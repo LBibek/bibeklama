@@ -13,6 +13,8 @@ import {
   ArrowRight,
   Briefcase,
   Flame,
+  BadgePercent,
+  Tag,
 } from "lucide-react";
 
 export function Workshops() {
@@ -25,6 +27,9 @@ export function Workshops() {
       borderGlow: "hover:border-indigo-500/50",
       description:
         "Comprehensive hands-on training covering the App Router, Server Components, client-side state, API architecture, dynamic routing, and high-performance production deployment.",
+      originalPrice: "NRS. 30,000",
+      discountPrice: "NRS. 25,000",
+      savings: "NRS. 5,000",
       modules: [
         "React Server Components (RSC) & Server Actions",
         "Next.js App Router Architecture & Layouts",
@@ -41,6 +46,9 @@ export function Workshops() {
       borderGlow: "hover:border-purple-500/50",
       description:
         "Deep dive into Microsoft .NET ecosystem, ASP.NET Core Web APIs, clean architecture, Entity Framework Core, authentication, and high-throughput corporate backends.",
+      originalPrice: "NRS. 30,000",
+      discountPrice: "NRS. 25,000",
+      savings: "NRS. 5,000",
       modules: [
         "C# Advanced Paradigms & Object-Oriented Principles",
         "ASP.NET Core Web API Architecture & Controllers",
@@ -57,6 +65,9 @@ export function Workshops() {
       borderGlow: "hover:border-cyan-500/50",
       description:
         "Equipping students with modern AI capabilities: prompt engineering architectures, LLM orchestration, few-shot prompting, autonomous agents, and AI-accelerated programming.",
+      originalPrice: "NRS. 30,000",
+      discountPrice: "NRS. 25,000",
+      savings: "NRS. 5,000",
       modules: [
         "Prompt Design Patterns, Context Structuring & Guardrails",
         "Few-Shot, Chain-of-Thought & Socratic Prompting",
@@ -83,6 +94,23 @@ export function Workshops() {
             Transforming learners from theoretical beginners into production-ready engineers.
             Over <strong className="text-white">90+ students</strong> successfully trained and mentored.
           </p>
+
+          {/* Pricing Highlight Pill */}
+          <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-3 p-2 px-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-xs sm:text-sm">
+            <span className="flex items-center gap-1.5 text-neutral-300">
+              <Tag className="w-3.5 h-3.5 text-indigo-400" />
+              <span>Standard Course Fee:</span>
+              <span className="line-through text-neutral-500 font-semibold">NRS. 30,000</span>
+            </span>
+            <span className="hidden sm:inline text-neutral-600">•</span>
+            <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
+              <BadgePercent className="w-4 h-4 text-emerald-400" />
+              <span>Special Discount Fee: NRS. 25,000</span>
+            </span>
+            <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
+              Save NRS. 5,000
+            </span>
+          </div>
         </div>
 
         {/* Highlight Banner */}
@@ -96,7 +124,7 @@ export function Workshops() {
                 90+ Students Empowered & Counting
               </h3>
               <p className="text-xs sm:text-sm text-neutral-300">
-                Direct hands-on workshops in cutting-edge tech stacks that match real market demand.
+                Direct hands-on workshops in Next.js, .NET Core & Prompt Engineering. Need-based scholarships also available for dedicated learners.
               </p>
             </div>
           </div>
@@ -106,7 +134,7 @@ export function Workshops() {
               href="#contact"
               className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-semibold shadow-lg shadow-indigo-600/20 transition-all"
             >
-              Request Workshop for Institution
+              Enroll at NRS. 25,000
             </a>
           </div>
         </div>
@@ -154,10 +182,44 @@ export function Workshops() {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-white/5">
-                  <div className="text-[11px] font-medium text-emerald-400 flex items-center gap-1.5">
-                    <Flame className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                    <span>Goal: {w.outcome}</span>
+                <div>
+                  {/* Pricing Block */}
+                  <div className="my-5 p-4 rounded-2xl bg-neutral-950/80 border border-white/10 flex items-center justify-between">
+                    <div>
+                      <span className="text-[10px] uppercase tracking-wider font-semibold text-neutral-400 block mb-0.5">
+                        Tuition Fee
+                      </span>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                          {w.discountPrice}
+                        </span>
+                        <span className="text-xs sm:text-sm text-neutral-500 line-through">
+                          {w.originalPrice}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-semibold">
+                        <BadgePercent className="w-3 h-3" />
+                        <span>Save {w.savings}</span>
+                      </span>
+                      <span className="block text-[9px] text-neutral-400 mt-1">Discount Active</span>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-white/5 space-y-3">
+                    <div className="text-[11px] font-medium text-emerald-400 flex items-center gap-1.5">
+                      <Flame className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>Goal: {w.outcome}</span>
+                    </div>
+
+                    <a
+                      href="#contact"
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-semibold shadow-md shadow-indigo-600/20 transition-all group-hover:shadow-indigo-500/40"
+                    >
+                      <span>Enroll at {w.discountPrice}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    </a>
                   </div>
                 </div>
               </div>

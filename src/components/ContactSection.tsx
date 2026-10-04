@@ -306,8 +306,8 @@ export function ContactSection() {
                     >
                       <option value="Business IT Consulting & Architecture">Business IT Consulting & Systems</option>
                       <option value="Aerial Drone Cinema & Creative Direction">Aerial Drone Cinema & Creative Film Direction</option>
-                      <option value="Digital Marketing & Video Production">Digital Marketing & Video Production</option>
-                      <option value="Student Workshops (Next.js / .NET / Prompt Eng)">Student Workshops (Next.js, .NET, AI)</option>
+                      <option value="Course Enrollment (NRS. 25,000 Discounted Fee)">Course Enrollment (Next.js / .NET / AI - NRS. 25,000)</option>
+                      <option value="Institutional Workshop Request">Institutional / Campus Workshop Request</option>
                       <option value="Scholarship Program & Philanthropy">Scholarship Inquiries (Need-Based)</option>
                       <option value="Board Directorship & Governance">Board Directorship & Governance Advisory</option>
                       <option value="General Strategic Partnership">General Strategic Collaboration</option>
