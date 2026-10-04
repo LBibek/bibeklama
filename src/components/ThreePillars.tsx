@@ -8,12 +8,12 @@ import {
   CheckCircle2,
   ChevronRight,
   Target,
-  Users,
   Compass,
   Layers,
   Sparkles,
-  BookOpen,
-  Briefcase,
+  ExternalLink,
+  Video,
+  Code2,
 } from "lucide-react";
 
 interface PillarDetail {
@@ -38,95 +38,95 @@ export function ThreePillars() {
   const pillars: PillarDetail[] = [
     {
       id: "board",
-      badge: "Governance & Fiduciary Duty",
-      title: "Board of Director",
-      subtitle: "Strategic stewardship, corporate accountability & risk oversight.",
+      badge: "Governance & Venture Leadership",
+      title: "Board of Director & Founder",
+      subtitle: "Strategic stewardship, corporate accountability & executive venture leadership at Going Genius.",
       icon: ShieldCheck,
       accentGradient: "from-indigo-500/20 via-blue-500/10 to-transparent",
       borderColor: "hover:border-indigo-500/50 group-hover:border-indigo-500/40",
       textColor: "text-indigo-400",
       quote:
-        "“Effective board governance isn't about micromanaging execution—it's about steering organizational purpose, protecting stakeholder value, and demanding structural clarity.”",
+        "“True governance bridges fiduciary oversight with entrepreneurial execution—steering organizations towards sustainable resilience and stakeholder value.”",
       description:
-        "Providing high-stakes advisory, fiduciary governance, and strategic steering to executive committees. Ensures organizational compliance, sustainable financial health, and visionary long-term trajectory.",
+        "Founder of Going Genius (goinggenius.com.np) and serving on corporate advisory boards. Leads executive strategy, capital allocation, risk audits, and strategic partnerships across technology and education.",
       responsibilities: [
-        "Executive Strategy Alignment & Long-Term Vision",
-        "Risk Assessment, Mitigation & Audit Committee Oversight",
-        "Stakeholder Representation & Shareholder Value Creation",
-        "Corporate Culture, Ethics & Compliance Monitoring",
-        "Mergers, Partnerships & Capital Allocation Guidance",
+        "Executive Leadership & Strategic Direction at Going Genius",
+        "Corporate Board Governance & Fiduciary Oversight",
+        "Enterprise Risk Assessment, Audit & Regulatory Compliance",
+        "Strategic Partnerships, Client Acquisitions & Venture Scaling",
+        "Demarcation of Board Oversight vs. High-Performance Execution",
       ],
       outcomes: [
-        "Robust corporate resilience against market volatilities",
-        "Clear demarcation of board oversight vs. operational management",
-        "Transparent governance frameworks benchmarked against global standards",
+        "Established Going Genius as a premier tech studio and consulting hub",
+        "Scaled enterprise client engagements regionally and internationally",
+        "Built a resilient governance framework prioritizing long-term value",
       ],
       metrics: [
-        { label: "Core Focus", value: "Strategic Direction" },
-        { label: "Risk Management", value: "Proactive Audit" },
-        { label: "Stakeholder Alignment", value: "Complete Transparency" },
+        { label: "Venture", value: "Going Genius" },
+        { label: "Focus", value: "Fiduciary & Strategy" },
+        { label: "Accountability", value: "High-Standard" },
       ],
     },
     {
       id: "teacher",
-      badge: "Pedagogy & Knowledge Transfer",
-      title: "Teacher & Educator",
-      subtitle: "Mentoring emerging leaders, demystifying complexities & nurturing curiosity.",
+      badge: "Pedagogy & Philanthropy",
+      title: "Teacher, Educator & Philanthropist",
+      subtitle: "90+ students trained, hands-on workshops in Next.js, .NET, Prompt Engineering & scholarships.",
       icon: GraduationCap,
       accentGradient: "from-violet-500/20 via-purple-500/10 to-transparent",
       borderColor: "hover:border-violet-500/50 group-hover:border-violet-500/40",
       textColor: "text-violet-400",
       quote:
-        "“Teaching is the architecture of human potential. When we connect abstract principles to practical real-world relevance, we create leaders, not just test-takers.”",
+        "“Teaching is about closing the gap between academic theory and industry reality. Through scholarships and applied workshops, we empower students to build real careers.”",
       description:
-        "Bridging academic rigor with real-world industry practice. Passionate about transforming curriculum, cultivating critical thinking, and empowering students to master complex business and technological systems.",
+        "Passionate technical educator and philanthropist. Has trained over 90+ students through intensive workshops in Next.js, .NET, and Prompt Engineering, while actively funding scholarships for students in need.",
       responsibilities: [
-        "Curriculum Modernization & Interactive Pedagogy",
-        "Executive Coaching & Professional Development Seminars",
-        "Individual Mentorship & Career Guidance for Future Technologists",
-        "Interactive Case Studies & Real-World Simulation Workshops",
-        "Fostering Lifelong Learning Mindsets & Ethical Leadership",
+        "Hands-on Workshops in Next.js, .NET Core & Prompt Engineering",
+        "Industry-Readiness Coaching: Git workflows, clean code & production apps",
+        "Philanthropic Scholarships: Covering tuition for underprivileged learners",
+        "Capstones, Real-World Portfolio Reviews & Mock Technical Interviews",
+        "Mentoring the Next Generation of Engineers into Top Tier Jobs",
       ],
       outcomes: [
-        "Hundreds of students successfully placed in top tier organizations",
-        "Significant boost in student engagement and applied problem-solving",
-        "Creation of collaborative, psychologically safe learning environments",
+        "Over 90+ students successfully trained and made industry-ready",
+        "Multiple underprivileged students funded with tech scholarships",
+        "Graduates thriving as professional developers and tech contributors",
       ],
       metrics: [
-        { label: "Learners Impacted", value: "1,000+" },
-        { label: "Methodology", value: "Case-Driven" },
-        { label: "Pedagogy", value: "Interactive & Applied" },
+        { label: "Students Trained", value: "90+" },
+        { label: "Core Stacks", value: "Next.js • .NET • AI" },
+        { label: "Impact", value: "Scholarships" },
       ],
     },
     {
       id: "architect",
-      badge: "Enterprise Systems & Strategy",
-      title: "Business Architect",
-      subtitle: "Translating boardroom strategy into operational realities and scalable architectures.",
+      badge: "Systems Architecture & IT Consulting",
+      title: "Business Architect & IT Consultant",
+      subtitle: "Architecting systems like GG Relativity, GG Portals, Finder BD, digital marketing & video production.",
       icon: Network,
       accentGradient: "from-cyan-500/20 via-teal-500/10 to-transparent",
       borderColor: "hover:border-cyan-500/50 group-hover:border-cyan-500/40",
       textColor: "text-cyan-400",
       quote:
-        "“A strategy without business architecture is merely wishful thinking. Architecture translates abstract visions into coordinated processes, capabilities, and technological engines.”",
+        "“Business architecture turns ambitious visions into high-performance engines—connecting technology backbones, digital marketing funnels, and media pipelines into a unified system.”",
       description:
-        "Designing the structural blueprints of modern enterprise operations. Bridges the critical gap between executive business goals, operational processes, and technology infrastructure.",
+        "Guiding businesses through IT modernization and growth. Architected major platforms including GG Relativity (office ERP), GG Portals, and Finder BD (telematics), alongside full-service digital marketing and in-house video production teams.",
       responsibilities: [
-        "Enterprise Capability Mapping & Value Stream Design",
-        "Digital Transformation & Legacy Systems Modernization",
-        "Operating Model Optimization & Cross-Functional Alignment",
-        "Technology Stack Selection Aligned with Business Strategy",
-        "Change Management Blueprints & Process Re-engineering",
+        "Enterprise System Architecture (GG Relativity, GG Portals, Finder BD)",
+        "Business IT Consulting, Infrastructure Hardening & Cloud Strategies",
+        "Digital Marketing Campaigns & Performance Conversion Funnels",
+        "Video Creation Team Leadership: Corporate media & educational production",
+        "Process Re-engineering, Capability Mapping & Operational Scaling",
       ],
       outcomes: [
-        "Elimination of cross-departmental silos and operational redundancies",
-        "Rapid accelerated time-to-market for new initiatives",
-        "Resilient, decoupled business processes that scale effortlessly",
+        "Delivered unified ERP and portal systems powering daily operations",
+        "Engineered scalable vehicle tracking architectures for international clients",
+        "Produced high-converting video and marketing campaigns for brand growth",
       ],
       metrics: [
-        { label: "System Focus", value: "Capabilities & Flows" },
-        { label: "Efficiency Gain", value: "Optimized Redundancies" },
-        { label: "Alignment", value: "Strategy ➔ Execution" },
+        { label: "Key Systems", value: "Relativity & Portals" },
+        { label: "Consulting", value: "IT & Architecture" },
+        { label: "Creative Media", value: "Video Team" },
       ],
     },
   ];
@@ -140,13 +140,13 @@ export function ThreePillars() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-medium mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Core Leadership Ecosystem</span>
+            <span>Core Ecosystem</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             The Three Pillars of Leadership
           </h2>
           <p className="mt-4 text-base sm:text-lg text-neutral-400">
-            A cohesive symbiosis of governance, human empowerment, and structural systems design.
+            A cohesive symbiosis of venture governance, human empowerment & philanthropy, and enterprise systems architecture.
           </p>
         </div>
 
@@ -205,7 +205,7 @@ export function ThreePillars() {
                     </p>
                   </div>
 
-                  {/* Bottom selection button */}
+                  {/* Bottom selection indicator */}
                   <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-medium">
                     <span
                       className={`${
@@ -256,7 +256,7 @@ export function ThreePillars() {
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-300 mb-3 flex items-center gap-2">
                   <Target className="w-4 h-4 text-indigo-400" />
-                  Key Strategic Contributions
+                  Key Contributions & Execution
                 </h4>
                 <ul className="space-y-2.5">
                   {currentPillar.responsibilities.map((resp, idx) => (

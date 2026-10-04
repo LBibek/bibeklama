@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Sparkles,
   Award,
+  ExternalLink,
 } from "lucide-react";
 
 interface MilestoneItem {
@@ -30,75 +31,75 @@ export function Timeline() {
     {
       id: "m1",
       year: "Present",
-      role: "Board Member & Strategic Advisor",
+      role: "Founder & Chief Architect",
       category: "board",
-      organization: "Executive & Corporate Advisory",
+      organization: "Going Genius (goinggenius.com.np)",
       description:
-        "Serving on board committees focusing on corporate governance, long-term strategic positioning, financial prudence, and compliance frameworks.",
+        "Founded and directing Going Genius. Leading executive strategy, software delivery, IT business consulting, digital marketing, and video production operations.",
       highlights: [
-        "Steering multi-year enterprise transformation strategies",
-        "Formulating fiduciary risk evaluation criteria",
-        "Aligning board-level vision with executive team KPIs",
+        "Architected enterprise software and client transformation roadmaps",
+        "Formed dedicated digital marketing & creative video production teams",
+        "Steering corporate governance and strategic client partnerships",
       ],
-      badge: "Governance",
+      badge: "Venture & Board",
     },
     {
       id: "m2",
-      year: "Ongoing",
-      role: "Academic Instructor & Faculty Mentor",
+      year: "Milestone",
+      role: "Technical Educator & Mentor (90+ Trained)",
       category: "teaching",
-      organization: "Higher Education & Executive Academies",
+      organization: "Industry-Ready Technical Workshops",
       description:
-        "Delivering comprehensive curricula in business systems, critical problem-solving, and technology management. Facilitating interactive seminars and mentoring students.",
+        "Conducted intensive hands-on training workshops in Next.js, Microsoft .NET Core, and Prompt Engineering, preparing 90+ students for real-world software careers.",
       highlights: [
-        "Instructing over 1,000+ emerging leaders and technologists",
-        "Designed hands-on, case-study driven syllabus",
-        "Mentored student incubators and technical capstones",
+        "90+ students trained in modern full-stack and AI development",
+        "End-to-end project-based learning with production code standards",
+        "Initiated need-based scholarships for underprivileged learners",
       ],
       badge: "Pedagogy",
     },
     {
       id: "m3",
-      year: "2023 - Present",
-      role: "Principal Business Architect",
+      year: "2024",
+      role: "Enterprise Systems Architect: GG Relativity & Portals",
       category: "architecture",
-      organization: "Enterprise Systems Strategy",
+      organization: "Going Genius Enterprise Platforms",
       description:
-        "Formulating enterprise architecture blueprints, capability mapping, and operational restructuring to ensure seamless alignment between digital tech stacks and business goals.",
+        "Blueprinted and engineered GG Relativity (internal ERP/office management suite) and GG Portals (multi-tenant client & student ecosystem).",
       highlights: [
-        "Reduced redundant processes across cross-functional departments",
-        "Architected scalable operational models for rapid growth",
-        "Bridged senior executives, engineering leads, and stakeholders",
+        "Deployed GG Relativity for centralized resource & office operations",
+        "Launched GG Portals for client self-service and student training tracks",
+        "Seamless integration with cloud security and modern API frameworks",
       ],
       badge: "Architecture",
     },
     {
       id: "m4",
-      year: "2021 - 2023",
-      role: "Director of Educational Initiatives & Pedagogy",
-      category: "teaching",
-      organization: "Academic Programs & Workshops",
+      year: "Ongoing",
+      role: "Systems Consultant & Telematics Solutions",
+      category: "architecture",
+      organization: "Finder BD (finder.com.bd)",
       description:
-        "Spearheaded pedagogical reform initiatives, teacher-student interactive workshops, and experiential learning modules.",
+        "Consulted and contributed to systems architecture for Finder BD, one of Bangladesh's premier vehicle tracking, IoT, and fleet intelligence platforms.",
       highlights: [
-        "Introduced real-world problem-solving sprint labs",
-        "Coached junior educators on active learning techniques",
+        "Optimized IoT vehicle data pipelines and real-time mapping performance",
+        "Engineered scalable backend service integrations",
       ],
-      badge: "Education",
+      badge: "IoT Telematics",
     },
     {
       id: "m5",
-      year: "2019 - 2022",
-      role: "Strategic Systems & Organization Architect",
-      category: "architecture",
-      organization: "Digital & Operations Advisory",
+      year: "Initiative",
+      role: "Philanthropic Tech Education Patron",
+      category: "teaching",
+      organization: "Scholarship & Equal Opportunity Fund",
       description:
-        "Engineered business capability frameworks and operating workflows for scaling ventures and institutional modernization projects.",
+        "Providing technology scholarships to deserving students in need to ensure economic disadvantage is never a barrier to mastering high-demand tech.",
       highlights: [
-        "Developed end-to-end value stream tracking frameworks",
-        "Spearheaded core workflow digitizations",
+        "Tuition-free seats in modern software engineering cohorts",
+        "Dedicated 1-on-1 career coaching and placement assistance",
       ],
-      badge: "Strategy",
+      badge: "Philanthropy",
     },
   ];
 
@@ -120,7 +121,7 @@ export function Timeline() {
             Milestones & Executive Journey
           </h2>
           <p className="mt-4 text-base sm:text-lg text-neutral-400">
-            A track record of high-impact boardroom steering, academic mentorship, and enterprise systems modernization.
+            From founding Going Genius and architecting enterprise platforms to training 90+ students and funding scholarships.
           </p>
         </div>
 
@@ -129,9 +130,9 @@ export function Timeline() {
           <div className="inline-flex p-1 rounded-2xl bg-neutral-900 border border-white/5">
             {[
               { id: "all", label: "All Milestones" },
-              { id: "board", label: "Board & Governance" },
-              { id: "teaching", label: "Teaching & Faculty" },
-              { id: "architecture", label: "Business Architecture" },
+              { id: "board", label: "Founding & Board" },
+              { id: "teaching", label: "Teaching & Philanthropy" },
+              { id: "architecture", label: "Enterprise Systems" },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -155,7 +156,7 @@ export function Timeline() {
               {/* Timeline Marker Dot */}
               <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-neutral-950 border-2 border-indigo-500 group-hover:scale-125 group-hover:border-cyan-400 group-hover:shadow-[0_0_12px_rgba(34,211,238,0.8)] transition-all" />
 
-              {/* Year chip (on desktop floats to the left) */}
+              {/* Year chip */}
               <div className="md:absolute md:-left-28 md:top-1.5 text-xs font-mono font-bold text-indigo-400 mb-1 md:mb-0 md:text-right md:w-20">
                 {item.year}
               </div>

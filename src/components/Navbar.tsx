@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Mail, Menu, X, ArrowUpRight } from "lucide-react";
+import { Mail, Menu, X, ArrowUpRight, ExternalLink } from "lucide-react";
 import { LinkedInIcon } from "@/components/Icons";
 
 export function Navbar() {
@@ -19,8 +19,9 @@ export function Navbar() {
   const navLinks = [
     { name: "About", href: "#about" },
     { name: "Three Pillars", href: "#pillars" },
-    { name: "Frameworks", href: "#frameworks" },
-    { name: "Milestones", href: "#milestones" },
+    { name: "Ventures & Projects", href: "#projects" },
+    { name: "Workshops", href: "#workshops" },
+    { name: "Philanthropy", href: "#philanthropy" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -28,7 +29,7 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "py-3 bg-neutral-950/80 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/50"
+          ? "py-3 bg-neutral-950/85 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/50"
           : "py-5 bg-transparent"
       }`}
     >
@@ -47,22 +48,27 @@ export function Navbar() {
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="font-semibold text-sm tracking-wide text-white group-hover:text-indigo-300 transition-colors">
-                Bibek Lama
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="font-semibold text-sm tracking-wide text-white group-hover:text-indigo-300 transition-colors">
+                  Bibek Lama
+                </span>
+                <span className="px-1.5 py-0.5 text-[9px] font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded">
+                  Founder
+                </span>
+              </div>
               <span className="text-[11px] text-neutral-400 font-mono tracking-tight">
-                Director • Educator • Architect
+                Going Genius • Board Director • Educator
               </span>
             </div>
           </a>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden md:flex items-center gap-1 bg-neutral-900/60 p-1.5 rounded-full border border-white/5 backdrop-blur-md">
+          <nav className="hidden lg:flex items-center gap-1 bg-neutral-900/60 p-1.5 rounded-full border border-white/5 backdrop-blur-md">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="px-4 py-1.5 text-xs font-medium text-neutral-300 hover:text-white rounded-full hover:bg-white/10 transition-all"
+                className="px-3.5 py-1.5 text-xs font-medium text-neutral-300 hover:text-white rounded-full hover:bg-white/10 transition-all"
               >
                 {link.name}
               </a>
@@ -70,11 +76,17 @@ export function Navbar() {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Available for Board Advisory</span>
-            </div>
+          <div className="hidden sm:flex items-center gap-3">
+            <a
+              href="https://goinggenius.com.np/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs hover:bg-cyan-900/40 transition-colors"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+              <span>Going Genius</span>
+              <ExternalLink className="w-3 h-3 text-cyan-400" />
+            </a>
 
             <a
               href="https://www.linkedin.com/in/bibeklamatmg?originalSubdomain=np"
@@ -91,7 +103,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl text-neutral-400 hover:text-white hover:bg-white/5 transition-colors"
@@ -105,13 +117,21 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 mx-4 p-5 rounded-2xl bg-neutral-900/95 border border-white/10 backdrop-blur-2xl shadow-2xl flex flex-col gap-4 animate-in fade-in slide-in-from-top-4 duration-200">
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs w-fit">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>Available for Board Advisory</span>
+        <div className="lg:hidden mt-2 mx-4 p-5 rounded-2xl bg-neutral-900/95 border border-white/10 backdrop-blur-2xl shadow-2xl flex flex-col gap-4 animate-in fade-in slide-in-from-top-4 duration-200">
+          <div className="flex items-center justify-between border-b border-white/5 pb-3">
+            <a
+              href="https://goinggenius.com.np/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs"
+            >
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              <span>Founder, Going Genius</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
           </div>
 
-          <div className="flex flex-col gap-1 border-t border-white/5 pt-3">
+          <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.name}

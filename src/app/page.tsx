@@ -2,6 +2,9 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Philosophy } from "@/components/Philosophy";
 import { ThreePillars } from "@/components/ThreePillars";
+import { ProjectsShowcase } from "@/components/ProjectsShowcase";
+import { Workshops } from "@/components/Workshops";
+import { Philanthropy } from "@/components/Philanthropy";
 import { Frameworks } from "@/components/Frameworks";
 import { Timeline } from "@/components/Timeline";
 import { ContactSection } from "@/components/ContactSection";
@@ -18,6 +21,9 @@ export default function Home() {
         <Hero />
         <Philosophy />
         <ThreePillars />
+        <ProjectsShowcase />
+        <Workshops />
+        <Philanthropy />
         <Frameworks />
         <Timeline />
         <ContactSection />
