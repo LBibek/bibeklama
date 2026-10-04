@@ -13,28 +13,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bibek Lama | Board of Director • Educator • Business Architect",
+  title: "Bibek Lama Tamang | Business Architect • Project Leader • Tech Professional",
   description:
-    "Executive portfolio of Bibek Lama (Tamang). Bridging strategic corporate governance, transformative education, and enterprise business architecture.",
+    "Official portfolio of Bibek Lama Tamang. Founder of Going Genius Group, dynamic Business Architect with deep expertise in IT systems, GPS/IoT telematics, digital transformation, and technical training.",
   keywords: [
     "Bibek Lama",
     "Bibek Lama Tamang",
-    "Board of Director",
+    "Going Genius Group",
     "Business Architect",
-    "Teacher",
-    "Educator",
-    "Executive Advisory",
-    "Nepal",
-    "Corporate Governance",
-    "Enterprise Architecture"
+    "Project Leader",
+    "Tech Professional",
+    "Finder GPS Nepal",
+    "Sipradi Auto Parts",
+    "Midas E-Class",
+    "Coventry University",
+    "Thapathali Campus",
+    "Drone Pilot Nepal",
+    "Kathmandu",
+    "Nepal"
   ],
-  authors: [{ name: "Bibek Lama" }],
+  authors: [{ name: "Bibek Lama Tamang" }],
   openGraph: {
-    title: "Bibek Lama | Board of Director • Educator • Business Architect",
+    title: "Bibek Lama Tamang | Business Architect • Project Leader • Tech Professional",
     description:
-      "Strategic Governance, Academic Leadership, and Enterprise Business Architecture.",
-    url: "https://www.linkedin.com/in/bibeklamatmg?originalSubdomain=np",
-    siteName: "Bibek Lama Portfolio",
+      "Founder of Going Genius Group. Business Architecture, IoT Telematics, Digital Transformation, and Technical Pedagogy.",
+    url: "https://bibeklama-rho.vercel.app",
+    siteName: "Bibek Lama Tamang",
     type: "website",
   },
 };

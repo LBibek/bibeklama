@@ -18,9 +18,9 @@ export function Navbar() {
 
   const navLinks = [
     { name: "About", href: "#about" },
-    { name: "Three Pillars", href: "#pillars" },
     { name: "Ventures", href: "#projects" },
     { name: "Workshops", href: "#workshops" },
+    { name: "Experience", href: "#milestones" },
     { name: "Media Reels", href: "#media" },
     { name: "Team", href: "#team" },
     { name: "Contact", href: "#contact" },
@@ -51,14 +51,14 @@ export function Navbar() {
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-sm tracking-wide text-white group-hover:text-indigo-300 transition-colors">
-                  Bibek Lama
+                  Bibek Lama Tamang
                 </span>
                 <span className="px-1.5 py-0.5 text-[9px] font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 rounded">
                   Founder
                 </span>
               </div>
               <span className="text-[11px] text-neutral-400 font-mono tracking-tight">
-                Going Genius • Board Director • Educator
+                Going Genius Group • Business Architect
               </span>
             </div>
           </a>

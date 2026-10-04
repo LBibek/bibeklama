@@ -16,6 +16,7 @@ import {
   ExternalLink,
   Video,
   Heart,
+  Phone,
 } from "lucide-react";
 import { LinkedInIcon, GitHubIcon, DiscordIcon, InstagramIcon } from "@/components/Icons";
 
@@ -76,16 +77,16 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white tracking-tight">
-                    Bibek Lama (Tamang)
+                    Bibek Lama Tamang
                   </h3>
                   <p className="text-xs text-neutral-400">
-                    linkedin.com/in/bibeklamatmg
+                    Business Architect | Project Leader | Tech Professional
                   </p>
                 </div>
               </div>
 
               <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-6">
-                For direct executive correspondence, board appointments, speaking engagements, or tech consulting, connect directly via LinkedIn or submit an inquiry.
+                Available for business architecture, IT consulting, IoT/telematics systems, student workshops, and strategic partnerships.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -118,6 +119,41 @@ export function ContactSection() {
                   )}
                 </button>
               </div>
+            </div>
+
+            {/* Direct Contact: Email & Phone / WhatsApp (from CV) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <a
+                href="mailto:bibeklamatamg@gmail.com"
+                className="p-4 rounded-2xl vr-glass flex items-center gap-3 group hover:border-cyan-500/40 transition-all"
+              >
+                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0 group-hover:scale-105 transition-transform">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-[10px] uppercase font-mono text-neutral-400">Direct Email</div>
+                  <div className="text-xs font-semibold text-white truncate group-hover:text-cyan-300 transition-colors">
+                    bibeklamatamg@gmail.com
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href="https://wa.me/9779768527869"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-2xl vr-glass flex items-center gap-3 group hover:border-emerald-500/40 transition-all"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0 group-hover:scale-105 transition-transform">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div className="min-w-0">
+                  <div className="text-[10px] uppercase font-mono text-neutral-400">Phone / WhatsApp</div>
+                  <div className="text-xs font-semibold text-white truncate group-hover:text-emerald-300 transition-colors">
+                    +977-9768527869
+                  </div>
+                </div>
+              </a>
             </div>
 
             {/* GitHub, Discord & Instagram Cards (Spatial VR Glass) */}

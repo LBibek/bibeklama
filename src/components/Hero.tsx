@@ -27,7 +27,7 @@ export function Hero() {
       {/* Top Badge: Founder & Leadership status */}
       <div className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-neutral-900/90 border border-white/10 text-xs text-neutral-300 shadow-xl backdrop-blur-md mb-8 hover:border-cyan-500/40 transition-colors">
         <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-        <span className="font-semibold text-white">Bibek Lama</span>
+        <span className="font-semibold text-white">Bibek Lama Tamang</span>
         <span className="text-neutral-500">•</span>
         <a
           href="https://goinggenius.com.np/"
@@ -35,13 +35,13 @@ export function Hero() {
           rel="noopener noreferrer"
           className="text-cyan-400 hover:text-cyan-300 font-medium inline-flex items-center gap-1 transition-colors"
         >
-          Founder, Going Genius
+          Founder, Going Genius Group
           <ExternalLink className="w-3 h-3" />
         </a>
         <span className="text-neutral-500">•</span>
-        <span className="text-neutral-400">Board Director & Business Architect</span>
+        <span className="text-neutral-400">Business Architect & Project Leader</span>
         <span className="text-neutral-500">•</span>
-        <span className="text-emerald-400 font-mono text-[11px]">Nepal</span>
+        <span className="text-emerald-400 font-mono text-[11px]">Kathmandu, Nepal</span>
       </div>
 
       {/* Main Headline */}
@@ -55,10 +55,8 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 text-base sm:text-xl text-neutral-300 max-w-3xl mx-auto font-normal leading-relaxed">
-          Founder of <strong className="text-white font-medium">Going Genius</strong>, 
-          Board Director, and Enterprise Business Architect. Driving digital transformations, 
-          delivering high-impact IT consulting, digital marketing & video production, and preparing 
-          students for modern tech careers through industry workshops and philanthropic scholarships.
+          Dynamic Business Architect, Project Leader, and Tech Professional. Founder of <strong className="text-white font-medium">Going Genius Group</strong>, 
+          driving digital transformation, enterprise ERP systems, and IoT telematics. Delivering high-impact consulting, digital marketing & video production, and preparing students for tech careers through industry workshops and scholarships.
         </p>
 
         {/* Triple Pillar Chips (Hero UI style) */}

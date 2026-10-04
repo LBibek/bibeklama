@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Mail, ArrowUp, ExternalLink } from "lucide-react";
+import { Mail, ArrowUp, ExternalLink, Phone } from "lucide-react";
 import { LinkedInIcon, GitHubIcon, DiscordIcon, InstagramIcon } from "@/components/Icons";
 
 export function Footer() {
@@ -21,13 +21,13 @@ export function Footer() {
               </div>
             </div>
             <div>
-              <div className="text-base font-bold text-white">Bibek Lama (Tamang)</div>
-              <div className="text-xs text-neutral-400">Founder, Going Genius • Director & Drone Pilot • Architect</div>
+              <div className="text-base font-bold text-white">Bibek Lama Tamang</div>
+              <div className="text-xs text-neutral-400">Business Architect | Project Leader | Tech Professional</div>
             </div>
           </div>
 
           <p className="text-xs text-neutral-400 leading-relaxed max-w-sm">
-            Bridging corporate governance with enterprise business architecture, creative film & aerial drone direction, and transformative tech workshops. Dedicated to mentoring 90+ students and funding educational scholarships in Nepal.
+            Founder of Going Genius Group. Driving digital transformation, enterprise ERP systems, GPS/IoT telematics, creative film direction, and mentoring 90+ students with scholarships in Nepal.
           </p>
 
           <div className="flex items-center gap-2.5 pt-2">
@@ -83,11 +83,21 @@ export function Footer() {
             </a>
 
             <a
-              href="#contact"
-              className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-indigo-400 border border-white/5 transition-colors"
-              title="Direct Inquiry"
+              href="mailto:bibeklamatamg@gmail.com"
+              className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-cyan-400 border border-white/5 transition-colors"
+              title="Email: bibeklamatamg@gmail.com"
             >
               <Mail className="w-4 h-4" />
+            </a>
+
+            <a
+              href="https://wa.me/9779768527869"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/30 text-emerald-400 hover:text-white border border-emerald-500/20 transition-colors"
+              title="Phone / WhatsApp: +977-9768527869"
+            >
+              <Phone className="w-4 h-4" />
             </a>
           </div>
         </div>
