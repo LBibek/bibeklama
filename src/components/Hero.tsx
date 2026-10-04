@@ -13,7 +13,7 @@ import {
   HeartHandshake,
   Video,
 } from "lucide-react";
-import { LinkedInIcon } from "@/components/Icons";
+import { LinkedInIcon, GitHubIcon, DiscordIcon } from "@/components/Icons";
 
 export function Hero() {
   return (
@@ -96,83 +96,95 @@ export function Hero() {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/bibeklamatmg?originalSubdomain=np"
+            href="https://github.com/bibeklamatmg"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 text-neutral-200 hover:text-white font-medium text-sm border border-white/10 hover:border-white/20 backdrop-blur-md transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 text-neutral-200 hover:text-white font-medium text-sm border border-white/10 hover:border-white/20 backdrop-blur-md transition-all"
           >
-            <LinkedInIcon className="w-4 h-4 text-cyan-400" />
-            <span>Connect on LinkedIn</span>
+            <GitHubIcon className="w-4 h-4 text-white" />
+            <span>GitHub Profile</span>
           </a>
 
           <a
-            href="#projects"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white font-medium text-sm border border-white/5 hover:border-white/15 transition-all"
+            href="https://discord.gg/kjeN4G3cM"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#5865F2]/20 hover:bg-[#5865F2]/30 text-[#c7d2fe] hover:text-white font-medium text-sm border border-[#5865F2]/30 transition-all"
           >
-            <Code2 className="w-4 h-4 text-violet-400" />
-            <span>Explore Key Systems</span>
+            <DiscordIcon className="w-4 h-4 text-[#818cf8]" />
+            <span>Discord Campus</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/bibeklamatmg?originalSubdomain=np"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 text-neutral-200 hover:text-white font-medium text-sm border border-white/10 hover:border-white/20 backdrop-blur-md transition-all"
+          >
+            <LinkedInIcon className="w-4 h-4 text-cyan-400" />
+            <span>LinkedIn</span>
           </a>
         </div>
       </div>
 
-      {/* Bento Stats / Real metrics bar */}
+      {/* Bento Stats / Real metrics bar (VisionOS Spatial VR Glass) */}
       <div className="mt-16 w-full max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-        <div className="p-4 sm:p-5 rounded-2xl bg-neutral-900/60 border border-white/5 backdrop-blur-md flex flex-col hover:border-indigo-500/30 transition-colors">
+        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-indigo-500/30 transition-colors">
           <div className="flex items-center justify-between text-indigo-400 mb-2">
             <ShieldCheck className="w-5 h-5" />
-            <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-500">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-400">
               Venture & Board
             </span>
           </div>
           <span className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             Founder
           </span>
-          <span className="text-xs text-neutral-400 mt-1">
+          <span className="text-xs text-neutral-300 mt-1">
             Going Genius & corporate board stewardship
           </span>
         </div>
 
-        <div className="p-4 sm:p-5 rounded-2xl bg-neutral-900/60 border border-white/5 backdrop-blur-md flex flex-col hover:border-violet-500/30 transition-colors">
+        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-violet-500/30 transition-colors">
           <div className="flex items-center justify-between text-violet-400 mb-2">
             <Users2 className="w-5 h-5" />
-            <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-500">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-400">
               Training
             </span>
           </div>
           <span className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             90+ Students
           </span>
-          <span className="text-xs text-neutral-400 mt-1">
+          <span className="text-xs text-neutral-300 mt-1">
             Trained hands-on in Next.js, .NET & AI prompts
           </span>
         </div>
 
-        <div className="p-4 sm:p-5 rounded-2xl bg-neutral-900/60 border border-white/5 backdrop-blur-md flex flex-col hover:border-cyan-500/30 transition-colors">
+        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-cyan-500/30 transition-colors">
           <div className="flex items-center justify-between text-cyan-400 mb-2">
             <Code2 className="w-5 h-5" />
-            <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-500">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-400">
               Enterprise
             </span>
           </div>
           <span className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             Flagship Platforms
           </span>
-          <span className="text-xs text-neutral-400 mt-1">
+          <span className="text-xs text-neutral-300 mt-1">
             GG Relativity, GG Portals, Finder BD & more
           </span>
         </div>
 
-        <div className="p-4 sm:p-5 rounded-2xl bg-neutral-900/60 border border-white/5 backdrop-blur-md flex flex-col hover:border-emerald-500/30 transition-colors">
+        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-emerald-500/30 transition-colors">
           <div className="flex items-center justify-between text-emerald-400 mb-2">
             <HeartHandshake className="w-5 h-5" />
-            <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-500">
+            <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-400">
               Philanthropy
             </span>
           </div>
           <span className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             Scholarships
           </span>
-          <span className="text-xs text-neutral-400 mt-1">
+          <span className="text-xs text-neutral-300 mt-1">
             Empowering students in need with modern tech grants
           </span>
         </div>

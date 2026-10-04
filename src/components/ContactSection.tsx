@@ -17,7 +17,7 @@ import {
   Video,
   Heart,
 } from "lucide-react";
-import { LinkedInIcon } from "@/components/Icons";
+import { LinkedInIcon, GitHubIcon, DiscordIcon } from "@/components/Icons";
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
@@ -120,8 +120,43 @@ export function ContactSection() {
               </div>
             </div>
 
+            {/* GitHub & Discord Cards (Spatial VR Glass) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <a
+                href="https://github.com/bibeklamatmg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-2xl vr-glass flex items-center justify-between gap-3 group hover:border-white/30"
+              >
+                <div className="flex items-center gap-2.5">
+                  <GitHubIcon className="w-5 h-5 text-white" />
+                  <div>
+                    <div className="text-xs font-bold text-white">GitHub</div>
+                    <div className="text-[10px] text-neutral-400">@bibeklamatmg</div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-white transition-colors" />
+              </a>
+
+              <a
+                href="https://discord.gg/kjeN4G3cM"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-2xl vr-glass flex items-center justify-between gap-3 group hover:border-[#5865F2]/40"
+              >
+                <div className="flex items-center gap-2.5">
+                  <DiscordIcon className="w-5 h-5 text-[#818cf8]" />
+                  <div>
+                    <div className="text-xs font-bold text-white">Discord Campus</div>
+                    <div className="text-[10px] text-neutral-400">Remote Learning</div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-[#818cf8] transition-colors" />
+              </a>
+            </div>
+
             {/* Going Genius Company Card */}
-            <div className="p-6 rounded-3xl bg-neutral-950 border border-white/10 flex items-center justify-between gap-4">
+            <div className="p-6 rounded-3xl vr-glass flex items-center justify-between gap-4">
               <div>
                 <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1">Company Headquarters</div>
                 <div className="text-base font-bold text-white">Going Genius</div>

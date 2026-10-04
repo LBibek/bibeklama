@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Mail, ArrowUp, ExternalLink } from "lucide-react";
-import { LinkedInIcon } from "@/components/Icons";
+import { LinkedInIcon, GitHubIcon, DiscordIcon } from "@/components/Icons";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -39,6 +39,26 @@ export function Footer() {
               title="LinkedIn Profile"
             >
               <LinkedInIcon className="w-4 h-4" />
+            </a>
+
+            <a
+              href="https://github.com/bibeklamatmg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white border border-white/5 transition-colors"
+              title="GitHub Profile"
+            >
+              <GitHubIcon className="w-4 h-4" />
+            </a>
+
+            <a
+              href="https://discord.gg/kjeN4G3cM"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-xl bg-[#5865F2]/20 hover:bg-[#5865F2]/40 text-[#a5b4fc] hover:text-white border border-[#5865F2]/30 transition-colors"
+              title="Discord Remote Campus"
+            >
+              <DiscordIcon className="w-4 h-4" />
             </a>
 
             <a

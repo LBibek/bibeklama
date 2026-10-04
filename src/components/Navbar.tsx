@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Mail, Menu, X, ArrowUpRight, ExternalLink } from "lucide-react";
-import { LinkedInIcon } from "@/components/Icons";
+import { LinkedInIcon, GitHubIcon, DiscordIcon } from "@/components/Icons";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -86,6 +86,26 @@ export function Navbar() {
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
               <span>Going Genius</span>
               <ExternalLink className="w-3 h-3 text-cyan-400" />
+            </a>
+
+            <a
+              href="https://github.com/bibeklamatmg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-300 hover:text-white hover:border-white/30 transition-all"
+              title="GitHub Profile"
+            >
+              <GitHubIcon className="w-3.5 h-3.5" />
+            </a>
+
+            <a
+              href="https://discord.gg/kjeN4G3cM"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-[#5865F2]/20 border border-[#5865F2]/30 text-[#a5b4fc] hover:text-white hover:bg-[#5865F2] transition-all"
+              title="Join Discord Community"
+            >
+              <DiscordIcon className="w-3.5 h-3.5" />
             </a>
 
             <a
