@@ -33,7 +33,7 @@ export function Navbar() {
       icon: <User className="w-full h-full" />,
     },
     {
-      title: "Bento Matrix",
+      title: "Leadership Matrix",
       href: "#bento",
       icon: <Layers className="w-full h-full" />,
     },

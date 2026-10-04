@@ -173,7 +173,7 @@ export function BentoSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold mb-4">
             <Layers className="w-3.5 h-3.5" />
-            <span>Executive Bento Overview</span>
+            <span>Leadership Matrix</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Integrated Leadership Matrix

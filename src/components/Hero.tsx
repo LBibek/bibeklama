@@ -6,21 +6,63 @@ import {
   ShieldCheck,
   GraduationCap,
   Network,
-  Sparkles,
-  ExternalLink,
+  Video,
+  Camera,
+  ArrowRight,
+  Globe,
+  Mail,
+  Phone,
+  Layers,
   Code2,
   Users2,
   HeartHandshake,
-  Video,
-  Camera,
 } from "lucide-react";
 import { LinkedInIcon, GitHubIcon, DiscordIcon, InstagramIcon } from "@/components/Icons";
 import { LampContainer } from "@/components/ui/lamp";
+import { FloatingDock, DockItem } from "@/components/ui/floating-dock";
 
 export function Hero() {
+  const heroDockLinks: DockItem[] = [
+    {
+      title: "Going Genius Group",
+      href: "https://goinggenius.com.np/",
+      icon: <Globe className="w-full h-full text-cyan-400" />,
+    },
+    {
+      title: "LinkedIn",
+      href: "https://www.linkedin.com/in/bibeklamatmg?originalSubdomain=np",
+      icon: <LinkedInIcon className="w-full h-full text-cyan-400" />,
+    },
+    {
+      title: "GitHub",
+      href: "https://github.com/LBibek",
+      icon: <GitHubIcon className="w-full h-full text-white" />,
+    },
+    {
+      title: "Discord Campus",
+      href: "https://discord.gg/kjeN4G3cM",
+      icon: <DiscordIcon className="w-full h-full text-[#818cf8]" />,
+    },
+    {
+      title: "Instagram",
+      href: "https://www.instagram.com/ggg.bibeklama/",
+      icon: <InstagramIcon className="w-full h-full text-pink-400" />,
+    },
+    {
+      title: "WhatsApp: +977-9768527869",
+      href: "https://wa.me/9779768527869",
+      icon: <Phone className="w-full h-full text-emerald-400" />,
+    },
+    {
+      title: "Email: bibeklamatamg@gmail.com",
+      href: "mailto:bibeklamatamg@gmail.com",
+      icon: <Mail className="w-full h-full text-amber-400" />,
+    },
+  ];
+
   return (
     <section className="relative overflow-hidden bg-neutral-950">
-      <LampContainer className="pt-32 sm:pt-40 pb-16">
+      <LampContainer className="pt-28 sm:pt-36 pb-14">
         <motion.div
           initial={{ opacity: 0.5, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,28 +71,8 @@ export function Hero() {
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="flex flex-col items-center text-center max-w-4xl mx-auto"
+          className="flex flex-col items-center text-center max-w-4xl mx-auto px-4"
         >
-          {/* Top Badge: Founder & Leadership status */}
-          <div className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-neutral-900/90 border border-white/10 text-xs text-neutral-300 shadow-xl backdrop-blur-md mb-6 hover:border-cyan-500/40 transition-colors">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span className="font-semibold text-white">Bibek Lama Tamang</span>
-            <span className="text-neutral-500">•</span>
-            <a
-              href="https://goinggenius.com.np/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyan-400 hover:text-cyan-300 font-medium inline-flex items-center gap-1 transition-colors"
-            >
-              Founder, Going Genius Group
-              <ExternalLink className="w-3 h-3" />
-            </a>
-            <span className="text-neutral-500">•</span>
-            <span className="text-neutral-400">Business Architect & Project Leader</span>
-            <span className="text-neutral-500">•</span>
-            <span className="text-emerald-400 font-mono text-[11px]">Kathmandu, Nepal</span>
-          </div>
-
           {/* Main Headline bathed in Lamp beam */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.12]">
             Engineering Ventures.{" "}
@@ -60,96 +82,55 @@ export function Hero() {
             Transforming Industry.
           </h1>
 
-          <p className="mt-6 text-base sm:text-lg text-neutral-300 max-w-3xl mx-auto font-normal leading-relaxed">
+          <p className="mt-6 text-base sm:text-lg text-neutral-300 max-w-2xl mx-auto font-normal leading-relaxed">
             Dynamic Business Architect, Project Leader, and Tech Professional. Founder of <strong className="text-white font-medium">Going Genius Group</strong>, 
-            driving digital transformation, enterprise ERP systems, and IoT telematics. Delivering high-impact consulting, digital marketing & video production, and preparing students for tech careers through industry workshops and scholarships.
+            driving digital transformation, enterprise ERP systems, and IoT telematics across Nepal.
           </p>
 
-          {/* Triple Pillar Chips (Hero UI style) */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5 max-w-4xl mx-auto">
-            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-indigo-950/40 border border-indigo-500/30 text-indigo-200 text-xs sm:text-sm font-medium backdrop-blur-md">
-              <ShieldCheck className="w-4 h-4 text-indigo-400" />
-              <span>Board of Director & Founder</span>
-            </div>
-
-            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-violet-950/40 border border-violet-500/30 text-violet-200 text-xs sm:text-sm font-medium backdrop-blur-md">
-              <GraduationCap className="w-4 h-4 text-violet-400" />
-              <span>Educator & Philanthropist</span>
-            </div>
-
-            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-cyan-200 text-xs sm:text-sm font-medium backdrop-blur-md">
-              <Network className="w-4 h-4 text-cyan-400" />
-              <span>Business Architect & IT Consultant</span>
-            </div>
-
-            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-amber-950/30 border border-amber-500/30 text-amber-200 text-xs sm:text-sm font-medium backdrop-blur-md">
-              <Video className="w-4 h-4 text-amber-400" />
-              <span>Marketing & Video Production</span>
-            </div>
-
-            <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-rose-950/30 border border-rose-500/30 text-rose-200 text-xs sm:text-sm font-medium backdrop-blur-md">
-              <Camera className="w-4 h-4 text-rose-400" />
-              <span>Drone Pilot & Film Director</span>
-            </div>
+          {/* Core Roles Streamlined Badges */}
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-950/40 border border-indigo-500/30 text-indigo-200 text-xs font-medium backdrop-blur-md">
+              <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
+              Board of Director & Founder
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-cyan-200 text-xs font-medium backdrop-blur-md">
+              <Network className="w-3.5 h-3.5 text-cyan-400" />
+              Business Architect & IT Consultant
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-violet-950/40 border border-violet-500/30 text-violet-200 text-xs font-medium backdrop-blur-md">
+              <GraduationCap className="w-3.5 h-3.5 text-violet-400" />
+              Educator & Mentor
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-950/40 border border-rose-500/30 text-rose-200 text-xs font-medium backdrop-blur-md">
+              <Camera className="w-3.5 h-3.5 text-rose-400" />
+              Drone Pilot & Film Director
+            </span>
           </div>
 
-          {/* CTA Buttons */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3.5">
-            <a
-              href="https://goinggenius.com.np/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 via-indigo-600 to-cyan-500 text-white font-medium text-sm shadow-xl shadow-indigo-600/25 hover:shadow-indigo-600/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
-            >
-              <span>Visit Going Genius</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
+          {/* Floating Dock for Hero Links */}
+          <div className="mt-10 flex flex-col items-center gap-3">
+            <FloatingDock items={heroDockLinks} />
+            <span className="text-[11px] font-mono text-neutral-400 tracking-wider">
+              Ventures • Socials • Direct Channels
+            </span>
+          </div>
 
+          {/* Primary Action Buttons */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
             <a
               href="#bento"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm border border-white/15 backdrop-blur-md transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 text-white font-medium text-sm shadow-xl shadow-indigo-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
             >
-              <span>Explore Bento Matrix</span>
+              <Layers className="w-4 h-4" />
+              <span>Explore Leadership Matrix</span>
             </a>
 
             <a
-              href="https://github.com/LBibek"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 text-neutral-200 hover:text-white font-medium text-sm border border-white/10 hover:border-white/20 backdrop-blur-md transition-all"
+              href="#contact"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-medium text-sm border border-white/15 backdrop-blur-md transition-all"
             >
-              <GitHubIcon className="w-4 h-4 text-white" />
-              <span>GitHub Profile</span>
-            </a>
-
-            <a
-              href="https://discord.gg/kjeN4G3cM"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#5865F2]/20 hover:bg-[#5865F2]/30 text-[#c7d2fe] hover:text-white font-medium text-sm border border-[#5865F2]/30 transition-all"
-            >
-              <DiscordIcon className="w-4 h-4 text-[#818cf8]" />
-              <span>Discord Campus</span>
-            </a>
-
-            <a
-              href="https://www.instagram.com/ggg.bibeklama/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 text-pink-300 hover:text-white font-medium text-sm border border-pink-500/30 transition-all"
-            >
-              <InstagramIcon className="w-4 h-4 text-pink-400" />
-              <span>Instagram</span>
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/bibeklamatmg?originalSubdomain=np"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-neutral-900/80 hover:bg-neutral-800 text-neutral-200 hover:text-white font-medium text-sm border border-white/10 hover:border-white/20 backdrop-blur-md transition-all"
-            >
-              <LinkedInIcon className="w-4 h-4 text-cyan-400" />
-              <span>LinkedIn</span>
+              <span>Get in Touch</span>
+              <ArrowRight className="w-4 h-4 text-cyan-400" />
             </a>
           </div>
         </motion.div>
