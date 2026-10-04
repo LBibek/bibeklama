@@ -10,7 +10,7 @@ import {
   Award,
   Film,
   Mail,
-  Sparkles,
+  ArrowUpRight,
 } from "lucide-react";
 import { FloatingDock, DockItem } from "@/components/ui/floating-dock";
 import { LinkedInIcon, GitHubIcon } from "@/components/Icons";
@@ -53,7 +53,7 @@ export function Navbar() {
       icon: <Award className="w-full h-full" />,
     },
     {
-      title: "Reels",
+      title: "Media Reels",
       href: "#media",
       icon: <Film className="w-full h-full" />,
     },
@@ -78,42 +78,39 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "py-2.5 bg-neutral-950/85 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/60"
+          ? "py-3 bg-neutral-950/85 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/60"
           : "py-4 bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
-          {/* Simple, Elegant Brand Logo on Left */}
+        <div className="relative flex items-center justify-between h-12">
+          {/* Left: Just clean text 'Bibek Lama' (No logo box, No Going Genius text) */}
           <Link
             href="#"
-            className="flex items-center gap-3 group focus:outline-none"
+            className="text-lg sm:text-xl font-bold tracking-tight text-white hover:text-cyan-300 transition-colors z-10"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-cyan-400 p-[1.5px] shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform shrink-0">
-              <div className="w-full h-full bg-neutral-950 rounded-[10px] flex items-center justify-center">
-                <span className="font-bold text-sm tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-indigo-200 via-white to-cyan-200">
-                  BL
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-sm tracking-tight text-white group-hover:text-indigo-300 transition-colors">
-                  Bibek Lama Tamang
-                </span>
-                <span className="hidden sm:inline-block px-1.5 py-0.5 text-[9px] font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 rounded">
-                  Founder
-                </span>
-              </div>
-              <span className="text-[11px] text-neutral-400 font-mono tracking-tight hidden sm:block">
-                Going Genius Group
-              </span>
-            </div>
+            Bibek Lama
           </Link>
 
-          {/* Aceternity Floating Dock on the Right */}
-          <div className="flex items-center">
+          {/* Center: Aceternity Floating Dock with Tooltips */}
+          <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center">
             <FloatingDock items={dockLinks} />
+          </div>
+
+          {/* Right: Connect Action Button & Mobile Dock */}
+          <div className="flex items-center gap-3 z-10">
+            <a
+              href="#contact"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-semibold shadow-md shadow-indigo-600/20 transition-all"
+            >
+              <span>Connect</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+
+            {/* Mobile Dock Menu */}
+            <div className="block lg:hidden">
+              <FloatingDock items={dockLinks} />
+            </div>
           </div>
         </div>
       </div>

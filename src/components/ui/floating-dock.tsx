@@ -50,7 +50,7 @@ const FloatingDockMobile = ({
         {open && (
           <motion.div
             layoutId="nav"
-            className="absolute right-0 top-full mt-3 flex flex-col gap-2 p-3 rounded-2xl bg-neutral-950/95 border border-white/15 backdrop-blur-2xl shadow-2xl z-50 min-w-[180px]"
+            className="absolute right-0 top-full mt-3 flex flex-col gap-2 p-3 rounded-2xl bg-neutral-950/95 border border-white/15 backdrop-blur-2xl shadow-2xl z-50 min-w-[200px]"
           >
             {items.map((item, idx) => (
               <motion.div
@@ -109,7 +109,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "hidden lg:flex h-11 items-center gap-1.5 rounded-full bg-neutral-900/75 border border-white/10 px-2.5 backdrop-blur-xl shadow-xl shadow-black/40",
+        "hidden lg:flex h-12 items-center gap-2 rounded-full bg-neutral-900/85 border border-white/15 px-3 backdrop-blur-xl shadow-2xl shadow-black/60",
         className
       )}
     >
@@ -138,11 +138,11 @@ function IconContainer({
     return val - bounds.x - bounds.width / 2;
   });
 
-  const widthTransform = useTransform(distance, [-120, 0, 120], [34, 48, 34]);
-  const heightTransform = useTransform(distance, [-120, 0, 120], [34, 48, 34]);
+  const widthTransform = useTransform(distance, [-120, 0, 120], [36, 52, 36]);
+  const heightTransform = useTransform(distance, [-120, 0, 120], [36, 52, 36]);
 
-  const widthTransformIcon = useTransform(distance, [-120, 0, 120], [16, 22, 16]);
-  const heightTransformIcon = useTransform(distance, [-120, 0, 120], [16, 22, 16]);
+  const widthTransformIcon = useTransform(distance, [-120, 0, 120], [17, 24, 17]);
+  const heightTransformIcon = useTransform(distance, [-120, 0, 120], [17, 24, 17]);
 
   const width = useSpring(widthTransform, {
     mass: 0.1,
@@ -175,20 +175,22 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="aspect-square rounded-full bg-white/5 hover:bg-white/15 border border-white/10 hover:border-cyan-400/50 flex items-center justify-center relative group transition-colors"
+        className="aspect-square rounded-full bg-white/5 hover:bg-white/15 border border-white/10 hover:border-cyan-400/60 flex items-center justify-center relative group transition-colors"
       >
+        {/* Prominent, Clearly Visible Tooltip Appearing Directly Below Dock Icons */}
         <AnimatePresence>
           {hovered && (
             <motion.div
-              initial={{ opacity: 0, y: 10, x: "-50%" }}
+              initial={{ opacity: 0, y: -4, x: "-50%" }}
               animate={{ opacity: 1, y: 0, x: "-50%" }}
-              exit={{ opacity: 0, y: 2, x: "-50%" }}
-              className="px-2.5 py-1 whitespace-nowrap rounded-lg bg-neutral-950/95 border border-white/20 text-white absolute left-1/2 -top-9 w-fit text-[11px] font-medium shadow-2xl backdrop-blur-md pointer-events-none z-50"
+              exit={{ opacity: 0, y: -4, x: "-50%" }}
+              className="px-3 py-1 whitespace-nowrap rounded-lg bg-neutral-950/95 border border-cyan-500/30 text-cyan-300 font-semibold absolute left-1/2 top-full mt-3 w-fit text-[11px] shadow-2xl backdrop-blur-xl pointer-events-none z-50 tracking-wide"
             >
               {title}
             </motion.div>
           )}
         </AnimatePresence>
+
         <motion.div
           style={{ width: widthIcon, height: heightIcon }}
           className="flex items-center justify-center text-neutral-300 group-hover:text-white"
