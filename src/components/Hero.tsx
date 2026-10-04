@@ -61,8 +61,8 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-neutral-950">
-      <LampContainer className="pt-28 sm:pt-36 pb-14">
+    <section className="relative overflow-hidden bg-neutral-950 pt-16 sm:pt-24">
+      <LampContainer className="pt-32 sm:pt-44 pb-16">
         <motion.div
           initial={{ opacity: 0.5, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
