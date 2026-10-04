@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Bibek Lama Tamang | Business Architect • Project Leader • Tech Professional",
     description:
       "Founder of Going Genius Group. Business Architecture, IoT Telematics, Digital Transformation, and Technical Pedagogy.",
-    url: "https://bibeklama-rho.vercel.app",
+    url: "https://bibeklama.vercel.app",
     siteName: "Bibek Lama Tamang",
     type: "website",
   },
