@@ -90,7 +90,7 @@ export function Navbar() {
             </a>
 
             <a
-              href="https://github.com/bibeklamatmg"
+              href="https://github.com/LBibek"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-neutral-900 border border-white/10 text-neutral-300 hover:text-white hover:border-white/30 transition-all"

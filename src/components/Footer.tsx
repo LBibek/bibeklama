@@ -42,7 +42,7 @@ export function Footer() {
             </a>
 
             <a
-              href="https://github.com/bibeklamatmg"
+              href="https://github.com/LBibek"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-300 hover:text-white border border-white/5 transition-colors"

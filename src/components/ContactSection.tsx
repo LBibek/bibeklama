@@ -123,7 +123,7 @@ export function ContactSection() {
             {/* GitHub, Discord & Instagram Cards (Spatial VR Glass) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <a
-                href="https://github.com/bibeklamatmg"
+                href="https://github.com/LBibek"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3.5 rounded-2xl vr-glass flex items-center justify-between gap-2 group hover:border-white/30"
