@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { BentoSection } from "@/components/BentoSection";
 import { Philosophy } from "@/components/Philosophy";
 import { ThreePillars } from "@/components/ThreePillars";
 import { ProjectsShowcase } from "@/components/ProjectsShowcase";
@@ -26,6 +27,7 @@ export default function Home() {
       {/* Main Content Sections */}
       <main className="flex-1">
         <Hero />
+        <BentoSection />
         <Philosophy />
         <ThreePillars />
         <ProjectsShowcase />
