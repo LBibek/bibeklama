@@ -12,8 +12,9 @@ import {
   Users2,
   HeartHandshake,
   Video,
+  Camera,
 } from "lucide-react";
-import { LinkedInIcon, GitHubIcon, DiscordIcon } from "@/components/Icons";
+import { LinkedInIcon, GitHubIcon, DiscordIcon, InstagramIcon } from "@/components/Icons";
 
 export function Hero() {
   return (
@@ -81,10 +82,15 @@ export function Hero() {
             <Video className="w-4 h-4 text-amber-400" />
             <span>Marketing & Video Production</span>
           </div>
+
+          <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-rose-950/30 border border-rose-500/30 text-rose-200 text-xs sm:text-sm font-medium backdrop-blur-md">
+            <Camera className="w-4 h-4 text-rose-400" />
+            <span>Drone Pilot & Film Director</span>
+          </div>
         </div>
 
         {/* CTA Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3.5">
           <a
             href="https://goinggenius.com.np/"
             target="_blank"
@@ -113,6 +119,16 @@ export function Hero() {
           >
             <DiscordIcon className="w-4 h-4 text-[#818cf8]" />
             <span>Discord Campus</span>
+          </a>
+
+          <a
+            href="https://www.instagram.com/ggg.bibeklama/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-pink-500/10 hover:bg-pink-500/20 text-pink-300 hover:text-white font-medium text-sm border border-pink-500/30 transition-all"
+          >
+            <InstagramIcon className="w-4 h-4 text-pink-400" />
+            <span>Instagram</span>
           </a>
 
           <a

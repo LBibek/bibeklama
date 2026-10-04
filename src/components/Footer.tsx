@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Mail, ArrowUp, ExternalLink } from "lucide-react";
-import { LinkedInIcon, GitHubIcon, DiscordIcon } from "@/components/Icons";
+import { LinkedInIcon, GitHubIcon, DiscordIcon, InstagramIcon } from "@/components/Icons";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -22,15 +22,15 @@ export function Footer() {
             </div>
             <div>
               <div className="text-base font-bold text-white">Bibek Lama (Tamang)</div>
-              <div className="text-xs text-neutral-400">Founder, Going Genius • Board Director • Educator</div>
+              <div className="text-xs text-neutral-400">Founder, Going Genius • Director & Drone Pilot • Architect</div>
             </div>
           </div>
 
           <p className="text-xs text-neutral-400 leading-relaxed max-w-sm">
-            Bridging corporate governance with enterprise business architecture, digital marketing, and transformative tech workshops. Dedicated to mentoring 90+ students and funding educational scholarships in Nepal.
+            Bridging corporate governance with enterprise business architecture, creative film & aerial drone direction, and transformative tech workshops. Dedicated to mentoring 90+ students and funding educational scholarships in Nepal.
           </p>
 
-          <div className="flex items-center gap-3 pt-2">
+          <div className="flex items-center gap-2.5 pt-2">
             <a
               href="https://www.linkedin.com/in/bibeklamatmg?originalSubdomain=np"
               target="_blank"
@@ -49,6 +49,16 @@ export function Footer() {
               title="GitHub Profile"
             >
               <GitHubIcon className="w-4 h-4" />
+            </a>
+
+            <a
+              href="https://www.instagram.com/ggg.bibeklama/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-xl bg-pink-500/10 hover:bg-pink-500/30 text-pink-400 hover:text-white border border-pink-500/30 transition-colors"
+              title="Instagram: @ggg.bibeklama"
+            >
+              <InstagramIcon className="w-4 h-4" />
             </a>
 
             <a
@@ -89,6 +99,8 @@ export function Footer() {
           <a href="#pillars" className="hover:text-white transition-colors">Three Leadership Pillars</a>
           <a href="#projects" className="hover:text-white transition-colors">Ventures & Projects</a>
           <a href="#workshops" className="hover:text-white transition-colors">Student Workshops</a>
+          <a href="#media" className="hover:text-white transition-colors">Media & Cinema Reels</a>
+          <a href="#team" className="hover:text-white transition-colors">Team & Testimonials</a>
           <a href="#philanthropy" className="hover:text-white transition-colors">Scholarship Philanthropy</a>
           <a href="#milestones" className="hover:text-white transition-colors">Milestones</a>
           <a href="#contact" className="hover:text-white transition-colors">Inquire & Contact</a>

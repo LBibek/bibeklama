@@ -17,7 +17,7 @@ import {
   Video,
   Heart,
 } from "lucide-react";
-import { LinkedInIcon, GitHubIcon, DiscordIcon } from "@/components/Icons";
+import { LinkedInIcon, GitHubIcon, DiscordIcon, InstagramIcon } from "@/components/Icons";
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
@@ -120,38 +120,54 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* GitHub & Discord Cards (Spatial VR Glass) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {/* GitHub, Discord & Instagram Cards (Spatial VR Glass) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <a
                 href="https://github.com/bibeklamatmg"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-2xl vr-glass flex items-center justify-between gap-3 group hover:border-white/30"
+                className="p-3.5 rounded-2xl vr-glass flex items-center justify-between gap-2 group hover:border-white/30"
               >
-                <div className="flex items-center gap-2.5">
-                  <GitHubIcon className="w-5 h-5 text-white" />
+                <div className="flex items-center gap-2">
+                  <GitHubIcon className="w-4 h-4 text-white" />
                   <div>
-                    <div className="text-xs font-bold text-white">GitHub</div>
-                    <div className="text-[10px] text-neutral-400">@bibeklamatmg</div>
+                    <div className="text-[11px] font-bold text-white">GitHub</div>
+                    <div className="text-[9px] text-neutral-400">@bibeklamatmg</div>
                   </div>
                 </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-white transition-colors" />
+                <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-white transition-colors" />
               </a>
 
               <a
                 href="https://discord.gg/kjeN4G3cM"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-2xl vr-glass flex items-center justify-between gap-3 group hover:border-[#5865F2]/40"
+                className="p-3.5 rounded-2xl vr-glass flex items-center justify-between gap-2 group hover:border-[#5865F2]/40"
               >
-                <div className="flex items-center gap-2.5">
-                  <DiscordIcon className="w-5 h-5 text-[#818cf8]" />
+                <div className="flex items-center gap-2">
+                  <DiscordIcon className="w-4 h-4 text-[#818cf8]" />
                   <div>
-                    <div className="text-xs font-bold text-white">Discord Campus</div>
-                    <div className="text-[10px] text-neutral-400">Remote Learning</div>
+                    <div className="text-[11px] font-bold text-white">Discord</div>
+                    <div className="text-[9px] text-neutral-400">Remote Campus</div>
                   </div>
                 </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 group-hover:text-[#818cf8] transition-colors" />
+                <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-[#818cf8] transition-colors" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/ggg.bibeklama/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3.5 rounded-2xl vr-glass flex items-center justify-between gap-2 group hover:border-pink-500/40"
+              >
+                <div className="flex items-center gap-2">
+                  <InstagramIcon className="w-4 h-4 text-pink-400" />
+                  <div>
+                    <div className="text-[11px] font-bold text-white">Instagram</div>
+                    <div className="text-[9px] text-neutral-400">@ggg.bibeklama</div>
+                  </div>
+                </div>
+                <ArrowUpRight className="w-3 h-3 text-neutral-500 group-hover:text-pink-400 transition-colors" />
               </a>
             </div>
 
@@ -289,6 +305,7 @@ export function ContactSection() {
                       className="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-white/10 text-white text-xs sm:text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                     >
                       <option value="Business IT Consulting & Architecture">Business IT Consulting & Systems</option>
+                      <option value="Aerial Drone Cinema & Creative Direction">Aerial Drone Cinema & Creative Film Direction</option>
                       <option value="Digital Marketing & Video Production">Digital Marketing & Video Production</option>
                       <option value="Student Workshops (Next.js / .NET / Prompt Eng)">Student Workshops (Next.js, .NET, AI)</option>
                       <option value="Scholarship Program & Philanthropy">Scholarship Inquiries (Need-Based)</option>

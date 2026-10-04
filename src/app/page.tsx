@@ -4,6 +4,7 @@ import { Philosophy } from "@/components/Philosophy";
 import { ThreePillars } from "@/components/ThreePillars";
 import { ProjectsShowcase } from "@/components/ProjectsShowcase";
 import { Workshops } from "@/components/Workshops";
+import { MediaCarousel } from "@/components/MediaCarousel";
 import { DiscordCommunity } from "@/components/DiscordCommunity";
 import { Philanthropy } from "@/components/Philanthropy";
 import { TeamTestimonials } from "@/components/TeamTestimonials";
@@ -29,6 +30,7 @@ export default function Home() {
         <ThreePillars />
         <ProjectsShowcase />
         <Workshops />
+        <MediaCarousel />
         <DiscordCommunity />
         <Philanthropy />
         <TeamTestimonials />

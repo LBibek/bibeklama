@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Mail, Menu, X, ArrowUpRight, ExternalLink } from "lucide-react";
-import { LinkedInIcon, GitHubIcon, DiscordIcon } from "@/components/Icons";
+import { LinkedInIcon, GitHubIcon, DiscordIcon, InstagramIcon } from "@/components/Icons";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,9 +19,10 @@ export function Navbar() {
   const navLinks = [
     { name: "About", href: "#about" },
     { name: "Three Pillars", href: "#pillars" },
-    { name: "Ventures & Projects", href: "#projects" },
+    { name: "Ventures", href: "#projects" },
     { name: "Workshops", href: "#workshops" },
-    { name: "Philanthropy", href: "#philanthropy" },
+    { name: "Media Reels", href: "#media" },
+    { name: "Team", href: "#team" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -106,6 +107,16 @@ export function Navbar() {
               title="Join Discord Community"
             >
               <DiscordIcon className="w-3.5 h-3.5" />
+            </a>
+
+            <a
+              href="https://www.instagram.com/ggg.bibeklama/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-400 hover:text-white hover:bg-pink-600 transition-all"
+              title="Instagram: @ggg.bibeklama"
+            >
+              <InstagramIcon className="w-3.5 h-3.5" />
             </a>
 
             <a
