@@ -21,6 +21,7 @@ interface Project {
   category: "Enterprise Systems" | "Ventures" | "Client Solutions" | "Digital Media";
   link: string;
   badge: string;
+  image?: string;
   tech: string[];
   gradient: string;
   borderColor: string;
@@ -39,6 +40,7 @@ export function ProjectsShowcase() {
       category: "Ventures",
       link: "https://goinggenius.com.np/",
       badge: "Flagship Venture",
+      image: "/project-goinggenius.jpg",
       tech: ["Next.js", ".NET", "Enterprise Cloud", "Digital Strategy"],
       gradient: "from-indigo-600/20 via-purple-600/10 to-transparent",
       borderColor: "hover:border-indigo-500/50",
@@ -56,6 +58,7 @@ export function ProjectsShowcase() {
       category: "Enterprise Systems",
       link: "https://www.office.goinggenius.com.np/",
       badge: "Enterprise ERP",
+      image: "/project-relativity.jpg",
       tech: [".NET", "Next.js", "SQL Server", "Role-Based Security"],
       gradient: "from-cyan-600/20 via-blue-600/10 to-transparent",
       borderColor: "hover:border-cyan-500/50",
@@ -90,6 +93,7 @@ export function ProjectsShowcase() {
       category: "Client Solutions",
       link: "https://finder.com.bd/",
       badge: "IoT & Fleet Tech",
+      image: "/project-telematics.jpg",
       tech: ["IoT Telematics", "Live Geo-tracking", "Scalable APIs", "Enterprise Web"],
       gradient: "from-emerald-600/20 via-teal-600/10 to-transparent",
       borderColor: "hover:border-emerald-500/50",
@@ -107,6 +111,7 @@ export function ProjectsShowcase() {
       category: "Client Solutions",
       link: "https://goinggenius.com.np/",
       badge: "Consulting Practice",
+      image: "/workshop-students.jpg",
       tech: ["Systems Architecture", "IT Governance", "Digital Marketing", "SEO / PPC"],
       gradient: "from-amber-600/20 via-orange-600/10 to-transparent",
       borderColor: "hover:border-amber-500/50",
@@ -124,6 +129,7 @@ export function ProjectsShowcase() {
       category: "Digital Media",
       link: "https://goinggenius.com.np/",
       badge: "Media Studio",
+      image: "/drone-cinematography.jpg",
       tech: ["Cinematography", "Motion Graphics", "Video Editing", "Content Strategy"],
       gradient: "from-rose-600/20 via-pink-600/10 to-transparent",
       borderColor: "hover:border-rose-500/50",
@@ -191,10 +197,32 @@ export function ProjectsShowcase() {
               />
 
               <div className="relative z-10">
+                {/* Image Banner */}
+                {proj.image && (
+                  <div className="relative w-full h-36 rounded-2xl overflow-hidden mb-5 border border-white/10 group-hover:border-cyan-500/40 transition-colors">
+                    <img
+                      src={proj.image}
+                      alt={proj.title}
+                      className="w-full h-full object-cover object-center filter brightness-[0.6] group-hover:scale-105 group-hover:brightness-[0.75] transition-all duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent" />
+                    <div className="absolute top-2.5 left-2.5">
+                      <span className="text-[10px] font-mono tracking-wide px-2.5 py-0.5 rounded-full bg-neutral-950/80 border border-white/10 text-cyan-300 backdrop-blur-md">
+                        {proj.badge}
+                      </span>
+                    </div>
+                  </div>
+                )}
+
                 {/* Badge and Link */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-[11px] font-mono tracking-wide px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300">
-                    {proj.badge}
+                <div className="flex items-center justify-between mb-3">
+                  {!proj.image && (
+                    <span className="text-[11px] font-mono tracking-wide px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-300">
+                      {proj.badge}
+                    </span>
+                  )}
+                  <span className="text-[11px] font-mono text-cyan-400">
+                    {proj.category}
                   </span>
                   <a
                     href={proj.link}
@@ -207,7 +235,7 @@ export function ProjectsShowcase() {
                   </a>
                 </div>
 
-                <h3 className="text-xl font-bold text-white tracking-tight mb-1 group-hover:text-indigo-200 transition-colors">
+                <h3 className="text-xl font-bold text-white tracking-tight mb-1 group-hover:text-cyan-200 transition-colors">
                   {proj.title}
                 </h3>
                 <p className="text-xs font-medium text-cyan-400/90 mb-3">

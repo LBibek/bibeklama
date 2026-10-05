@@ -55,6 +55,22 @@ export function Philanthropy() {
               from mastering modern technologies like Next.js, .NET, and Artificial Intelligence.
             </p>
 
+            {/* Mentorship & Scholarship Classroom visual */}
+            <div className="relative w-full h-48 rounded-2xl overflow-hidden border border-white/10 my-1">
+              <img
+                src="/workshop-students.jpg"
+                alt="Students in scholarship program"
+                className="w-full h-full object-cover object-center filter brightness-[0.55]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent" />
+              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs">
+                <span className="font-semibold text-white">Full-Stack Cohort & Lab Sprints</span>
+                <span className="px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 text-[10px] font-mono border border-rose-500/30">
+                  Kathmandu & Remote
+                </span>
+              </div>
+            </div>
+
             <blockquote className="p-5 rounded-2xl bg-neutral-950/80 border-l-4 border-rose-500 text-neutral-200 text-sm sm:text-base italic leading-relaxed">
               “Education is the ultimate equalizer. When we provide a scholarship to a student in need, 
               we aren't just teaching code—we are transforming an entire family's economic future.”

@@ -23,16 +23,52 @@ export const FloatingDock = ({
   items,
   desktopClassName,
   mobileClassName,
+  mode = "toggle",
 }: {
   items: DockItem[];
   desktopClassName?: string;
   mobileClassName?: string;
+  mode?: "toggle" | "inline";
 }) => {
   return (
     <>
       <FloatingDockDesktop items={items} className={desktopClassName} />
-      <FloatingDockMobile items={items} className={mobileClassName} />
+      {mode === "inline" ? (
+        <FloatingDockMobileInline items={items} className={mobileClassName} />
+      ) : (
+        <FloatingDockMobile items={items} className={mobileClassName} />
+      )}
     </>
+  );
+};
+
+const FloatingDockMobileInline = ({
+  items,
+  className,
+}: {
+  items: DockItem[];
+  className?: string;
+}) => {
+  return (
+    <div
+      className={cn(
+        "flex lg:hidden flex-wrap items-center justify-center gap-2 max-w-full px-2 py-2.5 rounded-2xl bg-neutral-900/80 border border-white/10 backdrop-blur-xl shadow-xl",
+        className
+      )}
+    >
+      {items.map((item) => (
+        <Link
+          key={item.title}
+          href={item.href}
+          className="w-10 h-10 rounded-full bg-white/5 border border-white/10 hover:border-cyan-400/50 flex items-center justify-center text-neutral-300 hover:text-white transition-all active:scale-95"
+          title={item.title}
+        >
+          <div className="w-5 h-5 flex items-center justify-center">
+            {item.icon}
+          </div>
+        </Link>
+      ))}
+    </div>
   );
 };
 

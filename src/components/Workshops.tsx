@@ -113,10 +113,17 @@ export function Workshops() {
           </div>
         </div>
 
-        {/* Highlight Banner */}
-        <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-indigo-950/40 via-purple-950/30 to-cyan-950/40 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-md">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+        {/* Highlight Banner with Workshop photo */}
+        <div className="relative mb-12 p-6 sm:p-8 rounded-3xl overflow-hidden border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-md">
+          <img
+            src="/workshop-students.jpg"
+            alt="Students in Workshop"
+            className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.25]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-950/80 via-neutral-950/80 to-cyan-950/70" />
+
+          <div className="relative z-10 flex items-center gap-4">
+            <div className="w-14 h-14 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-500/30">
               <Users2 className="w-7 h-7" />
             </div>
             <div>
@@ -129,7 +136,7 @@ export function Workshops() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="relative z-10 flex items-center gap-3 shrink-0">
             <a
               href="#contact"
               className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-semibold shadow-lg shadow-indigo-600/20 transition-all"

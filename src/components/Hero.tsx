@@ -73,8 +73,27 @@ export function Hero() {
           }}
           className="flex flex-col items-center text-center max-w-4xl mx-auto px-4"
         >
+          {/* Executive Portrait & Active Status */}
+          <div className="relative mb-6">
+            <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-3xl p-1 bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-500 shadow-2xl shadow-indigo-500/20">
+              <div className="w-full h-full rounded-[22px] overflow-hidden bg-neutral-900 border border-white/20 relative">
+                <img
+                  src="/bibek-portrait.jpg"
+                  alt="Bibek Lama Tamang - Business Architect & Project Leader"
+                  className="w-full h-full object-cover object-center filter contrast-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              </div>
+            </div>
+            {/* Live Indicator Badge */}
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-950/90 border border-emerald-500/40 text-emerald-300 text-[11px] font-mono shadow-xl backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Available for Advisory</span>
+            </div>
+          </div>
+
           {/* Main Headline bathed in Lamp beam */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.12]">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl">
             Engineering Ventures.{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-cyan-300 to-purple-300">
               Empowering Minds.
@@ -82,44 +101,44 @@ export function Hero() {
             Transforming Industry.
           </h1>
 
-          <p className="mt-6 text-base sm:text-lg text-neutral-300 max-w-2xl mx-auto font-normal leading-relaxed">
+          <p className="mt-5 text-sm sm:text-base lg:text-lg text-neutral-300 max-w-2xl mx-auto font-normal leading-relaxed">
             Dynamic Business Architect, Project Leader, and Tech Professional. Founder of <strong className="text-white font-medium">Going Genius Group</strong>, 
             driving digital transformation, enterprise ERP systems, and IoT telematics across Nepal.
           </p>
 
           {/* Core Roles Streamlined Badges */}
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-950/40 border border-indigo-500/30 text-indigo-200 text-xs font-medium backdrop-blur-md">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-indigo-950/50 border border-indigo-500/30 text-indigo-200 text-xs font-medium backdrop-blur-md">
               <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
               Board of Director & Founder
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-cyan-200 text-xs font-medium backdrop-blur-md">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-950/50 border border-cyan-500/30 text-cyan-200 text-xs font-medium backdrop-blur-md">
               <Network className="w-3.5 h-3.5 text-cyan-400" />
               Business Architect & IT Consultant
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-violet-950/40 border border-violet-500/30 text-violet-200 text-xs font-medium backdrop-blur-md">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-violet-950/50 border border-violet-500/30 text-violet-200 text-xs font-medium backdrop-blur-md">
               <GraduationCap className="w-3.5 h-3.5 text-violet-400" />
               Educator & Mentor
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-950/40 border border-rose-500/30 text-rose-200 text-xs font-medium backdrop-blur-md">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-950/50 border border-rose-500/30 text-rose-200 text-xs font-medium backdrop-blur-md">
               <Camera className="w-3.5 h-3.5 text-rose-400" />
               Drone Pilot & Film Director
             </span>
           </div>
 
-          {/* Floating Dock for Hero Links */}
-          <div className="mt-10 flex flex-col items-center gap-3">
-            <FloatingDock items={heroDockLinks} />
+          {/* Floating Dock for Hero Links (Inline on mobile, Magnified Dock on Desktop) */}
+          <div className="mt-8 sm:mt-10 flex flex-col items-center gap-3 w-full">
+            <FloatingDock items={heroDockLinks} mode="inline" />
             <span className="text-[11px] font-mono text-neutral-400 tracking-wider">
               Ventures • Socials • Direct Channels
             </span>
           </div>
 
           {/* Primary Action Buttons */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto px-4">
             <a
               href="#bento"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 text-white font-medium text-sm shadow-xl shadow-indigo-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-cyan-500 text-white font-medium text-sm shadow-xl shadow-indigo-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all"
             >
               <Layers className="w-4 h-4" />
               <span>Explore Leadership Matrix</span>
@@ -127,7 +146,7 @@ export function Hero() {
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-medium text-sm border border-white/15 backdrop-blur-md transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-medium text-sm border border-white/15 backdrop-blur-md transition-all"
             >
               <span>Get in Touch</span>
               <ArrowRight className="w-4 h-4 text-cyan-400" />

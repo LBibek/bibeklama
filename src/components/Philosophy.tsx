@@ -54,12 +54,22 @@ export function Philosophy() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {principles.map((item, index) => {
             const Icon = item.icon;
+            const accents = [
+              "from-blue-500/20 via-indigo-500/10 to-transparent",
+              "from-purple-500/20 via-pink-500/10 to-transparent",
+              "from-cyan-500/20 via-teal-500/10 to-transparent",
+            ];
+            const borderColors = [
+              "hover:border-blue-500/40",
+              "hover:border-purple-500/40",
+              "hover:border-cyan-500/40",
+            ];
             return (
               <div
                 key={index}
-                className="group relative rounded-3xl p-8 bg-neutral-900/40 border border-white/5 hover:border-white/20 transition-all duration-300 flex flex-col justify-between overflow-hidden hover:bg-neutral-900/80"
+                className={`group relative rounded-3xl p-8 vr-glass border border-white/10 ${borderColors[index]} transition-all duration-300 flex flex-col justify-between overflow-hidden hover:scale-[1.01]`}
               >
-                <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 group-hover:bg-indigo-500/10 blur-2xl transition-all pointer-events-none" />
+                <div className={`absolute inset-0 bg-gradient-to-br ${accents[index]} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
 
                 <div>
                   <div className="flex items-center justify-between mb-6">
