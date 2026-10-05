@@ -15,9 +15,13 @@ export function Footer() {
         {/* Brand & Summary */}
         <div className="md:col-span-5 flex flex-col gap-4">
           <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-cyan-500 p-[1px]">
-              <div className="w-full h-full bg-neutral-950 rounded-[11px] flex items-center justify-center font-bold text-xs text-white">
-                BL
+            <div className="relative w-11 h-11 rounded-full p-0.5 bg-gradient-to-tr from-indigo-600 via-purple-600 to-cyan-500 shadow-lg shrink-0">
+              <div className="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center">
+                <img
+                  src="/logo.png"
+                  alt="Bibek Lama Logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             <div>

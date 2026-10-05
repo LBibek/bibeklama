@@ -85,12 +85,23 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-12">
-          {/* Left: Just clean text 'Bibek Lama' (No logo box, No Going Genius text) */}
+          {/* Left: Brand Logo & Title */}
           <Link
             href="#"
-            className="text-lg sm:text-xl font-bold tracking-tight text-white hover:text-cyan-300 transition-colors z-10"
+            className="flex items-center gap-2.5 group z-10 transition-transform active:scale-95"
           >
-            Bibek Lama
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full p-0.5 bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-500 shadow-md group-hover:shadow-cyan-500/30 transition-all shrink-0">
+              <div className="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center">
+                <img
+                  src="/logo.png"
+                  alt="Bibek Lama Logo"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+            </div>
+            <span className="text-lg sm:text-xl font-bold tracking-tight text-white group-hover:text-cyan-300 transition-colors">
+              Bibek Lama
+            </span>
           </Link>
 
           {/* Center: Aceternity Floating Dock with Tooltips */}
