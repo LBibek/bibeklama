@@ -17,7 +17,7 @@ import { GsapAnimations } from "@/components/GsapAnimations";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#06070a] text-[#f3f4f6] flex flex-col selection:bg-indigo-500/30 selection:text-indigo-200">
+    <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] flex flex-col selection:bg-indigo-500/30 selection:text-indigo-200 transition-colors duration-300">
       {/* GSAP Scroll Trigger & Spatial VR Interaction Engine */}
       <GsapAnimations />
 

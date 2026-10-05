@@ -116,9 +116,9 @@ export function Workshops() {
         {/* Highlight Banner with Workshop photo */}
         <div className="relative mb-12 p-6 sm:p-8 rounded-3xl overflow-hidden border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-md">
           <img
-            src="/workshop-students.jpg"
-            alt="Students in Workshop"
-            className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.25]"
+            src="/tech-education.jpg"
+            alt="Technical Coding Workstation"
+            className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.22]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-950/80 via-neutral-950/80 to-cyan-950/70" />
 

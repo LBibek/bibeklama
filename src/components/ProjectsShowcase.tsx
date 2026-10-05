@@ -111,7 +111,7 @@ export function ProjectsShowcase() {
       category: "Client Solutions",
       link: "https://goinggenius.com.np/",
       badge: "Consulting Practice",
-      image: "/workshop-students.jpg",
+      image: "/project-consulting.jpg",
       tech: ["Systems Architecture", "IT Governance", "Digital Marketing", "SEO / PPC"],
       gradient: "from-amber-600/20 via-orange-600/10 to-transparent",
       borderColor: "hover:border-amber-500/50",

@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { FloatingDock, DockItem } from "@/components/ui/floating-dock";
 import { LinkedInIcon, GitHubIcon } from "@/components/Icons";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -97,8 +98,10 @@ export function Navbar() {
             <FloatingDock items={dockLinks} />
           </div>
 
-          {/* Right: Connect Action Button & Mobile Dock */}
-          <div className="flex items-center gap-3 z-10">
+          {/* Right: Theme Toggle, Connect Action Button & Mobile Dock */}
+          <div className="flex items-center gap-2.5 sm:gap-3 z-10">
+            <ThemeToggle />
+
             <a
               href="#contact"
               className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-semibold shadow-md shadow-indigo-600/20 transition-all"

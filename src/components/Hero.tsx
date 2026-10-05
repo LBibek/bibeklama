@@ -73,20 +73,21 @@ export function Hero() {
           }}
           className="flex flex-col items-center text-center max-w-4xl mx-auto px-4"
         >
-          {/* Executive Portrait & Active Status */}
+          {/* Executive Monogram & Active Status */}
           <div className="relative mb-6">
-            <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-3xl p-1 bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-500 shadow-2xl shadow-indigo-500/20">
-              <div className="w-full h-full rounded-[22px] overflow-hidden bg-neutral-900 border border-white/20 relative">
-                <img
-                  src="/bibek-portrait.jpg"
-                  alt="Bibek Lama Tamang - Business Architect & Project Leader"
-                  className="w-full h-full object-cover object-center filter contrast-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-3xl p-1 bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-500 shadow-2xl shadow-indigo-500/25">
+              <div className="w-full h-full rounded-[22px] bg-neutral-900 border border-white/20 flex flex-col items-center justify-center relative overflow-hidden backdrop-blur-xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 via-purple-500/10 to-cyan-500/20" />
+                <span className="relative z-10 text-2xl sm:text-3xl font-black text-white tracking-wider font-mono">
+                  BL
+                </span>
+                <span className="relative z-10 text-[9px] uppercase tracking-widest text-cyan-300 font-semibold font-mono mt-0.5">
+                  Bibek Lama
+                </span>
               </div>
             </div>
             {/* Live Indicator Badge */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-950/90 border border-emerald-500/40 text-emerald-300 text-[11px] font-mono shadow-xl backdrop-blur-md">
+            <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 whitespace-nowrap inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-950/90 border border-emerald-500/40 text-emerald-300 text-[11px] font-mono shadow-xl backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>Available for Advisory</span>
             </div>

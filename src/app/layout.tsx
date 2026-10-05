@@ -43,6 +43,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { ThemeProvider } from "@/components/ThemeProvider";
+
 export default function RootLayout({
   children,
 }: {
@@ -52,9 +54,10 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-[#09090b] text-[#f4f4f5] antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
-        {children}
+      <body className="min-h-full flex flex-col antialiased selection:bg-indigo-500/30 selection:text-indigo-200">
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

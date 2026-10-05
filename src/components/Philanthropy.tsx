@@ -58,8 +58,8 @@ export function Philanthropy() {
             {/* Mentorship & Scholarship Classroom visual */}
             <div className="relative w-full h-48 rounded-2xl overflow-hidden border border-white/10 my-1">
               <img
-                src="/workshop-students.jpg"
-                alt="Students in scholarship program"
+                src="/tech-education.jpg"
+                alt="Developer Workstations and Scholarship Labs"
                 className="w-full h-full object-cover object-center filter brightness-[0.55]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent" />

@@ -20,7 +20,6 @@ interface TeamMember {
   specialty: string;
   avatarText: string;
   avatarGradient: string;
-  avatarImage?: string;
   quote: string;
   keyWork: string;
   tags: string[];
@@ -35,7 +34,6 @@ export function TeamTestimonials() {
       specialty: "Next.js • React • Flutter • Open Source Packages",
       avatarText: "CT",
       avatarGradient: "from-blue-500 to-indigo-600",
-      avatarImage: "/avatar-chris.jpg",
       quote:
         "“Bibek dai's architectural mindset completely redefined how I approach frontend engineering and systems scalability. His guidance on Next.js, code craftsmanship, and business realities transformed my career from building interfaces to architecting mission-critical platforms.”",
       keyWork: "Engineered scalable frontend architectures & community npm packages.",
@@ -48,7 +46,6 @@ export function TeamTestimonials() {
       specialty: "Product Design • UX/UI • Strategic Systems",
       avatarText: "AL",
       avatarGradient: "from-purple-500 to-pink-600",
-      avatarImage: "/avatar-aman.jpg",
       quote:
         "“'It begins with an idea'—and Bibek dai showed me how to take that idea from an abstract whiteboard blueprint into a functional, scalable reality. His ability to fuse design empathy with enterprise business architecture is truly one of a kind.”",
       keyWork: "Designed innovative product UX and engineered creative web solutions.",
@@ -61,7 +58,6 @@ export function TeamTestimonials() {
       specialty: "Next.js • .NET Core • Prompt Engineering",
       avatarText: "GG",
       avatarGradient: "from-cyan-500 to-emerald-500",
-      avatarImage: "/workshop-students.jpg",
       quote:
         "“The remote Discord masterclasses and scholarship programs made modern technology accessible to those of us who couldn't afford expensive bootcamps. Learning real production workflows gave us the confidence to step into top-tier tech jobs.”",
       keyWork: "Remote cohort graduates building full-stack applications in active tech roles.",
@@ -98,19 +94,11 @@ export function TeamTestimonials() {
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center gap-3">
                     <div
-                      className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${member.avatarGradient} flex items-center justify-center text-white font-bold text-base shadow-lg shadow-black/40 p-[1.5px] overflow-hidden`}
+                      className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${member.avatarGradient} flex items-center justify-center text-white font-bold text-base shadow-lg shadow-black/40 p-[1.5px]`}
                     >
-                      {member.avatarImage ? (
-                        <img
-                          src={member.avatarImage}
-                          alt={member.name}
-                          className="w-full h-full object-cover object-center rounded-[14px]"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-neutral-950/40 rounded-[14px] flex items-center justify-center">
-                          {member.avatarText}
-                        </div>
-                      )}
+                      <div className="w-full h-full bg-neutral-950/60 rounded-[14px] flex items-center justify-center font-mono tracking-wider">
+                        {member.avatarText}
+                      </div>
                     </div>
                     <div>
                       <h3 className="text-base font-bold text-white tracking-tight flex items-center gap-1.5">

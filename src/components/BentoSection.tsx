@@ -134,8 +134,8 @@ export function BentoSection() {
       header: (
         <div className="relative w-full h-44 rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between p-4 group/card">
           <img
-            src="/workshop-students.jpg"
-            alt="Technical Pedagogy & Coding Workshops"
+            src="/tech-education.jpg"
+            alt="Technical Pedagogy & Coding Workstations"
             className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.3] group-hover/card:scale-105 group-hover/card:brightness-[0.45] transition-all duration-500"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent" />
