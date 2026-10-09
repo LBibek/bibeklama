@@ -17,12 +17,22 @@ import {
   Video,
   Heart,
   Phone,
+  Loader2,
 } from "lucide-react";
-import { LinkedInIcon, GitHubIcon, DiscordIcon, InstagramIcon } from "@/components/Icons";
+import { LinkedInIcon, GitHubIcon, DiscordIcon, InstagramIcon, WhatsAppIcon } from "@/components/Icons";
 
 export function ContactSection() {
   const [copied, setCopied] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [sentSummary, setSentSummary] = useState<{
+    name: string;
+    email: string;
+    subject: string;
+    timestamp?: string;
+  } | null>(null);
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -40,9 +50,46 @@ export function ContactSection() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setErrorMessage(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to deliver inquiry. Please try again.");
+      }
+
+      setSentSummary({
+        name: formState.name,
+        email: formState.email,
+        subject: formState.subject,
+        timestamp: data.timestamp,
+      });
+
+      setSubmitted(true);
+      setFormState({
+        name: "",
+        email: "",
+        subject: "Business IT Consulting & Architecture",
+        organization: "",
+        message: "",
+      });
+    } catch (err: any) {
+      setErrorMessage(
+        err.message || "An unexpected error occurred. You can reach out directly via WhatsApp."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -256,37 +303,76 @@ export function ContactSection() {
 
             {submitted ? (
               <div className="p-8 rounded-2xl bg-emerald-950/30 border border-emerald-500/30 text-center animate-in fade-in duration-300">
-                <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
-                  <Check className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-950/50">
+                  <Check className="w-7 h-7" />
                 </div>
-                <h4 className="text-lg font-bold text-white mb-2">
-                  Inquiry Received
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[11px] font-mono mb-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>React Email Template Compiled & Sent</span>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-2">
+                  Inquiry Dispatched Successfully
                 </h4>
-                <p className="text-xs sm:text-sm text-neutral-300 max-w-md mx-auto mb-6">
-                  Thank you, {formState.name || "Colleague"}. Bibek Lama and the Going Genius team will get back to you promptly.
+                <p className="text-xs sm:text-sm text-neutral-300 max-w-md mx-auto mb-6 leading-relaxed">
+                  Thank you, <strong className="text-white">{sentSummary?.name || "Colleague"}</strong>. Your consultation details have been structured via React Email and forwarded directly to Bibek Lama (<span className="text-cyan-400">bibeklamatamg@gmail.com</span>).
                 </p>
-                <div className="flex flex-wrap justify-center gap-3">
+
+                {/* Sent Summary Pill */}
+                {sentSummary && (
+                  <div className="p-4 rounded-xl bg-neutral-900/80 border border-white/10 text-left max-w-md mx-auto mb-6 text-xs space-y-1.5">
+                    <div className="flex justify-between text-neutral-400">
+                      <span>Sender:</span>
+                      <span className="text-neutral-200 font-mono">{sentSummary.email}</span>
+                    </div>
+                    <div className="flex justify-between text-neutral-400">
+                      <span>Subject:</span>
+                      <span className="text-cyan-300 font-medium">{sentSummary.subject}</span>
+                    </div>
+                    {sentSummary.timestamp && (
+                      <div className="flex justify-between text-neutral-400">
+                        <span>Delivered at:</span>
+                        <span className="text-neutral-300">{sentSummary.timestamp}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                <div className="flex flex-col sm:flex-row justify-center gap-3">
                   <a
-                    href={linkedInUrl}
+                    href={`https://wa.me/9779768527869?text=${encodeURIComponent(
+                      `Hello Bibek, I just submitted an inquiry on your portfolio regarding "${sentSummary?.subject}" (${sentSummary?.email}). Following up here!`
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 text-white text-xs font-semibold"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-semibold transition-all"
                   >
-                    <LinkedInIcon className="w-4 h-4" />
-                    Connect on LinkedIn
+                    <WhatsAppIcon className="w-4 h-4 fill-current" />
+                    <span>Instant WhatsApp Follow-up</span>
                   </a>
-                  <a
-                    href={goingGeniusUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-900 border border-white/10 text-white text-xs font-semibold"
+
+                  <button
+                    onClick={() => setSubmitted(false)}
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 border border-white/10 text-neutral-300 hover:text-white text-xs font-semibold transition-all"
                   >
-                    Explore Going Genius
-                  </a>
+                    <span>Send Another Inquiry</span>
+                  </button>
                 </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                {errorMessage && (
+                  <div className="p-4 rounded-xl bg-rose-950/40 border border-rose-500/40 text-rose-200 text-xs flex items-center justify-between">
+                    <span>{errorMessage}</span>
+                    <button
+                      type="button"
+                      onClick={() => setErrorMessage(null)}
+                      className="text-rose-400 hover:text-rose-200 text-xs underline ml-2"
+                    >
+                      Dismiss
+                    </button>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-2">
@@ -341,6 +427,12 @@ export function ContactSection() {
                       className="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-white/10 text-white text-xs sm:text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                     >
                       <option value="Business IT Consulting & Architecture">Business IT Consulting & Systems</option>
+                      <option value="Custom Software & Full-Stack Development">Custom Software & Full-Stack Development</option>
+                      <option value="Mobile Application Development (iOS & Android)">Mobile Application Development (iOS & Android)</option>
+                      <option value="UI/UX Development & Product Design">UI/UX Development & Product Design</option>
+                      <option value="Graphics Development & Visual Collateral">Graphics Development & Brand Collateral</option>
+                      <option value="Logo Making & Corporate Identity">Logo Making & Corporate Identity</option>
+                      <option value="AMC for Digital Marketing & Retainer">AMC for Digital Marketing & SEO Retainer</option>
                       <option value="Aerial Drone Cinema & Creative Direction">Aerial Drone Cinema & Creative Film Direction</option>
                       <option value="Course Enrollment (NRS. 25,000 Discounted Fee)">Course Enrollment (Next.js / .NET / AI - NRS. 25,000)</option>
                       <option value="Institutional Workshop Request">Institutional / Campus Workshop Request</option>
@@ -367,10 +459,20 @@ export function ContactSection() {
 
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-indigo-500 via-indigo-600 to-cyan-500 hover:from-indigo-600 hover:to-cyan-600 text-white font-semibold text-xs sm:text-sm shadow-xl shadow-indigo-600/30 transition-all active:scale-[0.99]"
+                  disabled={loading}
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-indigo-500 via-indigo-600 to-cyan-500 hover:from-indigo-600 hover:to-cyan-600 text-white font-semibold text-xs sm:text-sm shadow-xl shadow-indigo-600/30 transition-all active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Send Message</span>
+                  {loading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Sending via React Email...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>Send Message via React Email</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}
