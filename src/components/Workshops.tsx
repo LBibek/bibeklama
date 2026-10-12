@@ -138,10 +138,10 @@ export function Workshops() {
 
           <div className="relative z-10 flex items-center gap-3 shrink-0">
             <a
-              href="#contact"
+              href="#payment"
               className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-semibold shadow-lg shadow-indigo-600/20 transition-all"
             >
-              Enroll at NRS. 25,000
+              Enroll & Pay at NRS. 25,000
             </a>
           </div>
         </div>
@@ -221,10 +221,10 @@ export function Workshops() {
                     </div>
 
                     <a
-                      href="#contact"
+                      href="#payment"
                       className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-semibold shadow-md shadow-indigo-600/20 transition-all group-hover:shadow-indigo-500/40"
                     >
-                      <span>Enroll at {w.discountPrice}</span>
+                      <span>Scan QR & Enroll ({w.discountPrice})</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                     </a>
                   </div>

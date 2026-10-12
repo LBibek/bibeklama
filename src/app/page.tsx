@@ -8,6 +8,7 @@ import { Workshops } from "@/components/Workshops";
 import { MediaCarousel } from "@/components/MediaCarousel";
 import { DiscordCommunity } from "@/components/DiscordCommunity";
 import { Philanthropy } from "@/components/Philanthropy";
+import { PaymentSection } from "@/components/PaymentSection";
 import { TeamTestimonials } from "@/components/TeamTestimonials";
 import { Frameworks } from "@/components/Frameworks";
 import { Timeline } from "@/components/Timeline";
@@ -35,6 +36,7 @@ export default function Home() {
         <MediaCarousel />
         <DiscordCommunity />
         <Philanthropy />
+        <PaymentSection />
         <TeamTestimonials />
         <Frameworks />
         <Timeline />

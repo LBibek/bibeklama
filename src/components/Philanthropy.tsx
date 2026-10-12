@@ -124,16 +124,24 @@ export function Philanthropy() {
 
             <div className="p-6 rounded-3xl bg-gradient-to-r from-rose-950/30 to-purple-950/30 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-center sm:text-left">
-                <div className="text-sm font-bold text-white">Know a Student in Need?</div>
-                <div className="text-xs text-neutral-400">Nominate or apply for upcoming scholarship cohorts.</div>
+                <div className="text-sm font-bold text-white">Support or Apply for Tech Scholarships</div>
+                <div className="text-xs text-neutral-400">Scan QR to contribute or nominate candidates facing financial hardship.</div>
               </div>
 
-              <a
-                href="#contact"
-                className="px-4 py-2.5 rounded-xl bg-white text-neutral-950 hover:bg-neutral-200 text-xs font-bold transition-colors shrink-0"
-              >
-                Inquire for Scholarships
-              </a>
+              <div className="flex items-center gap-2.5">
+                <a
+                  href="#payment"
+                  className="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition-colors shrink-0 shadow-md shadow-rose-600/30"
+                >
+                  Contribute via QR
+                </a>
+                <a
+                  href="#contact"
+                  className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition-colors shrink-0 border border-white/10"
+                >
+                  Apply
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -11,6 +11,7 @@ import {
   Film,
   Mail,
   ArrowUpRight,
+  QrCode,
 } from "lucide-react";
 import { FloatingDock, DockItem } from "@/components/ui/floating-dock";
 import { LinkedInIcon, GitHubIcon } from "@/components/Icons";
@@ -57,6 +58,11 @@ export function Navbar() {
       title: "Media Reels",
       href: "#media",
       icon: <Film className="w-full h-full" />,
+    },
+    {
+      title: "Pay & Enroll",
+      href: "#payment",
+      icon: <QrCode className="w-full h-full text-emerald-400" />,
     },
     {
       title: "Contact",

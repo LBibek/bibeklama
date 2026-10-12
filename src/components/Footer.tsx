@@ -116,6 +116,7 @@ export function Footer() {
           <a href="#media" className="hover:text-white transition-colors">Media & Cinema Reels</a>
           <a href="#team" className="hover:text-white transition-colors">Team & Testimonials</a>
           <a href="#philanthropy" className="hover:text-white transition-colors">Scholarship Philanthropy</a>
+          <a href="#payment" className="hover:text-white transition-colors text-emerald-400 font-semibold">Payment & Class Booking (QR)</a>
           <a href="#milestones" className="hover:text-white transition-colors">Milestones</a>
           <a href="#contact" className="hover:text-white transition-colors">Inquire & Contact</a>
         </div>
