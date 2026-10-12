@@ -6,7 +6,7 @@ import { ContactInquiryEmail } from "@/emails/ContactInquiryEmail";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, subject, organization, message } = body;
+    const { name, email, phone, subject, organization, message } = body;
 
     // Validation
     if (!name || !email || !message) {
@@ -33,6 +33,7 @@ export async function POST(req: NextRequest) {
     const emailComponent = ContactInquiryEmail({
       name,
       email,
+      phone: phone || undefined,
       subject: subject || "Business IT Consulting & Architecture",
       organization: organization || undefined,
       message,

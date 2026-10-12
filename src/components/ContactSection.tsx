@@ -29,6 +29,7 @@ export function ContactSection() {
   const [sentSummary, setSentSummary] = useState<{
     name: string;
     email: string;
+    phone?: string;
     subject: string;
     timestamp?: string;
   } | null>(null);
@@ -36,6 +37,7 @@ export function ContactSection() {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
+    phone: "",
     subject: "Business IT Consulting & Architecture",
     organization: "",
     message: "",
@@ -71,6 +73,7 @@ export function ContactSection() {
       setSentSummary({
         name: formState.name,
         email: formState.email,
+        phone: formState.phone,
         subject: formState.subject,
         timestamp: data.timestamp,
       });
@@ -79,6 +82,7 @@ export function ContactSection() {
       setFormState({
         name: "",
         email: "",
+        phone: "",
         subject: "Business IT Consulting & Architecture",
         organization: "",
         message: "",
@@ -324,6 +328,12 @@ export function ContactSection() {
                       <span>Sender:</span>
                       <span className="text-neutral-200 font-mono">{sentSummary.email}</span>
                     </div>
+                    {sentSummary.phone && (
+                      <div className="flex justify-between text-neutral-400">
+                        <span>Phone / WhatsApp:</span>
+                        <span className="text-neutral-200 font-mono">{sentSummary.phone}</span>
+                      </div>
+                    )}
                     <div className="flex justify-between text-neutral-400">
                       <span>Subject:</span>
                       <span className="text-cyan-300 font-medium">{sentSummary.subject}</span>
@@ -340,7 +350,7 @@ export function ContactSection() {
                 <div className="flex flex-col sm:flex-row justify-center gap-3">
                   <a
                     href={`https://wa.me/9779768527869?text=${encodeURIComponent(
-                      `Hello Bibek, I just submitted an inquiry on your portfolio regarding "${sentSummary?.subject}" (${sentSummary?.email}). Following up here!`
+                      `Hello Bibek, I just submitted an inquiry on your portfolio regarding "${sentSummary?.subject}" (${sentSummary?.email}${sentSummary?.phone ? `, Tel: ${sentSummary.phone}` : ""}). Following up here!`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -406,6 +416,19 @@ export function ContactSection() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-2">
+                      Phone / WhatsApp Number
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="e.g. +977 98XXXXXXXX"
+                      value={formState.phone}
+                      onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-white/10 text-white text-xs sm:text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-2">
                       Organization / Institution
                     </label>
                     <input
@@ -416,31 +439,31 @@ export function ContactSection() {
                       className="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-white/10 text-white text-xs sm:text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
                     />
                   </div>
+                </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-2">
-                      Service / Area of Interest
-                    </label>
-                    <select
-                      value={formState.subject}
-                      onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-white/10 text-white text-xs sm:text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
-                    >
-                      <option value="Business IT Consulting & Architecture">Business IT Consulting & Systems</option>
-                      <option value="Custom Software & Full-Stack Development">Custom Software & Full-Stack Development</option>
-                      <option value="Mobile Application Development (iOS & Android)">Mobile Application Development (iOS & Android)</option>
-                      <option value="UI/UX Development & Product Design">UI/UX Development & Product Design</option>
-                      <option value="Graphics Development & Visual Collateral">Graphics Development & Brand Collateral</option>
-                      <option value="Logo Making & Corporate Identity">Logo Making & Corporate Identity</option>
-                      <option value="AMC for Digital Marketing & Retainer">AMC for Digital Marketing & SEO Retainer</option>
-                      <option value="Aerial Drone Cinema & Creative Direction">Aerial Drone Cinema & Creative Film Direction</option>
-                      <option value="Course Enrollment (NRS. 25,000 Discounted Fee)">Course Enrollment (Next.js / .NET / AI - NRS. 25,000)</option>
-                      <option value="Institutional Workshop Request">Institutional / Campus Workshop Request</option>
-                      <option value="Scholarship Program & Philanthropy">Scholarship Inquiries (Need-Based)</option>
-                      <option value="Board Directorship & Governance">Board Directorship & Governance Advisory</option>
-                      <option value="General Strategic Partnership">General Strategic Collaboration</option>
-                    </select>
-                  </div>
+                <div>
+                  <label className="block text-xs font-semibold text-neutral-300 uppercase tracking-wider mb-2">
+                    Service / Area of Interest
+                  </label>
+                  <select
+                    value={formState.subject}
+                    onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl bg-neutral-900 border border-white/10 text-white text-xs sm:text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all"
+                  >
+                    <option value="Business IT Consulting & Architecture">Business IT Consulting & Systems</option>
+                    <option value="Custom Software & Full-Stack Development">Custom Software & Full-Stack Development</option>
+                    <option value="Mobile Application Development (iOS & Android)">Mobile Application Development (iOS & Android)</option>
+                    <option value="UI/UX Development & Product Design">UI/UX Development & Product Design</option>
+                    <option value="Graphics Development & Visual Collateral">Graphics Development & Brand Collateral</option>
+                    <option value="Logo Making & Corporate Identity">Logo Making & Corporate Identity</option>
+                    <option value="AMC for Digital Marketing & Retainer">AMC for Digital Marketing & SEO Retainer</option>
+                    <option value="Aerial Drone Cinema & Creative Direction">Aerial Drone Cinema & Creative Film Direction</option>
+                    <option value="Course Enrollment (NRS. 25,000 Discounted Fee)">Course Enrollment (Next.js / .NET / AI - NRS. 25,000)</option>
+                    <option value="Institutional Workshop Request">Institutional / Campus Workshop Request</option>
+                    <option value="Scholarship Program & Philanthropy">Scholarship Inquiries (Need-Based)</option>
+                    <option value="Board Directorship & Governance">Board Directorship & Governance Advisory</option>
+                    <option value="General Strategic Partnership">General Strategic Collaboration</option>
+                  </select>
                 </div>
 
                 <div>

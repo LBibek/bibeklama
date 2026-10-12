@@ -18,6 +18,7 @@ import {
 export interface ContactInquiryEmailProps {
   name: string;
   email: string;
+  phone?: string;
   subject: string;
   organization?: string;
   message: string;
@@ -28,6 +29,7 @@ export interface ContactInquiryEmailProps {
 export function ContactInquiryEmail({
   name = "Aashish Sharma",
   email = "aashish@example.com",
+  phone,
   subject = "Business IT Consulting & Architecture",
   organization = "Himalayan Tech Ventures",
   message = "We are seeking strategic systems architecture guidance for scaling our IoT telematics infrastructure in Kathmandu. Looking forward to discussing scope and milestones.",
@@ -101,6 +103,19 @@ export function ContactInquiryEmail({
                   </Link>
                 </Column>
               </Row>
+
+              {phone && (
+                <Row style={detailRow}>
+                  <Column style={labelCol}>
+                    <Text style={detailLabel}>Phone / WhatsApp</Text>
+                  </Column>
+                  <Column style={valueCol}>
+                    <Link href={`tel:${phone.replace(/\s+/g, "")}`} style={linkStyle}>
+                      {phone}
+                    </Link>
+                  </Column>
+                </Row>
+              )}
 
               {organization && (
                 <Row style={detailRow}>
