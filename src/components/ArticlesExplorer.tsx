@@ -28,6 +28,7 @@ export function ArticlesExplorer() {
 
   const categories = [
     "All",
+    "Agile & Project Leadership",
     "Frontend Architecture",
     "Developer Cheatsheets",
     "Agentic AI & DevOps",
