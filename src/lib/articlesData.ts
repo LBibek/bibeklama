@@ -858,7 +858,145 @@ Fix: Run 'git reflog', identify the commit SHA prior to the reset, and run 'git 
       },
     ],
   },
+  {
+    id: "starting-nextjs-project-best-practices-architecture-naming-conventions",
+    slug: "starting-nextjs-project-best-practices-architecture-naming-conventions",
+    title: "Starting a Production Next.js Project: Architecture Blueprints, Naming Conventions & Anti-Patterns to Avoid",
+    subtitle:
+      "The definitive guide to initializing, structuring, and maintaining enterprise Next.js App Router codebases for maximum scalability, performance, and maintainability.",
+    badge: "Enterprise Playbook",
+    category: "Frontend Architecture",
+    readingTime: "10 min read",
+    date: "October 2026",
+    author: "Bibek Lama Tamang",
+    authorRole: "Business Architect & Project Leader, Going Genius",
+    summary:
+      "Starting a Next.js project is easy with 'create-next-app', but keeping it scalable, clean, and maintainable requires rigorous architectural foresight. Without structured guidelines, codebases devolve into tangled client-boundary messes, bloated component trees, unmanaged environment secrets, and confusing folder labyrinths. This guide outlines the exact directory layout, strict naming conventions, Server-versus-Client boundary rules, and the top 10 mistakes engineers must avoid when bootstrapping Next.js in production.",
+    keyTakeaways: [
+      "Adopt a feature-driven or layered 'src/' directory architecture with explicit route group segmentation '(marketing)', '(dashboard)'.",
+      "Follow strict naming conventions: kebab-case for route directories and URLs, PascalCase for React components, and camelCase for hooks and utilities.",
+      "Push 'use client' directives as far down the component tree as possible (leaves-only strategy) to maximize Server Component streaming.",
+      "Use TypeScript path aliases ('@/components/*', '@/lib/*') to eliminate brittle relative import traversal ('../../../').",
+      "Avoid common pitfalls: never query databases in client components, never use 'useEffect' for static data fetching, and enforce 'server-only' on private modules.",
+    ],
+    contentSections: [
+      {
+        heading: "1. The Project Initialization Foundation: Clean Tooling & Baseline",
+        body: `When initializing a production Next.js application, always start with an opinionated, strict foundation using TypeScript, Tailwind CSS, and ESLint:
+
+npx create-next-app@latest my-app --typescript --tailwind --eslint --app --src-dir --import-alias "@/*" --use-npm
+
+Key Baseline Choices:
+- Always opt into the 'src/' directory: Isolates application source logic from root configuration files ('next.config.ts', 'tsconfig.json', 'package.json', Dockerfiles).
+- Always use the App Router: The legacy Pages Router ('pages/') lacks Server Components, parallel routes, intercepting routes, and streaming layouts.
+- Configure Turbopack ('next dev --turbopack'): Accelerates development feedback loops by compiling modules incrementally in memory with Rust.`,
+      },
+      {
+        heading: "2. Battle-Tested Directory Structure: Scalable Folder Architecture",
+        body: `A clean directory structure prevents the 'junk drawer' syndrome where components, utilities, and API routes become intertangled. Below is the battle-tested enterprise layout used across Going Genius projects:`,
+        codeSnippet: `my-enterprise-app/
+├── public/                     # Static assets (favicons, SVGs, brand photography)
+├── src/
+│   ├── app/                    # Next.js App Router (Routing and Layouts ONLY)
+│   │   ├── (auth)/             # Route group: unauthenticated flows (login, register)
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── (dashboard)/        # Route group: protected operational portals
+│   │   │   ├── analytics/
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
+│   │   ├── api/                # Specialized HTTP webhooks and integrations
+│   │   │   └── contact/route.ts
+│   │   ├── globals.css         # Global design tokens and Tailwind imports
+│   │   ├── layout.tsx          # Root HTML/Body shell and global providers
+│   │   └── page.tsx            # Root landing page
+│   ├── components/             # Reusable UI Components
+│   │   ├── ui/                 # Atomic, headless design system primitives (button, modal, input)
+│   │   ├── shared/             # Cross-cutting composite blocks (navbar, footer, dock)
+│   │   └── modules/            # Feature-specific compound widgets (billing-card, telemetry-chart)
+│   ├── lib/                    # Core libraries, client singletons, and shared utilities
+│   │   ├── db.ts               # Prisma or Supabase client singleton
+│   │   └── utils.ts            # Helper functions (cn(), formatDate())
+│   ├── actions/                # Server Actions ('use server') for mutations
+│   │   ├── auth.ts
+│   │   └── billing.ts
+│   ├── hooks/                  # Custom client-side React hooks (useMediaQuery, useDebounce)
+│   ├── types/                  # Global TypeScript definitions and database schemas
+│   └── emails/                 # React Email transactional templates
+├── .env.example                # Sanitized environment variable template
+├── next.config.ts              # Next.js compiler, redirect, and image domain configuration
+└── tsconfig.json               # Path alias and strict compiler flags`,
+        codeLanguage: "bash",
+      },
+      {
+        heading: "3. Strict Naming Conventions: Enforcing Global Consistency",
+        body: `Inconsistent casing creates cross-platform bugs (especially between Windows case-insensitive and Linux case-sensitive file systems). Enforce these four golden naming rules:
+
+1. Route Folders & URLs (kebab-case):
+   - Correct: 'src/app/client-portal/page.tsx' -> URL: '/client-portal'
+   - Incorrect: 'src/app/ClientPortal/page.tsx' or 'src/app/client_portal/page.tsx'
+
+2. React Components (PascalCase):
+   - Correct: 'HeroSection.tsx', 'UserProfileCard.tsx', 'ThemeToggle.tsx'
+   - Rule: Name the file after the primary exported component.
+
+3. Utilities, Hooks & Server Actions (camelCase):
+   - Correct: 'useWindowSize.ts', 'formatCurrency.ts', 'updateProfile.ts'
+
+4. Route Groups & Private Folders:
+   - Route Groups: Wrap in parentheses '(marketing)', '(dashboard)'—creates logical grouping without affecting the URL path.
+   - Private Folders: Prefix with an underscore '_components/'—opt out of App Router routing completely.`,
+      },
+      {
+        heading: "4. Architectural Golden Rules: Server vs. Client Boundary",
+        body: `The most significant paradigm shift in Next.js is that components are Server Components by default. 
+
+Rule 1: Push 'use client' Down to the Leaves
+Never mark an entire page or large container as 'use client'. Keep the layout and page as Server Components to fetch data in parallel. Only extract small interactive widgets (like a modal trigger, theme toggle, or search input) into dedicated client components.
+
+Rule 2: Never Query Databases in Client Components
+Client components run in the user's browser. Attempting to import database clients or run SQL queries in a client component leaks internal credentials and crashes the build.
+
+Rule 3: Enforce 'server-only' on Sensitive Modules
+Install the official 'server-only' package and import it at the top of database adapters, token registries, and private cryptographic utilities. If any developer mistakenly imports that file into a client component, Next.js halts the build with an error.`,
+        codeSnippet: `// lib/db.ts
+import "server-only"; // Enforces compiler barrier: cannot be bundled for client!
+import { PrismaClient } from "@prisma/client";
+
+const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
+
+export const prisma =
+  globalForPrisma.prisma ||
+  new PrismaClient({
+    log: process.env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"],
+  });
+
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;`,
+        codeLanguage: "typescript",
+      },
+      {
+        heading: "5. Top 10 Common Next.js Mistakes to Avoid",
+        body: `1. Waterfall Data Fetching: Awaiting sequential queries in child components instead of fetching in parallel with 'Promise.all()' or React suspense streaming.
+2. Using 'useEffect' for Initial Data Fetching: Replaces instant server-rendered HTML with a blank loading spinner, degrading SEO and core web vitals.
+3. Leaking Secret Environment Variables: Prefixing private tokens with 'NEXT_PUBLIC_'. Variables prefixed with 'NEXT_PUBLIC_' are baked into client JS bundles!
+4. Unoptimized Remote Images: Using raw HTML '<img>' tags instead of 'next/image', forfeiting automatic WebP/AVIF compression and responsive srcsets.
+5. Inefficient Link Traversal: Using standard anchor '<a href>' tags for internal routes instead of Next.js '<Link>', causing full-page browser reloads rather than client-side soft transitions.
+6. Forgetting Cache Invalidation: Mutating database records via Server Actions without calling 'revalidatePath()' or 'revalidateTag()', leaving users with stale data.
+7. Over-Relying on Global State: Installing heavy state managers (Redux, Zustand) for server data instead of using URL search parameters and Server Component props.
+8. Missing 'metadata' and OpenGraph definitions: Launching production pages without dynamic titles, descriptions, and Twitter/Facebook preview cards.
+9. Modifying 'next.config.ts' with Unchecked Ignores: Turning on 'ignoreBuildErrors: true' to force failing TypeScript builds into production.
+10. Neglecting Loading & Error Boundaries: Omitting 'loading.tsx' and 'error.tsx' files, resulting in jarring layout shifts or white-screen fatal crashes on network drops.`,
+        callout: {
+          type: "warning",
+          title: "The NEXT_PUBLIC Security Trap",
+          text: "Never add NEXT_PUBLIC_ to private keys, payment secrets, or database URLs. That prefix tells the Next.js compiler to inline the secret string directly into public browser scripts.",
+        },
+      },
+    ],
+  },
 ];
+
 
 
 
