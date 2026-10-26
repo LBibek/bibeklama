@@ -600,6 +600,140 @@ export default async function FleetOperationsPage() {
       },
     ],
   },
+  {
+    id: "antigravity-mcp-agentic-ai-skills-github-vercel-cicd",
+    slug: "antigravity-mcp-agentic-ai-skills-github-vercel-cicd",
+    title: "Mastering Google Antigravity & Model Context Protocol (MCP): Building Custom Skills & Automated GitHub-Vercel CI/CD",
+    subtitle:
+      "A complete architectural guide to agentic coding: harnessing MCP tools, writing specialized SKILL.md workflows with operational rules, and automating zero-touch CI/CD pipelines.",
+    badge: "Agentic AI & Automation",
+    category: "Agentic AI & DevOps",
+    readingTime: "9 min read",
+    date: "October 2026",
+    author: "Bibek Lama Tamang",
+    authorRole: "Business Architect & Project Leader, Going Genius",
+    summary:
+      "The paradigm of AI assistance has undergone a quantum leap: from passive autocomplete chatbots to proactive, autonomous coding agents. Leading this revolution is Google Antigravity (AGY), an advanced agentic coding environment powered by the Model Context Protocol (MCP). This article explores how to architect custom skills using YAML-governed SKILL.md files, enforce project rules via AGENTS.md, orchestrate multi-agent tool execution, and build automated GitHub Actions + Vercel CI/CD pipelines for autonomous software delivery.",
+    keyTakeaways: [
+      "Antigravity shifts software engineering from manual coding to autonomous, plan-and-execute agentic collaboration.",
+      "The Model Context Protocol (MCP) standardizes how LLM agents interact with local shells, databases (Supabase), cloud hosts (Vercel), and design systems.",
+      "SKILL.md defines custom agentic capabilities using YAML frontmatter, execution workflows, and bundled scripts for deterministic outcomes.",
+      "Workspace and global rules (AGENTS.md / rules files) enforce architectural constraints, prevent regressions, and eliminate human review bottlenecks.",
+      "GitHub Actions paired with Vercel CLI enables zero-touch automated CI/CD: build verification, preview deployments, domain aliasing, and instant rollback.",
+    ],
+    contentSections: [
+      {
+        heading: "1. The Evolution: From Conversational Chatbots to Antigravity Agents",
+        body: `Traditional AI coding assistants operate within narrow conversational boundaries: you provide a prompt, and the model outputs an isolated code block that you must manually copy, paste, debug, and test.
+
+Google Antigravity (AGY) breaks this paradigm entirely. It operates as an agentic partner equipped with:
+- Native Terminal and Workspace Manipulation: Read, write, and patch files in-place with contiguous diff replacements.
+- Autonomous Background Execution: Running long builds, test suites, and schedule timers asynchronously while keeping you updated reactively without blocking threads.
+- Subagent Delegation: Spawning dedicated child agents (such as research agents or visual inspectors) to parallelize complex engineering efforts.`,
+      },
+      {
+        heading: "2. The Model Context Protocol (MCP): The Universal Agent Interface",
+        body: `Prior to MCP, connecting an AI model to an external service required writing custom, fragile API wrappers for every platform. Anthropic's Model Context Protocol (MCP), deeply integrated into Antigravity, standardizes this architecture via client-server JSON-RPC.
+
+In a modern Generative AI engineering environment:
+- The MCP Client (Antigravity): Discovers available tools, inspects schemas lazily, and authorizes execution.
+- The MCP Servers: Dedicated micro-daemons exposing specialized tools—such as the Vercel MCP server (deployments, environment variables, domains), the Supabase MCP server (SQL migrations, table policies), Chrome DevTools MCP (browser automation), and Context7 (official library docs).
+
+This modularity allows an agent to deploy production code, inspect serverless logs, and patch live database tables in a single coherent trajectory.`,
+        callout: {
+          type: "tip",
+          title: "The Power of MCP",
+          text: "MCP decouples the AI model from the tools it uses. If you change models or upgrade servers, your tool contracts, schemas, and credentials remain completely intact.",
+        },
+      },
+      {
+        heading: "3. Authoring Deterministic Skills with SKILL.md and Rules",
+        body: `While general LLMs possess broad knowledge, enterprise development requires hyper-specific organizational procedures. This is where Antigravity Skills come in.
+
+A Skill is a modular directory containing a 'SKILL.md' document with YAML frontmatter, instructions, and optionally bundled helper scripts.
+
+When combined with workspace rules ('AGENTS.md'), you establish unbreakable guardrails: for example, restricting edits to specific directories, requiring pre-commit test runs, or mandating specific framework versioning rules.`,
+        codeSnippet: `---
+name: vercel-deployment-pipeline
+description: Automates production deployment, alias assignment, and live endpoint verification on Vercel
+triggers:
+  - deploy to production
+  - publish live release
+---
+
+# Vercel Deployment Workflow
+
+## Phase 1: Pre-Deployment Validation
+1. Execute \`npm run build\` via background task to verify zero TypeScript errors.
+2. Verify all modified components have been committed to git on \`origin/master\`.
+
+## Phase 2: Dispatch Deployment
+1. Invoke Vercel MCP \`list_deployments\` with limit 1 to ensure a fresh OAuth token.
+2. Build the file deployment payload using the project packing script.
+3. Post deployment to \`/v13/deployments\` and poll status until \`readyState === "READY"\`.
+
+## Phase 3: Alias Assignment & Live Verification
+1. Call Vercel MCP \`assign_alias\` to bind \`bibeklama.vercel.app\`.
+2. Execute an automated HTTP probe against \`/api/contact\` to confirm live operational health.`,
+        codeLanguage: "markdown",
+      },
+      {
+        heading: "4. Enforcing Architectural Guardrails with AGENTS.md",
+        body: `Agents can easily wander into antipatterns if not bounded by clear operating rules. Placing an 'AGENTS.md' file at the root of your repository allows you to inject non-negotiable architectural mandates into the agent's system prompt before any task starts.`,
+        codeSnippet: `<!-- AGENTS.md: Repository-Level Instructions -->
+
+# Architectural Standards & Inviolable Rules
+
+1. **Framework Strictness**: We are running Next.js 16 with Turbopack. Do NOT use legacy Pages router patterns (\`getStaticProps\`, \`pages/_app.tsx\`). Always use App Router Server Components and Server Actions.
+2. **Zero-Trust Data Boundary**: All database queries must run through Prisma inside Server Components or protected Server Actions. Never leak sensitive connection strings to \`"use client"\` modules.
+3. **Automated Verification**: Never report a task as complete without verifying compilation via \`npm run build\` and confirming production deployment logs.`,
+        codeLanguage: "markdown",
+      },
+      {
+        heading: "5. Automating the End-to-End CI/CD Pipeline (GitHub Actions + Vercel)",
+        body: `The final piece of the modern agentic workflow is zero-touch CI/CD automation. When an Antigravity agent or human engineer pushes commits to GitHub, an automated workflow executes linting, type-checks, runs integration tests, and dispatches production deployments.`,
+        codeSnippet: `# .github/workflows/production-deploy.yml
+name: Production CI/CD Pipeline
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  validate-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: TypeScript & Lint Verification
+        run: npm run build
+
+      - name: Deploy to Vercel (Production)
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: \${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: \${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: \${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+          alias-domains: 'bibeklama.vercel.app'`,
+        codeLanguage: "yaml",
+      },
+    ],
+  },
 ];
+
 
 

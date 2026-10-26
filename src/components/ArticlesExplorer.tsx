@@ -28,6 +28,7 @@ export function ArticlesExplorer() {
 
   const categories = [
     "All",
+    "Agentic AI & DevOps",
     "Systems Engineering",
     "Cloud & Modernization",
     "Full-Stack Security",
