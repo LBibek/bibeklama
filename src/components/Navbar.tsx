@@ -47,7 +47,7 @@ export function Navbar() {
     },
     {
       title: "Articles",
-      href: "#blog",
+      href: "/articles",
       icon: <BookOpen className="w-full h-full text-cyan-400" />,
     },
     {
