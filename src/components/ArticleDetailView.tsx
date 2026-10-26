@@ -319,7 +319,7 @@ export function ArticleDetailView({
             </p>
             <div className="pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-3">
               <Link
-                href="/#contact"
+                href="#contact"
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-semibold shadow-md transition-all"
               >
                 <span>Consult on this Architecture</span>

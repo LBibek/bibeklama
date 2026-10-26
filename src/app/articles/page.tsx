@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { GsapAnimations } from "@/components/GsapAnimations";
 import { ArticlesExplorer } from "@/components/ArticlesExplorer";
+import { ContactSection } from "@/components/ContactSection";
 import { BookOpen, Sparkles, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -49,6 +50,9 @@ export default function ArticlesPage() {
           <ArticlesExplorer />
         </div>
       </main>
+
+      {/* Direct Contact & Consulting Area */}
+      <ContactSection />
 
       <Footer />
     </div>

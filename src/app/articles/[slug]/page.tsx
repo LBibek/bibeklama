@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { GsapAnimations } from "@/components/GsapAnimations";
 import { ArticleDetailView } from "@/components/ArticleDetailView";
+import { ContactSection } from "@/components/ContactSection";
 import {
   ARTICLES_DATA,
   getArticleBySlug,
@@ -193,6 +194,9 @@ export default async function ArticlePage({ params }: PageProps) {
           relatedArticles={related}
         />
       </main>
+
+      {/* Direct Contact & Consulting Area */}
+      <ContactSection />
 
       <Footer />
     </div>

@@ -282,7 +282,7 @@ export function ArticlesExplorer() {
           {/* Bottom Action Footer */}
           <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
             <Link
-              href="/#contact"
+              href="#contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-500 hover:to-cyan-500 text-white text-xs font-semibold shadow-md transition-all"
             >
               <span>Consult with Bibek on this Architecture</span>
