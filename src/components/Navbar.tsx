@@ -6,6 +6,7 @@ import {
   User,
   Layers,
   Briefcase,
+  BookOpen,
   GraduationCap,
   Award,
   Film,
@@ -43,6 +44,11 @@ export function Navbar() {
       title: "Ventures",
       href: "#projects",
       icon: <Briefcase className="w-full h-full" />,
+    },
+    {
+      title: "Articles",
+      href: "#blog",
+      icon: <BookOpen className="w-full h-full text-cyan-400" />,
     },
     {
       title: "Workshops",

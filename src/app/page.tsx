@@ -4,6 +4,7 @@ import { BentoSection } from "@/components/BentoSection";
 import { Philosophy } from "@/components/Philosophy";
 import { ThreePillars } from "@/components/ThreePillars";
 import { ProjectsShowcase } from "@/components/ProjectsShowcase";
+import { BlogSection } from "@/components/BlogSection";
 import { Workshops } from "@/components/Workshops";
 import { MediaCarousel } from "@/components/MediaCarousel";
 import { DiscordCommunity } from "@/components/DiscordCommunity";
@@ -32,6 +33,7 @@ export default function Home() {
         <Philosophy />
         <ThreePillars />
         <ProjectsShowcase />
+        <BlogSection />
         <Workshops />
         <MediaCarousel />
         <DiscordCommunity />
