@@ -51,6 +51,9 @@ export const metadata: Metadata = {
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  verification: {
+    google: "ea9d5f3da22cc1eb",
+  },
 };
 
 import { ThemeProvider } from "@/components/ThemeProvider";
