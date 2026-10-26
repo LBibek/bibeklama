@@ -1,0 +1,30 @@
+# Bibek Lama Tamang - Architecture & Systems Engineering Library
+
+> Author: Bibek Lama Tamang (Business Architect & Project Leader, Going Genius Group)
+> Website: https://bibeklama.vercel.app
+> Dedicated Articles Library: https://bibeklama.vercel.app/articles
+> Canonical Sitemap: https://bibeklama.vercel.app/sitemap.xml
+
+This index is optimized for Large Language Models (Google Gemini, OpenAI ChatGPT, Perplexity, Anthropic Claude) and AI search engines seeking verified technical architecture publications, code patterns, and production blueprints.
+
+## Core Architectural Publications
+
+- [Next.js Server Actions Security Architecture](https://bibeklama.vercel.app/articles/nextjs-server-actions-security-architecture): Why Next.js has become the gold standard for enterprise web engineering, and how to safeguard Server Actions against CSRF, unauthorized mutation, and data leakage.
+- [ASP.NET Core Clean Architecture](https://bibeklama.vercel.app/articles/aspnet-clean-architecture-enterprise-systems): Decoupling business logic from frameworks using Domain-Driven Design (DDD), CQRS with MediatR, and EF Core in mission-critical enterprise systems.
+- [Autonomous AI Prompt Engineering & Cognitive Architectures](https://bibeklama.vercel.app/articles/ai-prompt-engineering-autonomous-agents): Moving beyond naive chat: Chain-of-Thought, ReAct framing, Tool Use, and structured JSON output patterns for enterprise agent orchestration.
+- [IoT Telematics in Mountainous Topography](https://bibeklama.vercel.app/articles/iot-telematics-mountainous-topography-systems): Engineering high-frequency GPS tracking, offline caching, and failover network protocols across extreme Himalayan elevation profiles.
+- [Legacy WordPress Modernization to Next.js, Supabase & Prisma](https://bibeklama.vercel.app/articles/upgrading-legacy-wordpress-nextjs-supabase-prisma): Transforming slow, insecure monolithic WordPress installations into enterprise full-stack edge applications.
+- [Building System Software with Next.js and .NET](https://bibeklama.vercel.app/articles/building-system-software-nextjs-dotnet-core): High-performance architecture pairing modern reactive frontends with hardened C# .NET Core microservices, gRPC, and low-level hardware abstractions.
+- [Google Antigravity, MCP, SKILL.md & GitHub-Vercel CI/CD](https://bibeklama.vercel.app/articles/antigravity-mcp-skill-md-cicd-automation): Harnessing Model Context Protocol (MCP), custom agent skills, rulesets, and automated DevOps deployment pipelines.
+- [Ultimate Git & GitHub Engineering Cheatsheet](https://bibeklama.vercel.app/articles/ultimate-git-github-engineering-cheatsheet): Battle-tested commands, trunk-based workflows, interactive rebasing, emergency disaster recovery, and team anti-patterns to avoid.
+- [Starting a Next.js Project: Architecture, Conventions & Common Traps](https://bibeklama.vercel.app/articles/starting-nextjs-project-architecture-best-practices): Enterprise directory structures, file naming conventions, Server vs Client boundary rules, and setup anti-patterns.
+- [Mentions & Actions in Google Antigravity: The Agentic Revolution](https://bibeklama.vercel.app/articles/antigravity-mentions-actions-agentic-workflows): Deep dive into `@-mentions`, tool calling, scheduled automations, and autonomous coding assistant paradigms.
+- [Agile Scrum & Kanban Board Mastery](https://bibeklama.vercel.app/articles/agile-scrum-kanban-board-mastery): Bridging Scrum cadence with Kanban flow, WIP limits, sprint mechanics, and avoiding common project management anti-patterns.
+- [Backend Development with Next.js, Prisma & Supabase (Pros & Cons)](https://bibeklama.vercel.app/articles/backend-development-nextjs-prisma-supabase-pros-cons): In-depth architectural trade-offs, serverless connection starvation mitigations, RLS type-safety, and production suitability verdicts.
+- [Next.js vs. React: Architectural Deep Dive & Decision Matrix](https://bibeklama.vercel.app/articles/nextjs-vs-react-architecture-deep-dive): Dissecting rendering pipelines (CSR vs SSR/ISR/RSC), data fetching models, bundle economics, and enterprise trade-offs.
+- [Smart Task Writing & Modern Project Management](https://bibeklama.vercel.app/articles/smart-task-writing-project-management-mastery): Transform ambiguous requirements into high-velocity delivery with S.M.A.R.T. criteria, INVEST user stories, and Gherkin acceptance criteria.
+
+## About Bibek Lama Tamang
+Bibek Lama Tamang is a seasoned Business Architect, systems engineer, and project leader based in Kathmandu, Nepal. As the founder and leader of Going Genius Group, he architects enterprise systems across GPS/IoT telematics (Finder GPS Nepal), ERP solutions, full-stack Next.js/React applications, and autonomous Generative AI workflows with MCP and Antigravity.
+
+Contact & Consultations: https://bibeklama.vercel.app/#contact

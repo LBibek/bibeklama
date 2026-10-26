@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://bibeklama.vercel.app"),
   title: "Bibek Lama Tamang | Business Architect • Project Leader • Tech Professional",
   description:
     "Official portfolio of Bibek Lama Tamang. Founder of Going Genius Group, dynamic Business Architect with deep expertise in IT systems, GPS/IoT telematics, digital transformation, and technical training.",

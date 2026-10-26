@@ -17,6 +17,7 @@ import {
   Filter,
   Check,
   Flame,
+  ExternalLink,
 } from "lucide-react";
 import { ARTICLES_DATA, Article } from "@/lib/articlesData";
 
@@ -54,7 +55,7 @@ export function ArticlesExplorer() {
 
   const handleShare = (article: Article) => {
     if (typeof window !== "undefined") {
-      const url = `${window.location.origin}/articles#${article.slug}`;
+      const url = `${window.location.origin}/articles/${article.slug}`;
       navigator.clipboard.writeText(url);
       setCopiedId(article.id);
       setTimeout(() => setCopiedId(null), 2500);
@@ -180,13 +181,24 @@ export function ArticlesExplorer() {
               </span>
             </div>
 
-            <button
-              onClick={() => handleShare(activeArticle)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-300 text-xs font-medium border border-white/10 transition-colors"
-            >
-              <Share2 className="w-3.5 h-3.5" />
-              <span>{copiedId === activeArticle.id ? "Link Copied!" : "Share Blueprint"}</span>
-            </button>
+            <div className="flex items-center gap-2">
+              <Link
+                href={`/articles/${activeArticle.slug}`}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-xs font-semibold border border-cyan-500/30 transition-colors"
+                title="View full standalone page with dedicated URL and SEO metadata"
+              >
+                <span>Dedicated Page</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </Link>
+
+              <button
+                onClick={() => handleShare(activeArticle)}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-neutral-300 text-xs font-medium border border-white/10 transition-colors"
+              >
+                <Share2 className="w-3.5 h-3.5" />
+                <span>{copiedId === activeArticle.id ? "Link Copied!" : "Share"}</span>
+              </button>
+            </div>
           </div>
 
           {/* Title & Author */}

@@ -27,7 +27,7 @@ export function BlogSection() {
 
   const handleShare = () => {
     if (typeof window !== "undefined") {
-      navigator.clipboard.writeText(window.location.origin + "#blog");
+      navigator.clipboard.writeText(`${window.location.origin}/articles/${featuredArticle.slug}`);
       setCopiedLink(true);
       setTimeout(() => setCopiedLink(false), 2500);
     }
@@ -84,7 +84,7 @@ export function BlogSection() {
 
             <div className="flex items-center gap-2">
               <Link
-                href={`/articles#${featuredArticle.slug}`}
+                href={`/articles/${featuredArticle.slug}`}
                 className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-xs font-medium border border-cyan-500/30 transition-colors"
               >
                 <span>Read in Full Screen Page</span>
@@ -208,7 +208,7 @@ export function BlogSection() {
                 href="/articles"
                 className="text-xs text-neutral-400 hover:text-cyan-300 inline-flex items-center gap-1.5 transition-colors"
               >
-                <span>Browse All 4 Architecture Publications</span>
+                <span>Browse All {ARTICLES_DATA.length} Architecture Publications</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -226,7 +226,7 @@ export function BlogSection() {
               href="/articles"
               className="text-xs font-mono text-cyan-400 hover:underline flex items-center gap-1"
             >
-              <span>View Full Library</span>
+              <span>View Full Library ({ARTICLES_DATA.length})</span>
               <ChevronRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -257,7 +257,7 @@ export function BlogSection() {
                 <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs">
                   <span className="text-neutral-500 font-mono">By Bibek Lama</span>
                   <Link
-                    href={`/articles#${art.slug}`}
+                    href={`/articles/${art.slug}`}
                     className="text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
                   >
                     <span>Read Blueprint</span>

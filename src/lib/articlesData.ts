@@ -1796,6 +1796,32 @@ Great engineering leadership isn't about constant surveillance—it is about rem
   },
 ];
 
+export function getArticleBySlug(slug: string): Article | undefined {
+  return ARTICLES_DATA.find((a) => a.slug === slug || a.id === slug);
+}
+
+export function getAllArticleSlugs(): string[] {
+  return ARTICLES_DATA.map((a) => a.slug);
+}
+
+export function getAdjacentArticles(currentSlug: string): { prev?: Article; next?: Article } {
+  const index = ARTICLES_DATA.findIndex((a) => a.slug === currentSlug || a.id === currentSlug);
+  if (index === -1) return {};
+  return {
+    prev: index > 0 ? ARTICLES_DATA[index - 1] : undefined,
+    next: index < ARTICLES_DATA.length - 1 ? ARTICLES_DATA[index + 1] : undefined,
+  };
+}
+
+export function getRelatedArticles(currentSlug: string, limit = 3): Article[] {
+  const current = getArticleBySlug(currentSlug);
+  if (!current) return ARTICLES_DATA.slice(0, limit);
+  return ARTICLES_DATA.filter((a) => a.slug !== current.slug && a.category === current.category)
+    .concat(ARTICLES_DATA.filter((a) => a.slug !== current.slug && a.category !== current.category))
+    .slice(0, limit);
+}
+
+
 
 
 
