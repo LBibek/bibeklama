@@ -28,6 +28,7 @@ export function ArticlesExplorer() {
 
   const categories = [
     "All",
+    "Developer Cheatsheets",
     "Agentic AI & DevOps",
     "Systems Engineering",
     "Cloud & Modernization",

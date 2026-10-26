@@ -733,7 +733,133 @@ jobs:
       },
     ],
   },
+  {
+    id: "github-ultimate-cheatsheet-mistakes-and-best-practices",
+    slug: "github-ultimate-cheatsheet-mistakes-and-best-practices",
+    title: "The Ultimate Git & GitHub Cheatsheet: Essential Commands, Critical Anti-Patterns & Battle-Tested Rules",
+    subtitle:
+      "A pragmatic survival guide for modern developers: from foundational commands and interactive rebasing to avoiding disastrous merge commits, detached HEAD states, and leaked credentials.",
+    badge: "Developer Field Guide",
+    category: "Developer Cheatsheets",
+    readingTime: "10 min read",
+    date: "October 2026",
+    author: "Bibek Lama Tamang",
+    authorRole: "Business Architect & Project Leader, Going Genius",
+    summary:
+      "Git is the distributed nervous system of modern software engineering, yet it remains one of the most misunderstood tools in a developer's stack. A single misplaced force-push or committed .env secret can halt company operations or expose client databases. This field guide compiles essential everyday commands, advanced rescue techniques, the top 10 catastrophic mistakes developers make, and inviolable best practices practiced across Going Genius engineering teams.",
+    keyTakeaways: [
+      "Master the fundamental 4 states of Git: Working Directory, Staging Area (Index), Local Repository, and Remote.",
+      "Never use 'git push --force' on shared branches; always use the safer 'git push --force-with-lease'.",
+      "Keep commits atomic: one logical change per commit with descriptive imperative commit messages (Conventional Commits).",
+      "Prevent secret contamination by maintaining strict .gitignore files and installing pre-commit secret scanners (gitleaks).",
+      "Learn to rescue lost code using 'git reflog'—Git almost never deletes committed data unless explicitly garbage collected.",
+    ],
+    contentSections: [
+      {
+        heading: "1. The Mental Model: The Four Trees of Git",
+        body: `Most Git confusion comes from treating it as a magic cloud backup tool rather than a distributed content-addressable database. Git tracks snapshots of your files across four discrete stages:
+
+1. Working Directory: The actual sandbox files on your local operating system drive.
+2. Staging Area (Index): The staging canvas where you curate the exact hunks of code ready to form the next snapshot ('git add').
+3. Local Repository (HEAD): The committed cryptographic history stored inside your local '.git' folder.
+4. Remote Repository (Origin): The centralized or peer-hosted upstream repository (GitHub, GitLab) where commits are pushed and shared.`,
+      },
+      {
+        heading: "2. The Daily Developer Arsenal: Essential Git Commands",
+        body: `Here are the foundational commands every software engineer must execute with muscle memory:`,
+        codeSnippet: `# --- Setup & Configuration ---
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+git config --global init.defaultBranch main
+
+# --- Daily Workflow ---
+git status                          # Inspect modified and untracked files
+git diff                            # View unstaged changes line-by-line
+git add <file>                      # Stage a specific file
+git add -p                          # Stage specific hunks interactively (crucial for clean commits!)
+git commit -m "feat: descriptive summary"  # Record staged snapshot
+git push origin <branch-name>       # Transmit local commits to remote
+
+# --- Branching & Switching ---
+git checkout -b feature/login       # Create and switch to new branch (legacy)
+git switch -c feature/login         # Modern syntax: create and switch
+git branch -a                       # List all local and remote branches
+git branch -d feature/login         # Safely delete merged branch
+
+# --- Inspecting History ---
+git log --oneline --graph --decorate -n 10  # Clean ASCII commit tree
+git show <commit-hash>              # Inspect exact metadata and diff of a commit`,
+        codeLanguage: "bash",
+      },
+      {
+        heading: "3. Advanced Power Tools: Rebasing, Stashing & History Surgery",
+        body: `Senior engineers keep their commit histories linear, clean, and bisect-ready using advanced workflows:
+
+- Interactive Rebase ('git rebase -i HEAD~N'): Reorder, squash, edit, or drop messy experimental commits before opening a Pull Request.
+- Git Stash: Temporarily shelve uncommitted working directory changes when urgent bug fixes interrupt feature development.
+- Git Cherry-Pick: Selectively transplant an individual commit from one branch to another without merging full branches.`,
+        codeSnippet: `# --- Interactive Rebase (Clean your messy local commits) ---
+git rebase -i HEAD~3                # Pick, squash, reword the last 3 commits
+
+# --- Stashing Work in Progress ---
+git stash push -m "WIP: cart checkout logic"
+git stash list                      # View saved stashes
+git stash pop                       # Restore most recent stash and remove from stack
+
+# --- Emergency Code Rescue with Reflog ---
+git reflog                          # Shows history of all HEAD movements (even after resets!)
+git reset --hard HEAD@{2}           # Restore lost state back to 2 actions ago
+
+# --- Cherry-Picking a Hotfix ---
+git cherry-pick a1b2c3d4            # Apply single hotfix commit to current branch`,
+        codeLanguage: "bash",
+      },
+      {
+        heading: "4. The 10 Most Common & Dangerous Git Mistakes (And How to Fix Them)",
+        body: `1. Committing API Keys or '.env' Secrets:
+Mistake: Committing sensitive tokens, then making another commit deleting them. (They remain visible forever in your Git history!)
+Fix: Add to '.gitignore' immediately, use 'git rm --cached <file>' to unstage without deleting local files, and run BFG Repo-Cleaner or 'git-filter-repo' to scrub history. Rotate the exposed key immediately!
+
+2. Destructive Force-Pushing ('git push -f'):
+Mistake: Overwriting teammates' upstream commits on shared branches.
+Fix: Always enforce branch protection rules on GitHub and use '--force-with-lease', which aborts the push if the remote branch was updated by another developer.
+
+3. The Dreaded 'Merge Conflict Panic':
+Mistake: Aborting improperly or manually deleting lines blindly.
+Fix: Run 'git merge --abort' or 'git rebase --abort' to return safely to the pre-conflict state before inspecting conflicts calmly.
+
+4. Committing to the Wrong Branch:
+Mistake: Working for 3 hours on 'master' instead of a feature branch.
+Fix: Do NOT reset blindly. Run 'git branch feature/my-work', then 'git reset --hard origin/master' on master. Your work is safely preserved on the new branch!
+
+5. Accidental 'git reset --hard' Loss:
+Mistake: Wiping away hours of unpushed commits with a hard reset.
+Fix: Run 'git reflog', identify the commit SHA prior to the reset, and run 'git reset --hard <SHA>'.`,
+        callout: {
+          type: "warning",
+          title: "Golden Rule of Force Push",
+          text: "Never use 'git push -f' on 'master', 'main', or any shared team branch. Use GitHub branch protection rules to enforce status checks and Pull Request approvals.",
+        },
+      },
+      {
+        heading: "5. Inviolable Best Practices & GitHub Workflow Protocol",
+        body: `At Going Genius, all engineering contributors adhere to these battle-tested standards:
+
+1. Conventional Commits: Use semantic prefixes ('feat:', 'fix:', 'refactor:', 'chore:', 'docs:', 'perf:'). This enables automated changelogs and semantic release tagging.
+2. Keep Pull Requests Small: A PR should change fewer than 300 lines of code. Large PRs receive superficial reviews, while small PRs catch subtle bugs.
+3. Keep '.gitignore' Comprehensive: Standardize global ignore files for OS artifacts ('.DS_Store', 'Thumbs.db'), IDE configs ('.idea', '.vscode'), and package builds ('node_modules', '.next', 'bin', 'obj').
+4. Require Status Checks in GitHub: Configure GitHub branch protection so branches cannot merge unless automated CI tests and builds pass cleanly.
+5. Linear History Preference: Prefer 'Squash and Merge' or 'Rebase and Merge' on GitHub to prevent useless 'Merge branch feature into main' clutter in your release history.`,
+        callout: {
+          type: "tip",
+          title: "Pro Tip: Atomic Commits",
+          text: "If your commit message needs the word 'and', it should probably be two separate commits. Small, atomic commits make 'git revert' trivial if an unexpected production bug emerges.",
+        },
+      },
+    ],
+  },
 ];
+
 
 
 
