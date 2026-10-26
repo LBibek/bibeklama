@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   User,
   Layers,
@@ -104,9 +105,12 @@ export function Navbar() {
           >
             <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full p-0.5 bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-500 shadow-md group-hover:shadow-cyan-500/30 transition-all shrink-0">
               <div className="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center">
-                <img
+                <Image
                   src="/logo.png"
                   alt="Bibek Lama Logo"
+                  width={36}
+                  height={36}
+                  priority
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>

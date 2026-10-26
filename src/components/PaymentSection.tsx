@@ -244,6 +244,8 @@ Remarks / Notes: ${notes || "None provided"}
                 <img
                   src="/payment-qr.jpg"
                   alt="NIC ASIA MoBank QR Code for Bibek Lama"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto object-contain rounded-lg"
                 />
                 <div className="mt-3 text-center">

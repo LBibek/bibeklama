@@ -357,6 +357,8 @@ export function ProjectsShowcase() {
                     <img
                       src={proj.image}
                       alt={proj.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover object-center filter brightness-[0.6] group-hover:scale-105 group-hover:brightness-[0.75] transition-all duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent" />

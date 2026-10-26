@@ -118,6 +118,8 @@ export function Workshops() {
           <img
             src="/tech-education.jpg"
             alt="Technical Coding Workstation"
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.22]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-950/80 via-neutral-950/80 to-cyan-950/70" />

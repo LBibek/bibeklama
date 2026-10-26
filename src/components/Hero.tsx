@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ShieldCheck,
@@ -77,9 +78,12 @@ export function Hero() {
           <div className="relative mb-7">
             <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-3xl sm:rounded-[36px] p-1.5 bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-500 shadow-2xl shadow-indigo-500/30 group">
               <div className="w-full h-full rounded-[22px] sm:rounded-[30px] bg-neutral-900 border border-white/20 relative overflow-hidden backdrop-blur-xl">
-                <img
+                <Image
                   src="/bibek-portrait.png"
                   alt="Bibek Lama Tamang - Business Architect, Project Leader & Founder"
+                  width={192}
+                  height={192}
+                  priority
                   className="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.02] group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-neutral-950/60 to-transparent pointer-events-none" />
