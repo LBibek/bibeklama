@@ -29,16 +29,7 @@ export function ArticlesExplorer() {
 
   const categories = [
     "All",
-    "Agile & Project Leadership",
-    "Frontend Architecture",
-    "Developer Cheatsheets",
-    "Agentic AI & DevOps",
-    "Systems Engineering",
-    "Cloud & Modernization",
-    "Full-Stack Security",
-    "Backend Architecture",
-    "Generative AI Systems",
-    "Edge IoT & Systems",
+    ...Array.from(new Set(ARTICLES_DATA.map((a) => a.category))),
   ];
 
   const filteredArticles = ARTICLES_DATA.filter((article) => {
