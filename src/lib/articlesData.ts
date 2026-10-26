@@ -995,7 +995,112 @@ if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;`,
       },
     ],
   },
+  {
+    id: "antigravity-mention-and-action-features-guide",
+    slug: "antigravity-mention-and-action-features-guide",
+    title: "Mastering Google Antigravity: The Definitive Guide to @Mention Context & Slash Actions",
+    subtitle:
+      "How to unlock 10x developer productivity using targeted @mention resource injection, specialized agent summoning, and automated slash action commands across real-world workflows.",
+    badge: "AI Engineering Mastery",
+    category: "Agentic AI & DevOps",
+    readingTime: "9 min read",
+    date: "October 2026",
+    author: "Bibek Lama Tamang",
+    authorRole: "Business Architect & Project Leader, Going Genius",
+    summary:
+      "While traditional AI chats force developers to copy-paste scattered files or explain workspace context from scratch, Google Antigravity introduces two pivotal interaction paradigms: @Mentions and Slash Actions. This guide explains the technical mechanics and enterprise use cases of precision context pinning (@file, @folder, @git, @symbol, @subagent) alongside autonomous execution actions (/plan, /boost, /goal, /schedule, /grill-me, /compact).",
+    keyTakeaways: [
+      "@Mentions enable surgical context injection (@file, @folder, @diff, @docs), eliminating prompt token bloat and hallucination.",
+      "Specialized agent mentions (@research, @image-generator, @self) delegate sub-tasks to isolated agentic conversations.",
+      "Slash Actions automate complex agentic meta-workflows: /plan for architectural decomposition, /boost for multi-perspective review, and /goal for unyielding autonomous completion.",
+      "/schedule and /automation enable background cron schedules and heartbeat monitoring without blocking primary developer sessions.",
+      "/grill-me turns the AI into a tough architectural interviewer to uncover hidden edge cases before committing to implementation.",
+    ],
+    contentSections: [
+      {
+        heading: "1. The Context Problem: Why Copy-Pasting Code Kills AI Velocity",
+        body: `In standard LLM web interfaces, a developer spends 60% of their time manually curating context: copying TypeScript types, tracking down CSS classes, pasting terminal error traces, and explaining the folder hierarchy. This approach suffers from two critical flaws:
+
+1. Token Pollution: Pasting entire 2,000-line files wastes the LLM's attention budget on irrelevant boilerplate, increasing latency and hallucination rates.
+2. Context Staleness: As soon as a file changes on disk, your pasted chat snippet becomes obsolete.
+
+Google Antigravity solves this with @Mentions—a dynamic symbol and resource resolution engine integrated directly into the language model's runtime context.`,
+      },
+      {
+        heading: "2. The Antigravity @Mention Ecosystem: Precision Context Pinning",
+        body: `Typing '@' inside the Antigravity prompt interface opens an autocomplete drawer linking your prompt directly to live workspace artifacts:
+
+- @file (e.g. '@src/app/page.tsx'): Injects the exact file content into the agent's context window. The agent receives a live pointer to disk, enabling contiguous line-level edits.
+- @folder (e.g. '@src/components/'): Provides the structural tree of a directory, allowing the agent to comprehend module boundaries without ingesting every single byte.
+- @git / @diff: Passes the current unstaged git diff or commit history, allowing the agent to write release notes, detect breaking regressions, or author commit messages instantly.
+- @symbol (e.g. '@ContactInquiryEmailProps'): Pins an individual TypeScript interface, class, or function directly, providing micro-targeted context.
+- @docs / @url: Pulls verified official documentation (Next.js, Supabase, Tailwind, Prisma) directly into the agent's memory via MCP context resolvers.
+- @subagent (e.g. '@research'): Summons a specialized background subagent equipped with read-only exploration tools to investigate sprawling codebases without cluttering your primary chat transcript.`,
+        callout: {
+          type: "tip",
+          title: "Token Optimization Tip",
+          text: "Prefer '@symbol' or '@file' over '@folder' when fixing localized bugs. Pinning only the necessary interfaces keeps model inference lightning-fast and razor-sharp.",
+        },
+      },
+      {
+        heading: "3. Slash Actions: Automating Meta-Workflows & High-Order Reasoning",
+        body: `While @Mentions curate WHAT the agent sees, Slash Actions dictate HOW the agent thinks and acts. Typing '/' activates specialized execution behaviors:
+
+- /plan: Instructs the agent to enter a read-only architectural phase. The agent explores the codebase, designs file diffs, assesses breaking changes, and generates an interactive implementation plan for user sign-off before writing any code.
+- /boost: Activates deep-reasoning mode. The agent formulates hypotheses, engages in sequential thinking, solicits counter-perspectives, and runs rigorous self-verification before finalizing solutions.
+- /goal: Designed for long-running, multi-hour autonomous tasks (e.g., refactoring an entire database layer or migrating 40 legacy components). The agent will not stop until every test passes and the objective is 100% verified.
+- /grill-me: An adversarial interview mode where the agent interrogates the developer with sharp design questions to flesh out underspecified requirements, security policies, and edge cases.
+- /schedule: Configures recurring cron jobs or background one-shot timers (e.g. polling a slow deployment or running hourly smoke tests).
+- /compact: Summarizes and compresses lengthy conversation histories, freeing up valuable tokens in the context window while preserving core project requirements.`,
+        codeSnippet: `// Example: Enterprise Feature Planning Session
+User:
+/plan @src/components/PaymentSection.tsx @src/app/api/contact/route.ts
+We need to add Fonepay merchant dynamic QR generation alongside our current static MoBank image.
+
+Antigravity Execution:
+1. Agent enters planning mode (No files modified).
+2. Inspects @PaymentSection.tsx state variables and @route.ts email delivery payload.
+3. Produces a structured architectural artifact with:
+   - Schema updates (phone, merchantPayload)
+   - Component state transitions
+   - Backward compatibility verification
+4. Renders interactive "Proceed" button for developer approval.`,
+        codeLanguage: "markdown",
+      },
+      {
+        heading: "4. Real-World Enterprise Use Cases: Combining Mentions & Actions",
+        body: `The true power of Antigravity emerges when combining @Mentions and Slash Actions into unified workflows:
+
+Case 1: Architectural Alignment with /grill-me
+Prompt: '/grill-me @src/emails/ContactInquiryEmail.tsx We want to convert our portfolio inquiry form into a multi-step consultation booking funnel.'
+Result: The agent asks 4 targeted questions regarding database persistence, calendar booking sync, SMS fallbacks, and payment deposits, resolving design ambiguities before a single line of code is written.
+
+Case 2: Deep Refactoring with /boost and @subagent
+Prompt: '/boost @research Analyze all components importing @Icons.tsx and propose an optimized tree-shakable SVG bundle.'
+Result: The agent spawns a background research subagent, benchmarks bundle sizes, and presents a complete refactoring diff without interrupting the developer's main task.
+
+Case 3: Overnight Migration with /goal
+Prompt: '/goal Migrate all remaining mock images to Cloudflare R2 bucket URLs and ensure \`npm run build\` compiles with zero lint errors.'
+Result: The agent systematically iterates through components, replaces assets, runs local builds, resolves TypeScript warnings, and notifies the user upon verified completion.`,
+        callout: {
+          type: "tip",
+          title: "Proactive Pair Programming",
+          text: "Treat Antigravity not as an obedient script, but as a senior pair programmer. Use /grill-me and /plan to ensure you are solving the right problem with the right architecture.",
+        },
+      },
+      {
+        heading: "5. Summary: The Modern Agentic Coding Stack",
+        body: `Software engineering has advanced beyond manual syntax typing. By mastering:
+- @Mentions for surgical, real-time context injection,
+- Slash Actions for structured reasoning and automated execution modes,
+- Model Context Protocol (MCP) for tool decoupling and zero-touch cloud operations,
+
+developers at Going Genius and worldwide operate at 5x to 10x traditional engineering velocity while maintaining higher architectural standards and zero regressions.`,
+      },
+    ],
+  },
 ];
+
 
 
 
