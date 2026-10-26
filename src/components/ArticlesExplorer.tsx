@@ -26,7 +26,14 @@ export function ArticlesExplorer() {
   const [activeArticleId, setActiveArticleId] = useState<string>(ARTICLES_DATA[0].id);
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  const categories = ["All", "Full-Stack Security", "Backend Architecture", "Generative AI Systems", "Edge IoT & Systems"];
+  const categories = [
+    "All",
+    "Cloud & Modernization",
+    "Full-Stack Security",
+    "Backend Architecture",
+    "Generative AI Systems",
+    "Edge IoT & Systems",
+  ];
 
   const filteredArticles = ARTICLES_DATA.filter((article) => {
     const matchesCategory = selectedCategory === "All" || article.category === selectedCategory;

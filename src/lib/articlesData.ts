@@ -316,4 +316,151 @@ export async function processTelemetry(packet: TelemetryPacket) {
       },
     ],
   },
+  {
+    id: "upgrading-legacy-wordpress-to-nextjs-supabase-prisma-vercel",
+    slug: "upgrading-legacy-wordpress-to-nextjs-supabase-prisma-vercel",
+    title: "Replacing Fragile Legacy WordPress with World-Class Architecture: Next.js, Supabase, Prisma & Vercel",
+    subtitle:
+      "Why forward-thinking enterprises are discarding vulnerable, bloated PHP WordPress monoliths in favor of type-safe, ultra-fast, and infinitely scalable modern web stacks.",
+    badge: "Modernization Blueprint",
+    category: "Cloud & Modernization",
+    readingTime: "8 min read",
+    date: "October 2026",
+    author: "Bibek Lama Tamang",
+    authorRole: "Business Architect & Project Leader, Going Genius",
+    summary:
+      "For decades, WordPress was the default choice for building websites. In 2026, it has become an enterprise liability: riddled with vulnerable third-party plugins, sluggish database queries, high maintenance overheads, and fragile shared hosting. This blueprint details how Going Genius migrates organizations to a modern, decoupled tech stack: Next.js App Router for edge rendering, Supabase (PostgreSQL) for managed relational data and Row-Level Security, Prisma ORM for end-to-end type safety, and Vercel for global serverless deployment.",
+    keyTakeaways: [
+      "Plugin bloat, SQL injection vectors, and CPU thrashing make legacy WordPress costly to secure and scale.",
+      "Next.js App Router with Server Components reduces client JavaScript bundles while providing sub-second TTFB on Vercel's Edge Network.",
+      "Prisma ORM provides compile-time type safety across your entire data layer, preventing runtime schema mismatches.",
+      "Supabase provides an enterprise Postgres engine with built-in Row-Level Security (RLS), real-time change-data-capture, and object storage.",
+      "Zero-downtime database migration scripts allow transferring existing WP posts, media, and users cleanly into structured PostgreSQL tables.",
+    ],
+    contentSections: [
+      {
+        heading: "1. The Enterprise Reality: The Hidden Cost of 'Cheap' WordPress",
+        body: `WordPress is frequently chosen because the initial barrier to entry appears cheap: free software, one-click shared cPanel hosting, and thousands of off-the-shelf plugins. However, as an enterprise grows, this setup turns into a financial and security sinkhole.
+
+Over 90% of all CMS security vulnerabilities reported in recent years trace back to unmaintained WordPress plugins and themes. Furthermore, WordPress relies on an unindexed, generic EAV (Entity-Attribute-Value) schema within 'wp_postmeta', which triggers devastating full-table scans once an organization scales to tens of thousands of records.
+
+Between constant security patching, expensive dedicated caching layers (Varnish, Redis), and sluggish TTFB (Time to First Byte), 'cheap' WordPress becomes exponentially more expensive than modern serverless architectures.`,
+        callout: {
+          type: "warning",
+          title: "The WordPress Vulnerability Trap",
+          text: "A single outdated slider or form plugin can compromise your entire server root, leak confidential customer lists, or turn your domain into an unwitting spam relay.",
+        },
+      },
+      {
+        heading: "2. The World-Class Architecture: The Modern Stack Quartet",
+        body: `At Going Genius, when we modernize legacy clients from WordPress, we engineer a 4-part cloud-native foundation:
+
+1. Next.js 16 (App Router & Turbopack): Delivers instant static page delivery (ISR) combined with on-demand dynamic streaming.
+2. Vercel Global Edge Network: Deploys code to global edge points of presence, providing instant SSL, automatic asset optimization, and zero-configuration serverless scaling.
+3. Supabase (Managed PostgreSQL): An open-source, enterprise-grade relational database running real PostgreSQL, complete with pgvector, automated daily snapshots, and Row-Level Security (RLS).
+4. Prisma ORM: Generates zero-cost TypeScript definitions directly from your relational schema, ensuring that frontends and backends share a unified, strongly typed contract.`,
+      },
+      {
+        heading: "3. Prisma Schema Design: Replacing 'wp_posts' with Clean Relational Modeling",
+        body: `Rather than shoving arbitrary metadata into loose key-value pairs, Prisma allows us to model posts, authors, taxonomy tags, and custom fields with strict foreign key constraints and automatic indexes.`,
+        codeSnippet: `// prisma/schema.prisma
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL") // Supabase connection pooling
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Article {
+  id          String       @id @default(uuid())
+  slug        String       @unique
+  title       String
+  excerpt     String?
+  contentHtml String
+  published   Boolean      @default(false)
+  viewsCount  Int          @default(0)
+  authorId    String
+  author      Author       @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  categories  Category[]   @relation("ArticleCategories")
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@index([slug])
+  @@index([authorId])
+}
+
+model Author {
+  id        String    @id @default(uuid())
+  name      String
+  email     String    @unique
+  avatarUrl String?
+  articles  Article[]
+}`,
+        codeLanguage: "prisma",
+      },
+      {
+        heading: "4. Next.js Server Components + Supabase: Instant Speed & Zero-Trust RLS",
+        body: `Fetching data in Next.js Server Components happens server-side, eliminating the waterfall of client-side AJAX requests typical of bloated WordPress themes. Coupled with Supabase connection pooling (PgBouncer) and Vercel edge caching, queries resolve in single-digit milliseconds.`,
+        codeSnippet: `// app/articles/[slug]/page.tsx
+import { notFound } from "next/navigation";
+import { prisma } from "@/lib/prisma";
+
+export const revalidate = 3600; // Incremental Static Regeneration (1 hour)
+
+export async function generateStaticParams() {
+  const articles = await prisma.article.findMany({
+    where: { published: true },
+    select: { slug: true },
+    take: 100,
+  });
+  return articles.map((a) => ({ slug: a.slug }));
+}
+
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const article = await prisma.article.findUnique({
+    where: { slug },
+    include: { author: true, categories: true },
+  });
+
+  if (!article || !article.published) {
+    notFound();
+  }
+
+  return (
+    <article className="max-w-4xl mx-auto py-12">
+      <h1 className="text-4xl font-extrabold text-white">{article.title}</h1>
+      <div className="flex items-center gap-3 my-6">
+        <span>By {article.author.name}</span>
+        <span>•</span>
+        <time>{article.createdAt.toLocaleDateString()}</time>
+      </div>
+      <div 
+        className="prose prose-invert max-w-none"
+        dangerouslySetInnerHTML={{ __html: article.contentHtml }} 
+      />
+    </article>
+  );
+}`,
+        codeLanguage: "typescript",
+      },
+      {
+        heading: "5. Migration Strategy: Moving from WordPress with Zero Downtime",
+        body: `Migrating an active enterprise off WordPress involves a structured 3-phase roadmap:
+
+Phase 1 (Data Extraction): An automated script queries the WordPress REST API ('wp-json/wp/v2/posts') or directly parses the XML database dump, normalizing HTML content and downloading media assets to Supabase Storage S3 buckets.
+Phase 2 (SEO & 301 Redirect Mapping): Preserve organic Google rankings by generating exact redirect maps in 'next.config.ts' for historical slug structures.
+Phase 3 (DNS Cutover): Point the domain to Vercel's global CDN with zero minutes of user downtime. The old WordPress server can be decommissioned or archived.`,
+        callout: {
+          type: "tip",
+          title: "SEO Preservation Rule",
+          text: "Never cut over a CMS without verifying that all previous URL patterns either match identically or are mapped with HTTP 301 Permanent Redirects.",
+        },
+      },
+    ],
+  },
 ];
+
