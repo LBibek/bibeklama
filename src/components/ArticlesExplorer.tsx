@@ -28,6 +28,7 @@ export function ArticlesExplorer() {
 
   const categories = [
     "All",
+    "Systems Engineering",
     "Cloud & Modernization",
     "Full-Stack Security",
     "Backend Architecture",
