@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import {
   User,
   Layers,
@@ -21,15 +22,52 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { NepaliTranslateButton } from "@/components/NepaliTranslateButton";
 
 export function Navbar() {
+  const pathname = usePathname();
+  const isArticlesPage = pathname?.startsWith("/articles");
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>(isArticlesPage ? "articles" : "");
 
   useEffect(() => {
+    if (isArticlesPage) {
+      setActiveSection("articles");
+      return;
+    }
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      const sectionIds = [
+        "contact",
+        "payment",
+        "milestones",
+        "media",
+        "workshops",
+        "blog",
+        "projects",
+        "bento",
+        "about",
+      ];
+
+      const scrollPosition = window.scrollY + 220;
+
+      let current = "";
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPosition >= top) {
+            current = id;
+            break;
+          }
+        }
+      }
+      setActiveSection(current);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isArticlesPage]);
 
   const dockLinks: DockItem[] = [
     {
@@ -49,7 +87,7 @@ export function Navbar() {
     },
     {
       title: "Articles",
-      href: "/articles",
+      href: isArticlesPage ? "/articles" : "#blog",
       icon: <BookOpen className="w-full h-full text-cyan-400" />,
     },
     {
@@ -101,7 +139,7 @@ export function Navbar() {
         <div className="relative flex items-center justify-between h-12">
           {/* Left: Brand Logo & Title */}
           <Link
-            href="#"
+            href="/"
             className="flex items-center gap-2.5 group z-10 transition-transform active:scale-95"
           >
             <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full p-0.5 bg-gradient-to-tr from-cyan-400 via-indigo-500 to-purple-500 shadow-md group-hover:shadow-cyan-500/30 transition-all shrink-0">
@@ -121,9 +159,9 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Center: Aceternity Floating Dock with Tooltips */}
+          {/* Center: Aceternity Floating Dock with Active Region Scroll Glow */}
           <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center">
-            <FloatingDock items={dockLinks} />
+            <FloatingDock items={dockLinks} activeHref={activeSection} />
           </div>
 
           {/* Right: Language Toggle, Theme Toggle, Connect Action Button & Mobile Dock */}
@@ -139,9 +177,9 @@ export function Navbar() {
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
 
-            {/* Mobile Dock Menu */}
+            {/* Mobile Dock Menu with Active Scroll Glow */}
             <div className="block lg:hidden">
-              <FloatingDock items={dockLinks} />
+              <FloatingDock items={dockLinks} activeHref={activeSection} />
             </div>
           </div>
         </div>
