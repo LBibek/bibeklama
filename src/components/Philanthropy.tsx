@@ -17,19 +17,19 @@ export function Philanthropy() {
     {
       title: "Need-Based Technology Scholarships",
       description:
-        "Providing full and partial tuition scholarships to passionate students facing financial barriers, unlocking access to advanced computer science and software development training.",
+        "Full and partial tuition grants for passionate students facing financial barriers to master modern Next.js, .NET & AI systems.",
       metric: "100% Tuition Covered for Selected Scholars",
     },
     {
       title: "Modern Tech Tooling & Mentorship Access",
       description:
-        "Equipping scholars not just with coursework, but with developer environments, cloud credits, industry-grade project reviews, and direct 1-on-1 mentorship.",
+        "Equipping scholars with cloud credits, developer environments, production project reviews, and direct 1-on-1 mentorship.",
       metric: "Direct 1-on-1 Portfolio Reviews",
     },
     {
       title: "Industry Readiness & Job Placement Support",
       description:
-        "Connecting underprivileged students directly with hiring companies, tech startups, and internships through the Going Genius network.",
+        "Connecting underprivileged students directly with hiring companies, tech startups, and paid internships via Going Genius.",
       metric: "Bridging the Gap to First Employment",
     },
   ];

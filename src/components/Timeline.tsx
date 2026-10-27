@@ -41,11 +41,11 @@ export function Timeline() {
       category: "leadership",
       organization: "Going Genius Group (goinggenius.com.np)",
       description:
-        "Directing the entire business and technical strategy for Going Genius Group. Leading multi-disciplinary engineering projects, designing internal enterprise ERP platforms (GG Relativity & GG Portals), and building high-performance technical and creative teams.",
+        "Directing business and engineering strategy, architecting proprietary ERP platforms (GG Relativity & GG Portals), and leading multidisciplinary software and media teams.",
       highlights: [
-        "Architected enterprise ERP systems, client portals, and automation workflows",
-        "Formed and directed video creation, digital marketing, and software teams",
-        "Guided corporate governance, client IT consulting, and strategic expansions",
+        "Architected enterprise ERP systems & client portals",
+        "Formed and directed cross-functional software & media teams",
+        "Executive IT consulting & corporate digital transformation",
       ],
       badge: "Executive Leadership",
     },
@@ -56,11 +56,11 @@ export function Timeline() {
       category: "experience",
       organization: "Finder GPS Nepal / Finder Telematics",
       description:
-        "Spearheaded enterprise IoT and GPS telematics projects across Nepal. Successfully orchestrated cross-functional engineering and client deployments, resulting in a documented 20% surge in business sales.",
+        "Spearheaded enterprise IoT & GPS telematics implementations nationwide, expanding fleet operations and driving a documented +20% surge in sales.",
       highlights: [
-        "Managed high-scale GPS tracking and fleet telematics implementations",
-        "Drove commercial revenue growth, boosting product and service sales by 20%",
-        "Bridged client enterprise requirements with real-time hardware & software integrations",
+        "High-frequency GPS tracking & fleet telemetry operations",
+        "Documented +20% commercial revenue expansion",
+        "Engineered reliable hardware & software cloud integrations",
       ],
       badge: "IoT & Project Leadership",
     },
@@ -69,13 +69,12 @@ export function Timeline() {
       year: "2017 – 2018",
       role: "Service Engineer",
       category: "experience",
-      organization: "Sipradi Auto Parts (Sipradi Trading / Tata Motors)",
+      organization: "Sipradi Auto Parts (Tata Motors Group)",
       description:
-        "Served as Service Engineer at Sipradi Auto Parts, one of Nepal's largest automotive and engineering conglomerates. Designed technical workshop structures, optimized service procedures, and led training programs for technicians and engineering teams.",
+        "Standardized technical service procedures, structured engineering workshops, and trained technical staff across automotive diagnostic systems.",
       highlights: [
-        "Designed comprehensive technical training workshops and curriculum",
-        "Conducted hands-on training for service engineers and technical staff",
-        "Standardized technical workflows and diagnostic troubleshooting practices",
+        "Structured technical training programs for engineers",
+        "Standardized diagnostic troubleshooting workflows",
       ],
       badge: "Engineering & Training",
     },
@@ -86,13 +85,12 @@ export function Timeline() {
       category: "experience",
       organization: "Midas E-Class",
       description:
-        "Engineered interactive educational game concepts at Midas E-Class, the pioneer in digital education and multimedia e-learning in Nepal. Blended gamification mechanics with cognitive learning outcomes for school-age students.",
+        "Engineered interactive educational gamification concepts blending cognitive learning mechanics with multimedia digital education.",
       highlights: [
-        "Developed interactive game loops and mechanics for digital education",
-        "Created gamified educational software supporting self-paced student learning",
-        "Collaborated with curriculum designers to translate textbook lessons into software",
+        "Interactive game mechanics for self-paced learning",
+        "Curriculum translation into engaging digital software",
       ],
-      badge: "Interactive Media & EdTech",
+      badge: "EdTech & Interactive",
     },
     {
       id: "m5",
@@ -101,11 +99,10 @@ export function Timeline() {
       category: "pedagogy",
       organization: "90+ Students Mentored & Scholarship Program",
       description:
-        "Bridging academic education and industry standards through intensive hands-on workshops in Next.js, Microsoft .NET Core, and Prompt Engineering, paired with full need-based scholarship funding for students in need.",
+        "Hands-on workshops in Next.js, .NET Core, and Prompt Engineering, paired with full tuition scholarships for underprivileged students.",
       highlights: [
-        "90+ students trained in modern production stacks and prompt engineering",
-        "Established remote learning campus on Discord with live code reviews",
-        "Providing 100% need-based scholarships for economically disadvantaged students",
+        "90+ students trained in modern full-stack architectures",
+        "100% need-based scholarships funded for deserving scholars",
       ],
       badge: "Pedagogy & Philanthropy",
     },
@@ -213,12 +210,15 @@ export function Timeline() {
                   {item.description}
                 </p>
 
-                <div className="space-y-2 pt-3 border-t border-white/5">
+                <div className="flex flex-wrap gap-2 pt-3 border-t border-white/5">
                   {item.highlights.map((h, i) => (
-                    <div key={i} className="flex items-center gap-2 text-xs text-neutral-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 shrink-0" />
+                    <span
+                      key={i}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/[0.03] border border-white/5 text-[11px] text-neutral-300"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
                       <span>{h}</span>
-                    </div>
+                    </span>
                   ))}
                 </div>
               </div>

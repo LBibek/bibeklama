@@ -391,25 +391,15 @@ export function ProjectsShowcase() {
                   </a>
                 </div>
 
-                <h3 className="text-xl font-bold text-white tracking-tight mb-1 group-hover:text-cyan-200 transition-colors">
+                <h3 className="text-lg font-bold text-white tracking-tight mb-1 group-hover:text-cyan-200 transition-colors">
                   {proj.title}
                 </h3>
-                <p className="text-xs font-medium text-cyan-400/90 mb-3">
+                <p className="text-xs font-medium text-cyan-400/90 mb-2">
                   {proj.tagline}
                 </p>
-                <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-6">
+                <p className="text-xs text-neutral-300 leading-relaxed mb-4 line-clamp-3">
                   {proj.description}
                 </p>
-
-                {/* Highlights */}
-                <div className="space-y-2 mb-6">
-                  {proj.highlights.map((h, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-neutral-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 shrink-0" />
-                      <span>{h}</span>
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* Tech Stack Chips & Action Link with WhatsApp Button */}

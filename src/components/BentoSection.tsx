@@ -23,7 +23,7 @@ export function BentoSection() {
     {
       title: "Going Genius Group — Flagship Venture",
       description:
-        "Founder & Director directing executive strategy, enterprise ERP systems (GG Relativity & GG Portals), digital marketing, and commercial video creation pipelines.",
+        "Directing enterprise ERP platforms, digital client portals, and high-concurrency cloud systems.",
       header: (
         <div className="relative w-full h-44 rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between p-4 group/card">
           <img
@@ -63,7 +63,7 @@ export function BentoSection() {
     {
       title: "IoT & GPS Telematics Track Record",
       description:
-        "Former Project Head at Finder GPS Nepal. Managed enterprise vehicle tracking implementations, expanded operations, and drove a documented 20% surge in sales.",
+        "Spearheaded enterprise vehicle tracking, expanding fleet scale with documented +20% sales growth.",
       header: (
         <div className="relative w-full h-44 rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between p-4 group/card">
           <img
@@ -97,7 +97,7 @@ export function BentoSection() {
     {
       title: "Aerial Drone Pilot & Film Director",
       description:
-        "Certified Drone Pilot specializing in cinematic FPV, commercial video directing, and dramatic visual storytelling with the Going Genius video crew.",
+        "Commercial visual storytelling, high-speed FPV cinematography, and creative direction.",
       header: (
         <div className="relative w-full h-44 rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between p-4 group/card">
           <img
@@ -130,7 +130,7 @@ export function BentoSection() {
     {
       title: "Technical Pedagogy & Technology Scholarships",
       description:
-        "90+ students mentored across Next.js, .NET Core, and Prompt Engineering. Standard tuition NRS. 30,000 currently discounted to NRS. 25,000, with 100% need-based scholarships.",
+        "Mentoring engineers in Next.js, .NET & AI workflows, paired with full tuition tech scholarships.",
       header: (
         <div className="relative w-full h-44 rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between p-4 group/card">
           <img
@@ -161,7 +161,7 @@ export function BentoSection() {
     {
       title: "Academic Credentials",
       description:
-        "BSc Computing from Coventry University (UK) & Diploma in Electronics from IOE Thapathali Campus (Nepal).",
+        "BSc Computing (Coventry University, UK) & Diploma in Electronics (IOE Thapathali, Nepal).",
       header: (
         <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-blue-950/50 via-neutral-900 to-indigo-950/40 p-4 border border-white/5 flex flex-col justify-between">
           <BookOpen className="w-5 h-5 text-blue-400" />
@@ -178,7 +178,7 @@ export function BentoSection() {
     {
       title: "Direct Executive Advisory & Contact",
       description:
-        "Direct correspondence for business IT consulting, enterprise systems architecture, or speaking engagements. Based in Kathmandu, Nepal.",
+        "Executive advisory for business systems, cloud architecture, and technical consulting.",
       header: (
         <div className="relative w-full h-36 rounded-2xl bg-gradient-to-br from-cyan-950/50 via-neutral-900 to-indigo-950/40 p-4 border border-white/5 flex flex-col justify-between">
           <div className="flex items-center justify-between">
@@ -209,7 +209,7 @@ export function BentoSection() {
             Integrated Leadership Matrix
           </h2>
           <p className="mt-4 text-base sm:text-lg text-neutral-400">
-            Synthesizing entrepreneurship, telematics systems, creative film direction, and philanthropic technical pedagogy into a single vision.
+            Executive governance, enterprise telematics, creative film direction, and philanthropic technical mentorship.
           </p>
         </div>
 

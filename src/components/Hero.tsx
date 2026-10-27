@@ -106,8 +106,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 text-sm sm:text-base lg:text-lg text-neutral-300 max-w-2xl mx-auto font-normal leading-relaxed">
-            Dynamic Business Architect, Project Leader, and Tech Professional. Founder of <strong className="text-white font-medium">Going Genius Group</strong>, 
-            driving digital transformation, enterprise ERP systems, and IoT telematics across Nepal.
+            Dynamic Business Architect & Project Leader. Founder of <strong className="text-white font-medium">Going Genius Group</strong>, 
+            architecting enterprise ERP platforms, edge IoT telematics, and Generative AI workflows.
           </p>
 
           {/* Core Roles Streamlined Badges */}
@@ -161,7 +161,7 @@ export function Hero() {
 
       {/* Bento Stats / Real metrics bar (VisionOS Spatial VR Glass) */}
       <div className="pb-20 px-4 sm:px-6 lg:px-8 w-full max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 -mt-10 sm:-mt-14 relative z-30">
-        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-indigo-500/30 transition-colors">
+        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all">
           <div className="flex items-center justify-between text-indigo-400 mb-2">
             <ShieldCheck className="w-5 h-5" />
             <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-400">
@@ -172,11 +172,11 @@ export function Hero() {
             Founder
           </span>
           <span className="text-xs text-neutral-300 mt-1">
-            Going Genius & corporate board stewardship
+            Going Genius Group & Board Leadership
           </span>
         </div>
 
-        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-violet-500/30 transition-colors">
+        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10 transition-all">
           <div className="flex items-center justify-between text-violet-400 mb-2">
             <Users2 className="w-5 h-5" />
             <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-400">
@@ -187,11 +187,11 @@ export function Hero() {
             90+ Students
           </span>
           <span className="text-xs text-neutral-300 mt-1">
-            Trained hands-on in Next.js, .NET & AI prompts
+            Mentored in Next.js, .NET & AI Systems
           </span>
         </div>
 
-        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-cyan-500/30 transition-colors">
+        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10 transition-all">
           <div className="flex items-center justify-between text-cyan-400 mb-2">
             <Code2 className="w-5 h-5" />
             <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-400">
@@ -199,14 +199,14 @@ export function Hero() {
             </span>
           </div>
           <span className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-            Flagship Platforms
+            Flagship ERPs
           </span>
           <span className="text-xs text-neutral-300 mt-1">
-            GG Relativity, GG Portals, Finder BD & more
+            GG Relativity, GG Portals & Finder BD
           </span>
         </div>
 
-        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-emerald-500/30 transition-colors">
+        <div className="vr-glass p-4 sm:p-5 rounded-2xl flex flex-col hover:border-emerald-500/50 hover:shadow-lg hover:shadow-emerald-500/10 transition-all">
           <div className="flex items-center justify-between text-emerald-400 mb-2">
             <HeartHandshake className="w-5 h-5" />
             <span className="text-[10px] uppercase font-mono tracking-wider text-neutral-400">
@@ -217,7 +217,7 @@ export function Hero() {
             Scholarships
           </span>
           <span className="text-xs text-neutral-300 mt-1">
-            Empowering students in need with modern tech grants
+            Full & partial funding for tech scholars
           </span>
         </div>
       </div>
