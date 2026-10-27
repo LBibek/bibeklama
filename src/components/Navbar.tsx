@@ -37,30 +37,39 @@ export function Navbar() {
       setScrolled(window.scrollY > 20);
 
       const sectionIds = [
-        "contact",
-        "payment",
-        "milestones",
-        "media",
-        "workshops",
-        "blog",
-        "projects",
         "bento",
         "about",
+        "projects",
+        "blog",
+        "workshops",
+        "media",
+        "payment",
+        "milestones",
+        "contact",
       ];
 
-      const scrollPosition = window.scrollY + 220;
+      const focalY = 260; // viewing focal line from top of viewport
 
       let current = "";
       for (const id of sectionIds) {
         const el = document.getElementById(id);
         if (el) {
-          const top = el.offsetTop;
-          if (scrollPosition >= top) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= focalY && rect.bottom > focalY) {
             current = id;
             break;
           }
         }
       }
+
+      // If at the very bottom of the page, activate contact
+      if (
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 50
+      ) {
+        current = "contact";
+      }
+
       setActiveSection(current);
     };
 
@@ -159,7 +168,7 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Center: Aceternity Floating Dock with Active Region Scroll Glow */}
+          {/* Center: Aceternity Floating Dock with Scroll Active Glow */}
           <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center justify-center">
             <FloatingDock items={dockLinks} activeHref={activeSection} />
           </div>
@@ -177,7 +186,7 @@ export function Navbar() {
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
 
-            {/* Mobile Dock Menu with Active Scroll Glow */}
+            {/* Mobile Dock Menu with Scroll Active Glow */}
             <div className="block lg:hidden">
               <FloatingDock items={dockLinks} activeHref={activeSection} />
             </div>
