@@ -36,36 +36,42 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sectionIds = [
-        "bento",
-        "about",
-        "projects",
-        "blog",
-        "workshops",
-        "media",
-        "payment",
-        "milestones",
-        "contact",
+      // Section to Dock-Target mapping following the narrative storytelling sequence
+      const sectionMap: { id: string; target: string }[] = [
+        { id: "about", target: "about" },
+        { id: "bento", target: "bento" },
+        { id: "pillars", target: "bento" },
+        { id: "projects", target: "projects" },
+        { id: "blog", target: "blog" },
+        { id: "workshops", target: "workshops" },
+        { id: "philanthropy", target: "workshops" },
+        { id: "discord", target: "workshops" },
+        { id: "media", target: "media" },
+        { id: "milestones", target: "milestones" },
+        { id: "frameworks", target: "milestones" },
+        { id: "team", target: "milestones" },
+        { id: "payment", target: "payment" },
+        { id: "contact", target: "contact" },
       ];
 
       const focalY = 260; // viewing focal line from top of viewport
 
       let current = "";
-      for (const id of sectionIds) {
-        const el = document.getElementById(id);
+      for (const item of sectionMap) {
+        const el = document.getElementById(item.id);
         if (el) {
           const rect = el.getBoundingClientRect();
           if (rect.top <= focalY && rect.bottom > focalY) {
-            current = id;
+            current = item.target;
             break;
           }
         }
       }
 
-      // If at the very bottom of the page, activate contact
+      // If scrolled near page bottom, highlight contact
       if (
         window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 50
+        document.documentElement.scrollHeight - 60
       ) {
         current = "contact";
       }
@@ -78,6 +84,7 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isArticlesPage]);
 
+  // Dock items strictly arranged in top-to-bottom storytelling order
   const dockLinks: DockItem[] = [
     {
       title: "About",
@@ -105,14 +112,14 @@ export function Navbar() {
       icon: <GraduationCap className="w-full h-full" />,
     },
     {
-      title: "Experience",
-      href: "#milestones",
-      icon: <Award className="w-full h-full" />,
-    },
-    {
       title: "Media Reels",
       href: "#media",
       icon: <Film className="w-full h-full" />,
+    },
+    {
+      title: "Experience",
+      href: "#milestones",
+      icon: <Award className="w-full h-full" />,
     },
     {
       title: "Pay & Enroll",

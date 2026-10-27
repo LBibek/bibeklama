@@ -180,7 +180,7 @@ Remarks / Notes: ${notes || "None provided"}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-4">
             <QrCode className="w-3.5 h-3.5" />
-            <span>NIC ASIA MoBank & Fonepay Gateway</span>
+            <span>Chapter XI • Frictionless Onboarding & Enroll</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Digital Payment & Verification

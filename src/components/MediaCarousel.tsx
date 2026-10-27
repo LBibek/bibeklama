@@ -86,7 +86,7 @@ export function MediaCarousel() {
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-semibold mb-3">
             <Film className="w-3.5 h-3.5" />
-            <span>Creative Direction & Aerial Cinema</span>
+            <span>Chapter VII • Creative Direction & FPV Cinematography</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Director & Drone Pilot Reel

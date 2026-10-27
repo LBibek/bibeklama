@@ -42,7 +42,7 @@ export function Philanthropy() {
           <div className="lg:col-span-6 flex flex-col gap-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-medium w-fit">
               <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400/20" />
-              <span>Philanthropy in Education</span>
+              <span>Chapter VI • The Social Mission & Scholarships</span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">

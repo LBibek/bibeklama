@@ -72,7 +72,7 @@ export function TeamTestimonials() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-medium mb-4">
             <Users2 className="w-3.5 h-3.5" />
-            <span>Collaborators & Mentorship Impact</span>
+            <span>Chapter X • Endorsements & Peer Reviews</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Endorsements From Close Collaborators

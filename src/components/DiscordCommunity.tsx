@@ -53,7 +53,7 @@ export function DiscordCommunity() {
             <div className="lg:col-span-7 flex flex-col gap-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5865F2]/20 border border-[#5865F2]/40 text-[#a5b4fc] text-xs font-semibold w-fit">
                 <DiscordIcon className="w-4 h-4 text-[#5865F2]" />
-                <span>Remote Learning Campus on Discord</span>
+                <span>Community Hub • Remote Learning Campus</span>
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse ml-1" />
               </div>
 

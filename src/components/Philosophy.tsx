@@ -40,9 +40,9 @@ export function Philosophy() {
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 relative bg-neutral-950">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Guiding Principles</span>
+            <span>Chapter I • The Visionary Ethos</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Executive Philosophy

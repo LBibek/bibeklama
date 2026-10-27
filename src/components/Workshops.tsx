@@ -85,7 +85,7 @@ export function Workshops() {
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs font-medium mb-4">
             <GraduationCap className="w-3.5 h-3.5" />
-            <span>Applied Technical Pedagogy</span>
+            <span>Chapter V • Applied Pedagogy & Mentorship</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             Industry-Ready Student Workshops

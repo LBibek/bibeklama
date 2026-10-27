@@ -32,7 +32,7 @@ export function BlogSection() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold mb-3">
               <BookOpen className="w-3.5 h-3.5" />
-              <span>Engineering Library ({ARTICLES_DATA.length} Publications)</span>
+              <span>Chapter IV • Architectural Briefings & Publications</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
               Architectural Insights & Briefings

@@ -1,18 +1,18 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { BentoSection } from "@/components/BentoSection";
 import { Philosophy } from "@/components/Philosophy";
+import { BentoSection } from "@/components/BentoSection";
 import { ThreePillars } from "@/components/ThreePillars";
 import { ProjectsShowcase } from "@/components/ProjectsShowcase";
 import { BlogSection } from "@/components/BlogSection";
 import { Workshops } from "@/components/Workshops";
-import { MediaCarousel } from "@/components/MediaCarousel";
-import { DiscordCommunity } from "@/components/DiscordCommunity";
 import { Philanthropy } from "@/components/Philanthropy";
-import { PaymentSection } from "@/components/PaymentSection";
-import { TeamTestimonials } from "@/components/TeamTestimonials";
-import { Frameworks } from "@/components/Frameworks";
+import { DiscordCommunity } from "@/components/DiscordCommunity";
+import { MediaCarousel } from "@/components/MediaCarousel";
 import { Timeline } from "@/components/Timeline";
+import { Frameworks } from "@/components/Frameworks";
+import { TeamTestimonials } from "@/components/TeamTestimonials";
+import { PaymentSection } from "@/components/PaymentSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { GsapAnimations } from "@/components/GsapAnimations";
@@ -26,22 +26,31 @@ export default function Home() {
       {/* Sticky Glassmorphic VisionOS Dock/Navbar */}
       <Navbar />
 
-      {/* Main Content Sections */}
+      {/* Main Content: The Narrative Journey of Bibek Lama Tamang */}
       <main className="flex-1">
+        {/* ACT I: The Hook, Identity & Visionary Ethos */}
         <Hero />
-        <BentoSection />
         <Philosophy />
+        <BentoSection />
         <ThreePillars />
+
+        {/* ACT II: The Craft — Flagship Systems & Thought Leadership */}
         <ProjectsShowcase />
         <BlogSection />
+
+        {/* ACT III: The Mission — Pedagogy, Scholarships & Creative Vision */}
         <Workshops />
-        <MediaCarousel />
-        <DiscordCommunity />
         <Philanthropy />
-        <PaymentSection />
-        <TeamTestimonials />
-        <Frameworks />
+        <DiscordCommunity />
+        <MediaCarousel />
+
+        {/* ACT IV: The Validation — Track Record, Frameworks & Social Proof */}
         <Timeline />
+        <Frameworks />
+        <TeamTestimonials />
+
+        {/* ACT V: Action — Enroll, Contribute & Initiate Partnership */}
+        <PaymentSection />
         <ContactSection />
       </main>
 
