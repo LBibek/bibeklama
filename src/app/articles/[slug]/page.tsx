@@ -70,10 +70,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       tags: [article.category, article.badge, "Architecture", "Engineering"],
       images: [
         {
-          url: "https://bibeklama.vercel.app/bibek-portrait.png",
-          width: 800,
-          height: 800,
-          alt: `${article.title} by ${article.author}`,
+          url: `${canonicalUrl}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${article.title} - Architectural Blueprint by ${article.author}`,
+          type: "image/png",
         },
       ],
     },
@@ -82,7 +83,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: article.title,
       description: article.summary,
       creator: "@bibeklama",
-      images: ["https://bibeklama.vercel.app/bibek-portrait.png"],
+      images: [`${canonicalUrl}/opengraph-image`],
     },
     other: {
       "article:published_time": "2026-10-01T00:00:00.000Z",

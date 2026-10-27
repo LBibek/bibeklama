@@ -16,10 +16,14 @@ import { PaymentSection } from "@/components/PaymentSection";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { GsapAnimations } from "@/components/GsapAnimations";
+import { StructuredData } from "@/components/StructuredData";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)] flex flex-col selection:bg-indigo-500/30 selection:text-indigo-200 transition-colors duration-300">
+      {/* Search Engine & AI Structured Data (JSON-LD) */}
+      <StructuredData />
+
       {/* GSAP Scroll Trigger & Spatial VR Interaction Engine */}
       <GsapAnimations />
 
