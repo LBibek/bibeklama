@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
   Code,
   Terminal,
@@ -11,10 +12,12 @@ import {
   CheckCircle2,
   Cpu,
   ArrowRight,
+  ArrowUpRight,
   Briefcase,
   Flame,
   BadgePercent,
   Tag,
+  ShieldCheck,
 } from "lucide-react";
 
 export function Workshops() {
@@ -110,6 +113,18 @@ export function Workshops() {
             <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-semibold border border-emerald-500/30">
               Save NRS. 5,000
             </span>
+          </div>
+
+          {/* Credential Verification Gateway Link */}
+          <div className="mt-4">
+            <Link
+              href="/verify"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 text-emerald-300 text-xs font-medium transition-colors"
+            >
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Verify Graduate Certifications & Capstone Credentials</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { ARTICLES_DATA } from "@/lib/articlesData";
+import { VERIFIED_CERTIFICATES } from "@/lib/certificatesData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://bibeklama.vercel.app";
@@ -9,6 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.85,
+  }));
+
+  const certificateEntries: MetadataRoute.Sitemap = VERIFIED_CERTIFICATES.map((cert) => ({
+    url: `${baseUrl}/verify/${cert.id}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
   }));
 
   return [
@@ -24,6 +32,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.95,
     },
+    {
+      url: `${baseUrl}/verify`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
     ...articleEntries,
+    ...certificateEntries,
   ];
 }
