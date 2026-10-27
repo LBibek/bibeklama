@@ -18,6 +18,7 @@ import {
 import { FloatingDock, DockItem } from "@/components/ui/floating-dock";
 import { LinkedInIcon, GitHubIcon } from "@/components/Icons";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { NepaliTranslateButton } from "@/components/NepaliTranslateButton";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -125,8 +126,9 @@ export function Navbar() {
             <FloatingDock items={dockLinks} />
           </div>
 
-          {/* Right: Theme Toggle, Connect Action Button & Mobile Dock */}
-          <div className="flex items-center gap-2.5 sm:gap-3 z-10">
+          {/* Right: Language Toggle, Theme Toggle, Connect Action Button & Mobile Dock */}
+          <div className="flex items-center gap-2 sm:gap-2.5 z-10">
+            <NepaliTranslateButton />
             <ThemeToggle />
 
             <a

@@ -3,6 +3,7 @@
 import React from "react";
 import { Mail, ArrowUp, ExternalLink, Phone } from "lucide-react";
 import { LinkedInIcon, GitHubIcon, DiscordIcon, InstagramIcon } from "@/components/Icons";
+import { NepaliTranslateButton } from "@/components/NepaliTranslateButton";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -168,7 +169,8 @@ export function Footer() {
         <div>
           © {new Date().getFullYear()} Bibek Lama. Founder of Going Genius. All rights reserved.
         </div>
-        <div className="mt-2 sm:mt-0 flex items-center gap-4">
+        <div className="mt-2 sm:mt-0 flex items-center gap-3">
+          <NepaliTranslateButton variant="footer" />
           <span className="font-mono">Kathmandu, Nepal</span>
           <button
             onClick={scrollToTop}
