@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   ExternalLink,
   LayoutGrid,
   ArrowUpRight,
+  ArrowRight,
   Code2,
   Smartphone,
   Palette,
@@ -31,6 +33,7 @@ interface Project {
   borderColor: string;
   highlights: string[];
   whatsappMessage: string;
+  caseStudyUrl?: string;
 }
 
 export function ProjectsShowcase() {
@@ -224,6 +227,7 @@ export function ProjectsShowcase() {
       ],
       whatsappMessage:
         "Hello Bibek, I would like to inquire about GG Relativity Enterprise ERP system.",
+      caseStudyUrl: "/case-studies/gg-relativity",
     },
     {
       title: "GG Portals",
@@ -244,6 +248,7 @@ export function ProjectsShowcase() {
       ],
       whatsappMessage:
         "Hello Bibek, I would like to learn more about GG Portals multi-tenant platform.",
+      caseStudyUrl: "/case-studies/gg-portals",
     },
     {
       title: "Finder BD",
@@ -265,6 +270,7 @@ export function ProjectsShowcase() {
       ],
       whatsappMessage:
         "Hello Bibek, I am interested in IoT & GPS Telematics solutions based on Finder BD.",
+      caseStudyUrl: "/case-studies/finder-bd",
     },
     {
       title: "Video Creation Team & Media Production",
@@ -415,18 +421,30 @@ export function ProjectsShowcase() {
                   ))}
                 </div>
 
-                {/* Dual Action Bar: WhatsApp Button + Explore Link */}
-                <div className="flex items-center justify-between gap-2 pt-2">
-                  <a
-                    href={`https://wa.me/9779768527869?text=${encodeURIComponent(proj.whatsappMessage)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30 hover:border-emerald-500/50 transition-all duration-200 active:scale-[0.98] group/wa shadow-sm"
-                    title={`Inquire about ${proj.title} on WhatsApp`}
-                  >
-                    <WhatsAppIcon className="w-3.5 h-3.5 fill-current shrink-0 text-emerald-400 group-hover/wa:scale-110 transition-transform" />
-                    <span>WhatsApp</span>
-                  </a>
+                {/* Action Bar: WhatsApp Button + Blueprint Link + External Link */}
+                <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={`https://wa.me/9779768527869?text=${encodeURIComponent(proj.whatsappMessage)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30 hover:border-emerald-500/50 transition-all duration-200 active:scale-[0.98] group/wa shadow-sm"
+                      title={`Inquire about ${proj.title} on WhatsApp`}
+                    >
+                      <WhatsAppIcon className="w-3.5 h-3.5 fill-current shrink-0 text-emerald-400 group-hover/wa:scale-110 transition-transform" />
+                      <span>WhatsApp</span>
+                    </a>
+
+                    {proj.caseStudyUrl && (
+                      <Link
+                        href={proj.caseStudyUrl}
+                        className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-all"
+                      >
+                        <span>Blueprint</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </Link>
+                    )}
+                  </div>
 
                   <a
                     href={proj.link}

@@ -113,6 +113,7 @@ export function Footer() {
           <a href="#about" className="hover:text-white transition-colors">Executive Philosophy</a>
           <a href="#pillars" className="hover:text-white transition-colors">Three Leadership Pillars</a>
           <a href="#projects" className="hover:text-white transition-colors">Ventures & Projects</a>
+          <a href="/case-studies" className="hover:text-white transition-colors text-cyan-400 font-semibold">Architecture Case Studies</a>
           <a href="/articles" className="hover:text-white transition-colors text-cyan-400 font-semibold">Articles & Architecture Library</a>
           <a href="#workshops" className="hover:text-white transition-colors">Student Workshops</a>
           <a href="/verify" className="hover:text-white transition-colors text-emerald-400 font-semibold">Verify Student Credentials</a>

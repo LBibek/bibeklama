@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { ARTICLES_DATA } from "@/lib/articlesData";
 import { VERIFIED_CERTIFICATES } from "@/lib/certificatesData";
+import { CASE_STUDIES_DATA } from "@/lib/caseStudiesData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://bibeklama.vercel.app";
@@ -19,6 +20,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const caseStudyEntries: MetadataRoute.Sitemap = CASE_STUDIES_DATA.map((study) => ({
+    url: `${baseUrl}/case-studies/${study.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.9,
+  }));
+
   return [
     {
       url: baseUrl,
@@ -33,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: `${baseUrl}/case-studies`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/verify`,
       lastModified: new Date(),
       changeFrequency: "weekly",
@@ -40,5 +54,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...articleEntries,
     ...certificateEntries,
+    ...caseStudyEntries,
   ];
 }
