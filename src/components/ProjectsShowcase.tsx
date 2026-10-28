@@ -217,7 +217,7 @@ export function ProjectsShowcase() {
       linkText: "View ERP Portal",
       badge: "Enterprise ERP",
       image: "/project-relativity.jpg",
-      tech: [".NET", "Next.js", "SQL Server", "Role-Based Security", "Telemetry"],
+      tech: ["PHP", "MySQL", "Next.js", "REST APIs", "Role-Based Security"],
       gradient: "from-cyan-600/20 via-blue-600/10 to-transparent",
       borderColor: "hover:border-cyan-500/50",
       highlights: [
@@ -238,7 +238,7 @@ export function ProjectsShowcase() {
       link: "https://portals.goinggenius.com.np/",
       linkText: "Access Portals",
       badge: "Cloud Portal",
-      tech: ["Next.js", "REST APIs", "Modern Authentication", "Tailwind CSS"],
+      tech: ["PHP", "MySQL", "Next.js", "REST APIs", "Role-Based Access"],
       gradient: "from-violet-600/20 via-purple-600/10 to-transparent",
       borderColor: "hover:border-violet-500/50",
       highlights: [

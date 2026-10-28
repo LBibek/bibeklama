@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Enterprise Architecture Case Studies | Bibek Lama Tamang",
     description:
-      "Deep-dive technical case studies covering .NET Core Clean Architecture, Next.js Server Components, Redis geospatial telemetry, and high-concurrency cloud systems.",
+      "Deep-dive technical case studies covering PHP & MySQL enterprise ERP backends, Next.js Server Components, Redis geospatial telemetry, and high-concurrency cloud systems.",
     url: "https://bibeklama.vercel.app/case-studies",
     siteName: "Bibek Lama Tamang - Architecture Practice",
     type: "website",

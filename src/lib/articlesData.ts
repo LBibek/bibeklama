@@ -475,7 +475,7 @@ Phase 3 (DNS Cutover): Point the domain to Vercel's global CDN with zero minutes
     author: "Bibek Lama Tamang",
     authorRole: "Business Architect & Project Leader, Going Genius",
     summary:
-      "Building true 'system software'—such as enterprise ERPs (GG Relativity), automated telematics telemetry engines, and mission-critical inventory backbones—demands two competing qualities: raw computational throughput and instant, reactive user experiences. This blueprint examines why pairing Microsoft .NET (C#) as the robust backend engine with Next.js as the spatial edge presentation layer is the definitive enterprise architecture in 2026.",
+      "Building true 'system software'—such as high-scale IoT telematics engines, real-time fleet trackers, and mission-critical corporate backbones—demands two competing qualities: raw computational throughput and instant, reactive user experiences. This blueprint examines why pairing Microsoft .NET (C#) as the robust backend engine with Next.js as the spatial edge presentation layer is the definitive enterprise architecture in 2026.",
     keyTakeaways: [
       ".NET (Kestrel & CLR) provides C++-adjacent execution speeds, thread pooling, and high-memory management for heavy computational workloads.",
       "Next.js App Router acts as a high-speed presentation BFF (Backend-For-Frontend), caching server responses and streaming UI at the edge.",
@@ -486,8 +486,8 @@ Phase 3 (DNS Cutover): Point the domain to Vercel's global CDN with zero minutes
     contentSections: [
       {
         heading: "1. The System Software Dilemma: UI Agility vs. Raw Compute Engine",
-        body: `When architecting large-scale system software—such as GG Relativity ERP or Finder GPS Telematics—pure Node.js backends struggle with CPU-intensive thread saturation, large in-memory dataset aggregation, and raw byte-level socket parsing. Conversely, traditional desktop .NET WPF/WinForms clients or server-rendered Razor monoliths lack the modern, spatial reactivity and edge distribution required by distributed remote workforces.
-
+        body: `When architecting large-scale system software—such as Finder GPS Telematics or high-concurrency IoT backends—pure Node.js backends struggle with CPU-intensive thread saturation, large in-memory dataset aggregation, and raw byte-level socket parsing. Conversely, traditional desktop .NET WPF/WinForms clients or server-rendered Razor monoliths lack the modern, spatial reactivity and edge distribution required by distributed remote workforces.
+ 
 The solution is an architectural symbiosis:
 - The Compute Engine (.NET): Leverages the high-performance Common Language Runtime (CLR), managed thread pools, memory-mapped files, and Entity Framework Core for rock-solid transaction processing, hardware device communication, and complex business calculations.
 - The Spatial Presentation Layer (Next.js): Deployed to global edge networks to render Server Components, stream real-time UI states, and enforce zero-trust authentication before requests ever hit internal corporate subnets.`,
@@ -500,7 +500,7 @@ For real-time operational events—such as fleet vehicle emergency stops, wareho
         codeSnippet: `// telemetry-service.proto
 syntax = "proto3";
 
-option csharp_namespace = "GoingGenius.Relativity.Telemetry";
+option csharp_namespace = "GoingGenius.Telematics.Telemetry";
 
 service FleetTelemetryEngine {
   rpc IngestTelemetryBatch (TelemetryBatchRequest) returns (TelemetryBatchResponse);
@@ -522,7 +522,7 @@ message CoordinatePing {
         body: `The .NET backend handles hardware socket ingestion, background cron workers, and transactional persistence with maximum hardware efficiency. C# 13 features like 'ref struct', memory spans ('Span<T>'), and Native AOT compilation ensure minimal garbage collection overhead.`,
         codeSnippet: `// Services/FleetTelemetryService.cs
 using Grpc.Core;
-using GoingGenius.Relativity.Telemetry;
+using GoingGenius.Telematics.Telemetry;
 
 public class FleetTelemetryService : FleetTelemetryEngine.FleetTelemetryEngineBase
 {
@@ -590,8 +590,8 @@ export default async function FleetOperationsPage() {
         codeLanguage: "typescript",
       },
       {
-        heading: "5. Production Proven: The GG Relativity Architecture",
-        body: `At Going Genius, this architectural synergy powers our flagship enterprise platform, GG Relativity. By assigning computational burdens, multi-tenant database transactions, and hardware I/O to .NET Core, while delegating user authentication, responsive layouts, and edge caching to Next.js, the system achieves 99.99% uptime with sub-100ms UI interactions across desktop and mobile devices worldwide.`,
+        heading: "5. Production Proven: High-Throughput Telematics Architecture",
+        body: `At Going Genius, this architectural synergy powers high-throughput IoT telematics platforms and fleet tracking systems. By assigning computational burdens, socket hardware ingestion, and low-latency calculations to .NET Core, while delegating user authentication, responsive layouts, and edge caching to Next.js, the system achieves 99.99% uptime with sub-100ms UI interactions across desktop and mobile devices worldwide.`,
         callout: {
           type: "tip",
           title: "Architecture Maxim",

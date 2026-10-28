@@ -52,7 +52,7 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
     slug: "gg-relativity",
     title: "GG Relativity: Integrated Enterprise ERP & Operations Management System",
     subtitle:
-      "Architecting a distributed .NET Core and Next.js operations suite powering multi-tenant resource orchestration, client relationship workflows, and real-time operational telemetry for Going Genius.",
+      "Architecting a robust PHP and MySQL enterprise operations backend with Next.js powering multi-tenant resource orchestration, client relationship workflows, and operational telemetry for Going Genius.",
     client: "Going Genius Group",
     role: "Lead Systems Architect & Founder",
     period: "2023 – Present",
@@ -60,13 +60,13 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
     liveUrl: "https://www.office.goinggenius.com.np/",
     heroImage: "/project-relativity.jpg",
     summary:
-      "GG Relativity is a bespoke enterprise resource planning (ERP) platform designed from the ground up to unify Going Genius's disparate operational workflows. By decoupling presentation logic through Next.js and powering backend orchestration with an ASP.NET Core Clean Architecture microservice core, the system achieves sub-50ms query latency, strict Role-Based Access Control (RBAC), and automated financial telemetry.",
+      "GG Relativity is a bespoke enterprise resource planning (ERP) platform designed from the ground up to unify Going Genius's disparate operational workflows. By decoupling presentation logic through Next.js and powering backend orchestration with an optimized PHP REST service architecture and relational MySQL database (InnoDB), the system achieves sub-50ms query latency, strict Role-Based Access Control (RBAC), and automated financial telemetry.",
     metrics: [
       {
         label: "Query Response Latency",
         value: "< 42ms",
         change: "-68%",
-        detail: "Achieved via compiled Linq queries & Redis caching",
+        detail: "Achieved via indexed MySQL queries & Redis caching",
       },
       {
         label: "Workflow Automation",
@@ -108,7 +108,7 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
     architectureLayers: [
       {
         name: "Client Presentation Tier",
-        badge: "Edge Next.js 16 Client",
+        badge: "Edge Next.js Client",
         description:
           "Server-rendered dashboards using React Server Components for instantaneous initial page loads with client islands for interactive telemetry widgets.",
         tech: ["Next.js App Router", "Tailwind CSS", "Lucide React", "GSAP Telemetry"],
@@ -122,8 +122,8 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
         name: "Security & API Gateway Tier",
         badge: "Zero-Trust Authorization",
         description:
-          "Stateless token-based reverse proxy managing request throttling, rate limiting, and cryptographic claims inspection.",
-        tech: ["ASP.NET Core Middleware", "JWT Bearer Authentication", "CORS Hardening"],
+          "Stateless token-based reverse proxy managing request throttling, rate limiting, and cryptographic claims inspection for PHP services.",
+        tech: ["PHP REST Gateway", "JWT Authentication", "CORS Hardening", "Rate Limiting"],
         responsibilities: [
           "Sub-millisecond claims validation",
           "Audit trail logging for all mutative requests",
@@ -132,24 +132,24 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
       },
       {
         name: "Business Logic & Core Services",
-        badge: "Clean Architecture Core",
+        badge: "PHP Service Layer Architecture",
         description:
-          "Separated domain entities, use-case interactors, and external interfaces adhering to strict Onion Architecture principles.",
-        tech: [".NET 8 / C#", "MediatR CQRS", "FluentValidation", "AutoMapper"],
+          "Decoupled service layer, domain models, and repository interfaces adhering to clean modular design in PHP.",
+        tech: ["PHP 8", "PDO Prepared Statements", "Repository Pattern", "Domain Logic"],
         responsibilities: [
-          "Decoupled command and query handlers (CQRS)",
-          "In-process event bus for asynchronous notification triggers",
-          "Strict domain rule validation before persistence",
+          "Decoupled service business handlers",
+          "Atomic transaction management with PDO commit/rollback",
+          "Strict input validation and sanitization before persistence",
         ],
       },
       {
         name: "Data Persistence & Caching Tier",
-        badge: "Hybrid SQL & In-Memory Cache",
+        badge: "MySQL Relational Database & Cache",
         description:
-          "Primary relational store with ACID guarantees alongside an in-memory Redis cluster for session states and frequently evaluated dashboard summaries.",
-        tech: ["PostgreSQL", "Entity Framework Core", "Redis Cache", "Database Migrations"],
+          "Primary relational store with InnoDB engine for ACID guarantees alongside an in-memory Redis cluster for session states and frequently evaluated dashboard summaries.",
+        tech: ["MySQL (InnoDB)", "Redis Cache", "B-Tree Indexes", "Prepared Queries"],
         responsibilities: [
-          "Optimized relational indexing & multi-tenant isolation",
+          "Optimized relational indexing & foreign key constraints",
           "Sub-millisecond session and telemetry cache lookups",
           "Automated point-in-time recovery backup snapshots",
         ],
@@ -157,10 +157,10 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
     ],
     decisions: [
       {
-        title: "ASP.NET Core Clean Architecture vs. Monolithic Node.js",
-        choice: "ASP.NET Core 8 Web API with Onion Architecture",
+        title: "PHP REST Architecture & MySQL vs. Monolithic Node.js",
+        choice: "PHP 8 REST Services with MySQL (InnoDB)",
         rationale:
-          "C#'s strong static typing, native dependency injection, and compiled runtime throughput provided vastly superior predictability for complex enterprise financial transactions and strict domain modeling.",
+          "PHP's battle-tested execution stability, isolated request memory model, robust PDO prepared statements, and mature MySQL relational consistency provided deterministic transaction handling and straightforward hosting governance.",
         alternative: "Express.js / Node.js monorepo",
       },
       {
@@ -171,11 +171,11 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
         alternative: "Vite + React Single Page App (SPA)",
       },
       {
-        title: "Hybrid PostgreSQL + Redis vs. Single Database Engine",
-        choice: "PostgreSQL for ACID ledgers + Redis for Telemetry Cache",
+        title: "Relational MySQL (InnoDB) + Redis vs. Single Database Engine",
+        choice: "MySQL for ACID ledgers + Redis for Telemetry Cache",
         rationale:
-          "Reduced database query contention by 70% during peak billing cycles while retaining strict relational consistency for accounting ledgers.",
-        alternative: "PostgreSQL for all reads and writes",
+          "MySQL's InnoDB engine guarantees strict ACID transactions, foreign key constraints, and relational consistency for contracts and invoices, while Redis handles volatile real-time counters.",
+        alternative: "MySQL for all reads, writes, and volatile counters",
       },
     ],
     keyHighlights: [
@@ -185,44 +185,88 @@ export const CASE_STUDIES_DATA: CaseStudy[] = [
       "Automated CI/CD pipeline with strict unit, integration, and security regression testing",
     ],
     codeSnippet: {
-      title: "Clean Architecture Command Handler with Transactional Boundary",
-      language: "csharp",
-      code: `public class ApproveContractCommandHandler : IRequestHandler<ApproveContractCommand, Result<Guid>>
-{
-    private readonly IContractRepository _contractRepo;
-    private readonly IAuditLogger _auditLogger;
-    private readonly IUnitOfWork _unitOfWork;
+      title: "PHP Service Layer with Transactional Boundary & Prepared Statements (MySQL PDO)",
+      language: "php",
+      code: `<?php
+declare(strict_types=1);
 
-    public ApproveContractCommandHandler(
-        IContractRepository contractRepo,
-        IAuditLogger auditLogger,
-        IUnitOfWork unitOfWork)
+namespace GoingGenius\\Relativity\\Services;
+
+use PDO;
+use Exception;
+
+class ContractApprovalService
+{
+    private PDO $db;
+    private AuditLogger $auditLogger;
+
+    public function __construct(PDO $db, AuditLogger $auditLogger)
     {
-        _contractRepo = contractRepo;
-        _auditLogger = auditLogger;
-        _unitOfWork = unitOfWork;
+        $this->db = $db;
+        $this->auditLogger = $auditLogger;
     }
 
-    public async Task<Result<Guid>> Handle(ApproveContractCommand command, CancellationToken ct)
+    public function approveContract(int $contractId, int $approverId): array
     {
-        var contract = await _contractRepo.GetByIdAsync(command.ContractId, ct);
-        if (contract is null)
-            return Result.Failure<Guid>("Contract record not found.");
+        $this->db->beginTransaction();
 
-        contract.Approve(command.ApproverUserId, command.ApprovalTimestamp);
+        try {
+            // 1. Fetch contract with exclusive row lock in MySQL
+            $stmt = $this->db->prepare(
+                "SELECT id, status, client_id, amount 
+                 FROM contracts 
+                 WHERE id = :id FOR UPDATE"
+            );
+            $stmt->execute(['id' => $contractId]);
+            $contract = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        await _auditLogger.LogSecurityActionAsync(
-            "CONTRACT_APPROVED", 
-            command.ApproverUserId, 
-            contract.Id, 
-            ct);
+            if (!$contract) {
+                throw new Exception("Contract record not found.");
+            }
 
-        await _unitOfWork.CommitAsync(ct);
-        return Result.Success(contract.Id);
+            if ($contract['status'] === 'APPROVED') {
+                throw new Exception("Contract is already approved.");
+            }
+
+            // 2. Update status and timestamp in MySQL
+            $updateStmt = $this->db->prepare(
+                "UPDATE contracts 
+                 SET status = 'APPROVED', 
+                     approved_by = :approver_id, 
+                     approved_at = NOW() 
+                 WHERE id = :id"
+            );
+            $updateStmt->execute([
+                'approver_id' => $approverId,
+                'id' => $contractId
+            ]);
+
+            // 3. Log security audit trail atomically
+            $this->auditLogger->logAction(
+                action: 'CONTRACT_APPROVED',
+                userId: $approverId,
+                entityId: $contractId,
+                metadata: ['amount' => $contract['amount']]
+            );
+
+            $this->db->commit();
+
+            return [
+                'success' => true,
+                'contractId' => $contractId,
+                'status' => 'APPROVED'
+            ];
+        } catch (Exception $e) {
+            $this->db->rollBack();
+            return [
+                'success' => false,
+                'error' => $e->getMessage()
+            ];
+        }
     }
 }`,
       explanation:
-        "Encapsulates domain logic strictly within the entity, guaranteeing that audit logs and state changes execute atomically within a single transactional unit of work.",
+        "Encapsulates domain logic strictly within a PHP service, utilizing MySQL's InnoDB row-level locking (SELECT ... FOR UPDATE) and PDO transactions to guarantee atomic audit logging and state transitions.",
     },
     outcomes: [
       "Eliminated manual paperwork and reconciliation across Going Genius office departments",
@@ -424,7 +468,7 @@ export async function processTelemetryBeacon(point: TelemetryPoint) {
     liveUrl: "https://portals.goinggenius.com.np/",
     heroImage: "/tech-education.jpg",
     summary:
-      "GG Portals is the unified digital campus and client collaboration gateway engineered for Going Genius. It streamlines classroom materials distribution, interactive coding assignments, scholarship progress tracking, and client delivery hubs into a unified, authenticated Next.js environment with role isolation.",
+      "GG Portals is the unified digital campus and client collaboration gateway engineered for Going Genius. It streamlines classroom materials distribution, interactive coding assignments, scholarship progress tracking, and client delivery hubs into a unified environment powered by a PHP and MySQL backend architecture coupled with modern Next.js client experiences.",
     metrics: [
       {
         label: "Students & Alumni Served",
@@ -459,7 +503,7 @@ export async function processTelemetryBeacon(point: TelemetryPoint) {
         title: "Multi-Role Workspace Isolation",
         description:
           "Enterprise consulting clients, paying bootcamp students, and scholarship fellows needed secure, segregated access within a single portal without viewing each other's proprietary deliverables.",
-        impact: "Required strict tenant scoping and authenticated session authorization.",
+        impact: "Required strict tenant scoping and authenticated session authorization in PHP and MySQL.",
       },
     ],
     architectureLayers: [
@@ -476,13 +520,25 @@ export async function processTelemetryBeacon(point: TelemetryPoint) {
         ],
       },
       {
-        name: "Multi-Tenant Data Management",
-        badge: "PostgreSQL & Row-Level Security",
+        name: "Backend Core & REST Services",
+        badge: "PHP 8 REST Services",
         description:
-          "Database architecture enforcing strict row-level security so users access only their assigned workshop cohorts and project assets.",
-        tech: ["PostgreSQL", "Prisma ORM / Supabase", "Row-Level Security (RLS)"],
+          "Modular PHP backend handling authentication, role authorization, resource delivery, and webhook notifications.",
+        tech: ["PHP 8", "REST APIs", "JWT Authentication", "PDO Prepared Statements"],
         responsibilities: [
-          "Multi-tenant data isolation at the database layer",
+          "Secure session management and role verification",
+          "Scoped API endpoints for courseware and student submissions",
+          "Webhook event processing for classroom triggers",
+        ],
+      },
+      {
+        name: "Multi-Tenant Data Management",
+        badge: "MySQL (InnoDB) Relational Store",
+        description:
+          "Database architecture enforcing strict foreign key constraints and parameterized tenant scoping so users access only their authorized workshop cohorts and assets.",
+        tech: ["MySQL (InnoDB)", "ACID Transactions", "B-Tree Indexes", "Foreign Keys"],
+        responsibilities: [
+          "Multi-tenant data isolation via parameterized tenant scoping",
           "Encrypted credential and session storage",
           "Automated audit logging of grade and certificate submissions",
         ],
@@ -490,11 +546,18 @@ export async function processTelemetryBeacon(point: TelemetryPoint) {
     ],
     decisions: [
       {
-        title: "PostgreSQL Row-Level Security (RLS) vs Application-Level Filters",
-        choice: "Database Row-Level Security Policies",
+        title: "MySQL Parameterized Scoping vs. Unstructured Storage",
+        choice: "Relational MySQL (InnoDB) with Parameterized Queries",
         rationale:
-          "Guarantees that even if an application endpoint lacks an explicit where-clause filter, unauthorized cross-tenant data leaks are physically impossible at the database engine level.",
-        alternative: "Manual application-layer WHERE userId = x queries",
+          "Guarantees rigid relational integrity between students, workshops, assignments, and payments, while PDO parameterized statements eliminate SQL injection risks across all tenant queries.",
+        alternative: "Unstructured NoSQL or client-filtered queries",
+      },
+      {
+        title: "PHP REST Architecture vs. Monolithic Node.js",
+        choice: "Modular PHP 8 Backend API",
+        rationale:
+          "Offers reliable execution isolation, straightforward deployment governance, and low maintenance overhead matching Going Genius's production infrastructure.",
+        alternative: "Node.js microservices",
       },
     ],
     keyHighlights: [
